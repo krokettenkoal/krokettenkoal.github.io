@@ -1,0 +1,98 @@
+main.hero {
+    --offset-top: calc(10rem + var(--navbar-height));
+
+    width: 100%;
+    position: relative;
+    padding-top: var(--offset-top);
+    padding-bottom: 5rem;
+    min-height: calc(100vh - var(--offset-top) - 5rem);
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    background-image: url('https://picsum.photos/1920/1080?blur');
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: brightness(0.3);
+    -webkit-backdrop-filter: brightness(0.3);
+}
+
+main.hero::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background-image: radial-gradient(ellipse at center, var(--main-bg-col), rgba(0, 4, 35, 0.8) 40%, rgba(0, 4, 35, 0.6));
+    z-index: -1;
+}
+
+main.hero > * {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+main.hero h1 {
+    background-image: var(--rainbow-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: -.15rem;
+}
+
+main.hero .hero-img {
+    position: absolute;
+    height: 60vh;
+    top: calc(10vh + 1rem);
+    right: 0;
+    filter: grayscale(1);
+    mix-blend-mode: lighten;
+    opacity: .6;
+}
+
+main.hero div.hero-img {
+    width: 100%;
+    height: 60vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(90%, transparent));
+}
+
+main.hero a {
+    font-weight: bold;
+}
+
+main.hero article section p {
+    text-align: justify;
+}
+
+@media screen and (min-width: 1200px){
+    main.hero > * {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+
+    main.hero .hero-img {
+        right: 20vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main.hero {
+        --offset-top: calc(3rem + var(--navbar-height));
+
+        min-height: calc(100vh - var(--navbar-height) - 3rem);
+        padding-top: var(--offset-top);
+        background-image: url('https://picsum.photos/600/1067?blur');
+    }
+
+    main.hero > * {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    main.hero .hero-img {
+        top: 5vh;
+    }
+}

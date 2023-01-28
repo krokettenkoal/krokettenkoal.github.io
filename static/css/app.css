@@ -1,3 +1,5 @@
+/* CUSTOM FONTS */
+
 @font-face {
     font-family: 'Raleway';
     src: url('/fonts/raleway.ttf');
@@ -37,6 +39,8 @@
     font-style: italic;
 }
 
+/* GLOBAL STYLE */
+
 :root {
     --main-bg-col: rgb(0, 4, 35);
     --main-bg-gradient: radial-gradient(ellipse at top left, rgb(0, 5, 43) 10%, rgb(0, 2, 17) 70%);
@@ -47,6 +51,12 @@
 
     --scrollbar-background: var(--main-bg-col);
     --scrollbar-foreground: var(--link-hover-col);
+
+    --navbar-height: 12vh;
+
+    --rainbow-gradient: linear-gradient(90deg,blue,yellow,red,purple);
+    --rainbow-gradient-vertical: linear-gradient(to bottom,blue,yellow,red,purple);
+    --austria-gradient: linear-gradient(to bottom, red 45%, white 45%, white 67%, red 67%);
 }
 
 html {
@@ -82,6 +92,18 @@ body::-webkit-scrollbar-track { /* Background */
     background: var(--scrollbar-background);
 }
 
+h1, .h1 {
+    font-family: 'Futura Heading';
+    font-size: 6rem;
+    line-height: 6rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+h2, .h2 {
+    margin-top: 2rem;
+}
+
 a {
     color: var(--link-col);
     text-decoration: none;
@@ -93,4 +115,17 @@ a {
 a:hover, a:active {
     color: var(--link-hover-col);
     border-color: var(--link-hover-col);
+}
+
+.austria {
+    background-image: var(--austria-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rainbow {
+    background-image: var(--rainbow-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: red;
 }

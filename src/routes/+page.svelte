@@ -1,102 +1,13 @@
 <script>
     import HumanGreeting from 'svelte-material-icons/HumanGreeting.svelte';
 </script>
-<article class="hero" id="welcome">
+
+<article id="welcome">
     <section>
-        <div class="hero-img" style="background-image:url('/img/cgrill.jpg')" />
-        <h1>Welcome! <HumanGreeting/></h1>
+        <h1>Welcome! <HumanGreeting color="orange"/></h1>
         <p>
-            My name is <strong>Cajetan Grill</strong> and I am a software developer/designer with a focus on game development.
+            My name is <strong>Cajetan Grill</strong> and I am an <span class="austria"><strong>Austrian</strong></span> software developer/designer with a focus on game development.
             On this site, I show you who I am and where I come from, as well as some of my projects and creations.
         </p>
     </section>
-    <a class="hero-link" href="/about">Next ></a>
 </article>
-
-<style>
-    .hero {
-        position: relative;
-        padding: calc(10rem + 10vh) 10rem 10rem 10rem;
-        min-height: calc(90vh - 20rem);
-        background-image: url('https://picsum.photos/1920/1080?blur');
-        background-size: cover;
-        background-attachment: fixed;
-        backdrop-filter: brightness(0.3);
-    }
-
-    @media screen and (max-width: 800px){
-        .hero {
-            min-height: calc(90vh - 2rem);
-            background-image: url('https://picsum.photos/600/1067?blur');
-            padding: calc(10vh + 3rem) 1rem 1rem 1rem;
-        }
-    }
-
-    .hero::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background-image: radial-gradient(ellipse at center, var(--main-bg-col), rgba(0, 4, 35, 0.8) 40%, rgba(0, 4, 35, 0.6));
-        z-index: -1;
-    }
-
-    .hero h1 {
-        font-family: 'Futura Heading';
-        font-size: 6rem;
-        text-shadow: 10px 10px 0 var(--main-bg-col);
-        margin-bottom: 2rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: -.15rem;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-    }
-
-    .hero .hero-img {
-        position: absolute;
-        height: 60vh;
-        top: calc(10vh + 1rem);
-        right: 0;
-        filter: grayscale(1);
-        mix-blend-mode: lighten;
-        opacity: .6;
-    }
-
-    .hero div.hero-img {
-        width: 100%;
-        height: 60vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: right;
-        mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
-        -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(90%, transparent));
-    }
-
-    .hero .hero-link {
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-
-    @media screen and (min-width: 1200px){
-        .hero {
-            padding-left: 20vw;
-            padding-right: 20vw;
-        }
-
-        .hero .hero-img {
-            right: 20vw;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .hero .hero-img {
-            top: 5vh;
-        }
-    }
-</style>

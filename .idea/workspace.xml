@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/bangers.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/bangers.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/bangers.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/futura-cond-medium-oblique.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/futura-cond-medium-oblique.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/futura-cond-medium-oblique.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/raleway-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/raleway.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/yanone.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/cgrill.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/cgrill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/PrevNext.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/components/Socials.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/navdata.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/hero.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +28,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="+layout.svelte" />
-        <option value="CSS File" />
         <option value="+error.svelte" />
+        <option value="navbar.svelte" />
+        <option value="footer.svelte" />
+        <option value="+page.svelte" />
+        <option value="CSS File" />
+        <option value="PrevNext.svelte" />
+        <option value="TypeScript File" />
+        <option value="Socials.svelte" />
       </list>
     </option>
   </component>
@@ -61,7 +59,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -70,12 +67,14 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\www\krokettenkoal\cgrill-web\src\lib\components" />
       <recent name="C:\www\krokettenkoal\cgrill-web\static\css" />
     </key>
   </component>
@@ -100,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674847790466</updated>
       <workItem from="1674847791529" duration="16437000" />
+      <workItem from="1674901980355" duration="28843000" />
     </task>
     <servers />
   </component>
