@@ -1,16 +1,16 @@
 <script>
-    import HumanGreeting from 'svelte-material-icons/HumanGreeting.svelte';
+    import { page } from '$app/stores';
+    import EmoticonSad from 'svelte-material-icons/EmoticonSad.svelte';
 </script>
+
 <article class="hero" id="welcome">
     <section>
-        <div class="hero-img" style="background-image:url('/img/cgrill.jpg')" />
-        <h1>Welcome! <HumanGreeting/></h1>
-        <p>
-            My name is <strong>Cajetan Grill</strong> and I am a software developer/designer with a focus on game development.
-            On this site, I show you who I am and where I come from, as well as some of my projects and creations.
-        </p>
+        <h1>We has error {#if $page.error.id}
+                {$page.error.id}
+            {/if}<EmoticonSad/></h1>
+        <p><em>{$page.error.message}</em></p>
     </section>
-    <a class="hero-link" href="/about">Next ></a>
+    <a href="/" class="hero-link">&lt; Go to start</a>
 </article>
 
 <style>
@@ -58,26 +58,6 @@
         line-height: 1.8rem;
     }
 
-    .hero .hero-img {
-        position: absolute;
-        height: 60vh;
-        top: calc(10vh + 1rem);
-        right: 0;
-        filter: grayscale(1);
-        mix-blend-mode: lighten;
-        opacity: .6;
-    }
-
-    .hero div.hero-img {
-        width: 100%;
-        height: 60vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: right;
-        mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
-        -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(90%, transparent));
-    }
-
     .hero .hero-link {
         font-size: 1.5rem;
         font-weight: bold;
@@ -87,16 +67,6 @@
         .hero {
             padding-left: 20vw;
             padding-right: 20vw;
-        }
-
-        .hero .hero-img {
-            right: 20vw;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .hero .hero-img {
-            top: 5vh;
         }
     }
 </style>

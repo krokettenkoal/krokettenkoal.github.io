@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway Italic';
+    src: url('/fonts/raleway-italic.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src:    url('/fonts/bangers.ttf'),
+            url('/fonts/bangers.woff2') format('woff2'),
+            url('/fonts/bangers.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yanone';
+    src:    url('/fonts/yanone.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Heading';
+    src:    url('/fonts/futura-cond-medium-oblique.otf'),
+            url('/fonts/futura-cond-medium-oblique.woff2') format('woff2'),
+            url('/fonts/futura-cond-medium-oblique.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+:root {
+    --main-bg-col: rgb(0, 4, 35);
+    --main-bg-gradient: radial-gradient(ellipse at top left, rgb(0, 5, 43) 10%, rgb(0, 2, 17) 70%);
+    --main-text-col: rgb(245, 245, 245);
+    --secondary-text-col: rgb(101, 108, 134);
+    --link-col: rgb(244, 63, 184);
+    --link-hover-col: rgb(167, 43, 126);
+
+    --scrollbar-background: var(--main-bg-col);
+    --scrollbar-foreground: var(--link-hover-col);
+}
+
+html {
+    font-family: 'Raleway', Tahoma, Verdana, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-col);
+    background-image: var(--main-bg-gradient);
+    background-attachment: fixed;
+    color: var(--main-text-col);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+
+    scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+
+body::-webkit-scrollbar {
+    position: fixed;
+    width: 7px; /* Mostly for vertical scrollbars */
+    height: 7px; /* Mostly for horizontal scrollbars */
+}
+
+body::-webkit-scrollbar-thumb { /* Foreground */
+    background: var(--scrollbar-foreground);
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-track { /* Background */
+    background: var(--scrollbar-background);
+}
+
+a {
+    color: var(--link-col);
+    text-decoration: none;
+    border-bottom: 2px solid var(--link-col);
+
+    transition: color 150ms ease-out, border 150ms ease-out;
+}
+
+a:hover, a:active {
+    color: var(--link-hover-col);
+    border-color: var(--link-hover-col);
+}
