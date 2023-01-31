@@ -54,7 +54,7 @@
 
     --navbar-height: 12vh;
 
-    --rainbow-gradient: linear-gradient(90deg,blue,yellow,red,purple);
+    --rainbow-gradient: linear-gradient(90deg, #A81B79, #F5DE58, #27EEF5, #23A4A8);
     --rainbow-gradient-vertical: linear-gradient(to bottom,blue,yellow,red,purple);
     --austria-gradient: linear-gradient(to bottom, red 45%, white 45%, white 67%, red 67%);
 }
@@ -102,6 +102,9 @@ h1, .h1 {
 
 h2, .h2 {
     margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--secondary-text-col);
 }
 
 a {

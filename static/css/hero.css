@@ -11,7 +11,7 @@ main.hero {
     background-image: url('https://picsum.photos/1920/1080?blur');
     background-size: cover;
     background-attachment: fixed;
-    backdrop-filter: brightness(0.3);
+    backdrop-filter: brightness(0.3) sepia(1) hue-rotate(30deg);
     -webkit-backdrop-filter: brightness(0.3);
 }
 
@@ -23,6 +23,7 @@ main.hero::before {
     bottom: 0;
     content: '';
     background-image: radial-gradient(ellipse at center, var(--main-bg-col), rgba(0, 4, 35, 0.8) 40%, rgba(0, 4, 35, 0.6));
+    background-attachment: fixed;
     z-index: -1;
 }
 
@@ -47,6 +48,7 @@ main.hero .hero-img {
     filter: grayscale(1);
     mix-blend-mode: lighten;
     opacity: .6;
+    z-index: -1;
 }
 
 main.hero div.hero-img {
@@ -69,8 +71,8 @@ main.hero article section p {
 
 @media screen and (min-width: 1200px){
     main.hero > * {
-        padding-left: 20vw;
-        padding-right: 20vw;
+        padding-left: 25vw;
+        padding-right: 25vw;
     }
 
     main.hero .hero-img {

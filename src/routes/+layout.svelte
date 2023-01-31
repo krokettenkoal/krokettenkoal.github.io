@@ -1,6 +1,6 @@
 <script lang="ts">
-    import NavBar from '$lib/components/navbar.svelte';
-    import Footer from '$lib/components/footer.svelte';
+    import NavBar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
     import PrevNext from "$lib/components/PrevNext.svelte";
 </script>
 
@@ -25,4 +25,5 @@
 
         box-shadow: 0 5px 20px black;
     }
+
 </style>

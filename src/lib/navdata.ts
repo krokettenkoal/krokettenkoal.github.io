@@ -66,3 +66,7 @@ export function getPrevNext(currentPath: string): PrevNextData {
 
     return prevNext;
 }
+
+export function getPageData(url: string): NavPage | undefined {
+    return data.pages.find(p => p.url == url);
+}
