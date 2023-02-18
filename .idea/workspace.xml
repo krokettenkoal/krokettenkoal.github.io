@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added static adapter&#10;Changed adapter from auto to static as a preparation for deploying the project to GitHub pages">
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated svelte config">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +82,17 @@
       <recent name="C:\www\krokettenkoal\cgrill-web\static\css\portfolio" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -92,6 +103,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +131,7 @@
       <workItem from="1676536641054" duration="26000" />
       <workItem from="1676635307970" duration="11288000" />
       <workItem from="1676648560238" duration="25709000" />
-      <workItem from="1676706236612" duration="6197000" />
+      <workItem from="1676706236612" duration="6640000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -132,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676713932241</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated svelte config">
+      <created>1676713983077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676713983077</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +215,12 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
       </list>
     </option>
   </component>
@@ -211,6 +239,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features" />
     <MESSAGE value="Added static adapter&#10;Changed adapter from auto to static as a preparation for deploying the project to GitHub pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added static adapter&#10;Changed adapter from auto to static as a preparation for deploying the project to GitHub pages" />
+    <MESSAGE value="Updated svelte config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated svelte config" />
   </component>
 </project>
