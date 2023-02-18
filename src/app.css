@@ -42,25 +42,37 @@
 /* GLOBAL STYLE */
 
 :root {
-    --main-bg-col: rgb(0, 4, 35);
-    --main-bg-gradient: radial-gradient(ellipse at top left, rgb(0, 5, 43) 10%, rgb(0, 2, 17) 70%);
-    --main-text-col: rgb(245, 245, 245);
-    --secondary-text-col: rgb(101, 108, 134);
-    --link-col: rgb(244, 63, 184);
-    --link-hover-col: rgb(167, 43, 126);
+
+    /* COLORS */
+    --main-bg-col: var(--ci-dark-blue);
+    --main-text-col: var(--ci-white);
+    --secondary-text-col: var(--ci-grey);
+    --accent-col: var(--ci-pink);
+    --accent-col-shade: var(--ci-pink-shade);
+
+    --link-col: var(--accent-col);
+    --link-hover-col: var(--accent-col-shade);
+
+    --main-bg-gradient: var(--grad-r-dark-blue-top-left);
+    --bg-gradient: var(--grad-r-dark-blue-center);
+    --rainbow-gradient: var(--grad-l-rainbow);
+    --rainbow-gradient-vertical: var(--grad-l-rainbow-vertical);
+    --austria-gradient: var(--grad-l-austria);
+    --title-gradient: var(--rainbow-gradient);
 
     --scrollbar-background: var(--main-bg-col);
-    --scrollbar-foreground: var(--link-hover-col);
+    --scrollbar-foreground: var(--accent-col-shade);
 
+    /* FONTS */
+    --font-normal: 'Raleway', Tahoma, Verdana, Arial, sans-serif;
+    --font-heading: 'Futura Heading';
+
+    /* NAVBAR */
     --navbar-height: 12vh;
-
-    --rainbow-gradient: linear-gradient(90deg, #A81B79, #F5DE58, #27EEF5, #23A4A8);
-    --rainbow-gradient-vertical: linear-gradient(to bottom,blue,yellow,red,purple);
-    --austria-gradient: linear-gradient(to bottom, red 45%, white 45%, white 67%, red 67%);
 }
 
 html {
-    font-family: 'Raleway', Tahoma, Verdana, Arial, sans-serif;
+    font-family: var(--font-normal);
 }
 
 body {
@@ -93,7 +105,7 @@ body::-webkit-scrollbar-track { /* Background */
 }
 
 h1, .h1 {
-    font-family: 'Futura Heading';
+    font-family: var(--font-heading);
     font-size: 6rem;
     line-height: 6rem;
     margin-bottom: 2rem;

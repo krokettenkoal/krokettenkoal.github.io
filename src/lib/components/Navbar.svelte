@@ -1,14 +1,13 @@
 <script lang="ts">
     import {page} from "$app/stores";
-    import {data} from '$lib/navdata';
+    import {data, matchPage} from '$lib/navdata';
+    import type {NavPage} from "$lib/navdata";
 
     export let iconSize = 27;
 
-    let scrollY = 0;
-    let innerHeight = 1;
-    let scrollPos = 0;
-
+    let scrollY = 0, innerHeight = 1, scrollPos, pageData: NavPage;
     $: scrollPos = scrollY / innerHeight;
+    $: pageData = matchPage($page.url.pathname);
 
 </script>
 
@@ -16,7 +15,7 @@
 
 <nav class:collapsed={scrollPos > 0.2}>
     {#each data.pages as navPage}
-        <a title="{navPage.title}" href="{navPage.url}" class="navlink" class:active={$page.url.pathname === navPage.url}>
+        <a title="{navPage.title}" href="{navPage.url}" class="navlink" class:active={pageData.url === navPage.url}>
             {#if !!navPage.icon}
                 <span class="navlink-icon">
                     <svelte:component this="{navPage.icon}" width="{iconSize}" height="{iconSize}"/>
@@ -41,11 +40,26 @@
         align-items: stretch;
         gap: 3rem;
         z-index: 99;
-        background-image: linear-gradient(to bottom, var(--main-bg-col) 20%, transparent);
 
+        background-image: linear-gradient(to bottom, var(--main-bg-col) 20%, transparent);
         mask-image: radial-gradient(ellipse at top, black 60%, transparent);
         -webkit-mask-image: -webkit-radial-gradient(50% 0%, black 60%, transparent);
+    }
 
+    @media screen and (max-width: 768px){
+        :root {
+            --navbar-height: 8vh;
+            --offset-top: 0;
+        }
+
+        nav {
+            top: unset;
+            bottom: 0;
+
+            background-image: linear-gradient(to top, var(--main-bg-col) 20%, transparent);
+            mask-image: radial-gradient(ellipse at bottom, black 60%, transparent);
+            -webkit-mask-image: -webkit-radial-gradient(50% 100%, black 60%, transparent);
+        }
     }
 
     nav .navlink {
@@ -105,7 +119,7 @@
         min-width: 4rem;
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 768px){
         nav {
             gap: 1rem;
         }

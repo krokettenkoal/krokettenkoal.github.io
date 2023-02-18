@@ -70,3 +70,12 @@ export function getPrevNext(currentPath: string): PrevNextData {
 export function getPageData(url: string): NavPage | undefined {
     return data.pages.find(p => p.url == url);
 }
+
+export function matchPage(path: string): NavPage | undefined {
+    const parts = path.split('/').filter(p => p);
+
+    if(parts.length === 0)
+        return getPageData('/');
+
+    return getPageData('/' + parts[0]);
+}

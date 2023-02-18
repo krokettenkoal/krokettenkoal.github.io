@@ -19,6 +19,7 @@
 <style>
     a {
         border: 0;
+        font-size: 1.5rem;
     }
 
     .skip-icon {

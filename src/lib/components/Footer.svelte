@@ -28,4 +28,10 @@
     footer .toe > * {
         margin-top: .7rem;
     }
+
+    @media screen and (max-width: 768px) {
+        footer {
+            padding-bottom: var(--navbar-height);
+        }
+    }
 </style>

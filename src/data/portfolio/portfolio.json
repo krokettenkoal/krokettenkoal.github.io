@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": "nftp",
+      "title": "Notes from the Past",
+      "description": "Notes from the Past is a Walking simulator playable on Windows, set in a post-apocalyptic world where humans became extinct. The player follows the story of an alien on the hunt for music discs who explores an abandoned house and discovers how its residents perceived the last days of humanity.",
+      "text": "## Summary \n\nNotes from the Past explores human culture through the lens of an **alien lifeform**. Discovering the _Voyager_ probe and deciphering the **Golden Record** led these aliens to find music. Enthralled by melodies never thought possible, they began their **journey to Earth**. While exploring an abandoned house and its surroundings, an alien discovers the story of the family that lived there and of **humanity’s sudden end.**\n\nExplore an expansive house filled with puzzles. Collect artefacts of humanity and find out what caused civilization to end. Listen to recordings of the people that lived there and learn about their fate.",
+      "hasTheme": true,
+      "background": "bg.jpg",
+      "links": [
+        {
+          "target": "https://git.nwt.fhstp.ac.at/mt201010/NFTP-Game",
+          "label": "Git repository",
+          "title": "nftp-game on FHstp GitLab"
+        }
+      ]
+    },
+    {
+      "id": "kk",
+      "title": "krokettenkoal.at",
+      "description": "My personal website, containing information about me and a portfolio of some of my projects. Made with Svelte(Kit).",
+      "text": "",
+      "links": [
+        {
+          "target": "https://github.com/krokettenkoal/cgrill-web",
+          "label": "Git repository",
+          "title": "cgrill-web on GitHub"
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 <script lang="ts">
+    import Theme from "$lib/components/Theme.svelte";
     import NavBar from '$lib/components/Navbar.svelte';
     import Footer from '$lib/components/Footer.svelte';
-    import PrevNext from "$lib/components/PrevNext.svelte";
+    import '$src/colors.css';
+    import '$src/app.css';
 </script>
+
+<Theme/>
 
 <NavBar/>
 
 <div id="content">
-    <main class="hero">
+    <main>
         <slot></slot>
-        <PrevNext/>
     </main>
 </div>
 

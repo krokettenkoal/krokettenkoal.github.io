@@ -2,6 +2,8 @@
     import {page} from '$app/stores';
     import type {PrevNextData} from "$lib/navdata";
     import {getPrevNext} from "$lib/navdata";
+    import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
+    import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 
     let data: PrevNextData;
 
@@ -10,8 +12,8 @@
 
 {#if data.prev || data.next}
     <section>
-        <a href="{data.prev?.url ?? '#'}" class:invisible={!data.prev}>&lt; {data.prev?.title ?? ''}</a>
-        <a href="{data.next?.url ?? '#'}" class:invisible={!data.next}>{data.next?.title ?? ''} &gt;</a>
+        <a href="{data.prev?.url ?? '#'}" class:invisible={!data.prev}><ChevronLeft/> {data.prev?.title ?? ''}</a>
+        <a href="{data.next?.url ?? '#'}" class:invisible={!data.next}>{data.next?.title ?? ''} <ChevronRight/></a>
     </section>
 {/if}
 
@@ -26,5 +28,12 @@
 
     .invisible {
         visibility: hidden;
+    }
+
+    a {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-end;
     }
 </style>
