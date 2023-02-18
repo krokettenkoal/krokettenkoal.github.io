@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Some more testing regarding GitHub pages">
-      <change afterPath="$PROJECT_DIR$/static/.nojekyll" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added prerender entries to make build successful">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/themes/nftp.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/themes/nftp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Theme.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Theme.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +76,14 @@
       <recent name="C:\www\krokettenkoal\cgrill-web\src\routes\admin\portfolio\[...projectId]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\www\krokettenkoal\cgrill-web\static" />
       <recent name="C:\www\krokettenkoal\cgrill-web\src\data\themes" />
       <recent name="C:\www\krokettenkoal\cgrill-web\src\data\portfolio\css" />
       <recent name="C:\www\krokettenkoal\cgrill-web\src\data\portfolio" />
       <recent name="C:\www\krokettenkoal\cgrill-web\src\data" />
-      <recent name="C:\www\krokettenkoal\cgrill-web\static\css\portfolio" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -137,7 +134,7 @@
       <workItem from="1676648560238" duration="25709000" />
       <workItem from="1676706236612" duration="6640000" />
       <workItem from="1676714437161" duration="53000" />
-      <workItem from="1676747346332" duration="2915000" />
+      <workItem from="1676747346332" duration="3994000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -174,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676749098440</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added prerender entries to make build successful">
+      <created>1676750340654</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676750340654</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +265,12 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
       </list>
     </option>
   </component>
@@ -281,6 +291,7 @@
     <MESSAGE value="Added static adapter&#10;Changed adapter from auto to static as a preparation for deploying the project to GitHub pages" />
     <MESSAGE value="Updated svelte config" />
     <MESSAGE value="Some more testing regarding GitHub pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some more testing regarding GitHub pages" />
+    <MESSAGE value="Added prerender entries to make build successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added prerender entries to make build successful" />
   </component>
 </project>
