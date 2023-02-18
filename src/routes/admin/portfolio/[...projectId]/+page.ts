@@ -14,3 +14,5 @@ export async function load({ params }: any) {
         throw error(500, err);
     }
 }
+
+export const prerender = false;
