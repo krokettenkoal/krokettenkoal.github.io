@@ -49,16 +49,6 @@
     @media screen and (max-width: 768px){
         :root {
             --navbar-height: 8vh;
-            --offset-top: 0;
-        }
-
-        nav {
-            top: unset;
-            bottom: 0;
-
-            background-image: linear-gradient(to top, var(--main-bg-col) 20%, transparent);
-            mask-image: radial-gradient(ellipse at bottom, black 60%, transparent);
-            -webkit-mask-image: -webkit-radial-gradient(50% 100%, black 60%, transparent);
         }
     }
 

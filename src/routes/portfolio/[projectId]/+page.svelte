@@ -12,6 +12,7 @@
     import Hero from "$lib/components/Hero.svelte";
     import MoreProjects from "$lib/components/MoreProjects.svelte";
     import {theme} from '$stor';
+    import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte'
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -56,6 +57,8 @@
     </article>
 
     <MoreProjects current="{current.id}" prev="{prev}" next="{next}"/>
+
+    <a href="/portfolio" title="Back to portfolio" class="back"><ChevronLeft/> Back to portfolio</a>
 </Hero>
 
 <style>
@@ -64,22 +67,45 @@
     }
 
     .logo {
-        --logo: url('/img/portfolio/logo.png');
-
         position: absolute;
-        top: calc(var(--offset-top) - 7rem);
-        left: 0;
+        height: 35vh;
+        top: calc(var(--navbar-height) + 2rem);
         right: 0;
-        height: 10rem;
+        filter: grayscale(1);
+        mix-blend-mode: lighten;
+        opacity: .3;
+        z-index: -1;
+        mask-image: linear-gradient(45deg, black 0%, transparent 30%);
+        -webkit-mask-image: -webkit-gradient(linear, right top, left bottom, color-stop(0%, black), color-stop(30%, transparent));
+    }
 
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-
+    div.logo {
+        width: 100%;
         background-image: var(--logo);
         background-size: contain;
-        background-position: center;
         background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    @media screen and (min-width: 1200px){
+        .logo {
+            right: 20vw;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .logo {
+            top: 5vh;
+        }
+    }
+
+    article {
+        margin-top: 5rem;
+    }
+
+    .back {
+        margin-top: 3rem;
+        display: inline-flex;
+        align-items: center;
     }
 </style>

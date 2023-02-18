@@ -27,28 +27,14 @@
         box-sizing: border-box;
         font-size: 1.5rem;
         line-height: 1.8rem;
-        background-image: var(--bg-img), var(--default-bg-img);
+        background: var(--bg-gradient), var(--bg-img, var(--default-bg-img, var(--main-bg-gradient)));
         background-size: cover;
         background-attachment: fixed;
+        background-repeat: no-repeat;
         backdrop-filter: brightness(0.3) sepia(1) hue-rotate(30deg);
         -webkit-backdrop-filter: brightness(0.3) sepia(1) hue-rotate(30deg);
 
-        transition: background 500ms linear;
-    }
-
-    .hero::before {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        background-image: var(--bg-gradient);
-        background-attachment: fixed;
-        z-index: -1;
-
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
+        transition: all 200ms linear;
     }
 
     .hero :global(h1),
@@ -81,7 +67,8 @@
 
             min-height: calc(100vh - var(--navbar-height) - 3rem);
             padding-top: var(--offset-top);
-            background-image: var(--bg-portrait), var(--default-bg-portrait);
+            background: var(--bg-gradient), var(--bg-portrait, var(--default-bg-portrait, var(--main-bg-gradient)));
+            background-repeat: repeat-y;
         }
 
         .hero {

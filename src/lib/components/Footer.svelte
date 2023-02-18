@@ -31,7 +31,9 @@
 
     @media screen and (max-width: 768px) {
         footer {
-            padding-bottom: var(--navbar-height);
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
         }
     }
 </style>

@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Minor content changes to improve word wrap">
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added heading font fallbacks">
+      <change afterPath="$PROJECT_DIR$/static/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/navdata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/navdata.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Hero.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Hero.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/portfolio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/portfolio.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/kk/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/kk/thumb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +50,7 @@
         <option value="+page.svelte" />
         <option value="ProjectList.svelte" />
         <option value="TypeScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,26 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/www/krokettenkoal/cgrill-web/static/img/portfolio&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/www/krokettenkoal/cgrill-web/static/img/portfolio",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
+    "ts.external.directory.path": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\www\krokettenkoal\cgrill-web\static\img\portfolio" />
@@ -135,7 +153,7 @@
       <workItem from="1676648560238" duration="25709000" />
       <workItem from="1676706236612" duration="6640000" />
       <workItem from="1676714437161" duration="53000" />
-      <workItem from="1676747346332" duration="6539000" />
+      <workItem from="1676747346332" duration="15317000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -193,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676751871992</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added heading font fallbacks">
+      <created>1676754067122</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676754067122</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,30 +235,16 @@
         <option value="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.js" />
         <option value="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.js.map" />
         <option value="$PROJECT_DIR$/src/routes/portfolio/[...projectId]/+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/src/routes/portfolio/+page.js" />
         <option value="$PROJECT_DIR$/src/routes/portfolio/+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/src/lib/utils.js.map" />
@@ -242,46 +253,34 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/src/routes/+layout.js.map" />
         <option value="$PROJECT_DIR$/src/routes/+layout.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
-        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
@@ -309,6 +308,7 @@
     <MESSAGE value="Added prerender entries to make build successful" />
     <MESSAGE value="Moved themes to static folder to be included in build &#10;Also updated theme loading behaviour to a simple &lt;link&gt; element since they're now served statically" />
     <MESSAGE value="Minor content changes to improve word wrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor content changes to improve word wrap" />
+    <MESSAGE value="Added heading font fallbacks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added heading font fallbacks" />
   </component>
 </project>

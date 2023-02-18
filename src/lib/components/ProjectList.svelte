@@ -1,25 +1,31 @@
 <script context="module" lang="ts">
-    import type {IProject} from "../portfolio";
+    import type {IProject} from "$lib/portfolio";
+    import {Project} from "$lib/portfolio";
 
-    function getImgStyle(p: IProject): string {
-        if(p.background)
-            return `--img: url('${p.bg}')`;
+    function getImgStyle(p: Project): string {
+        const url = p.thumb || p.bg;
 
-        return '--img: var(--main-bg-gradient)';
+        if(url)
+            return `--img: url('${url}');`;
+
+        return '--img: var(--main-bg-gradient);';
     }
 </script>
 
 <script lang="ts">
-    import {Project, Portfolio} from "$lib/portfolio.ts";
+    import {page} from "$app/stores";
+    import {Portfolio} from "$lib/portfolio.ts";
     import {TextUtils} from "$lib/utils";
     import {Circle} from "svelte-loading-spinners";
 
     export let projects: Array<string> = [];
     export let source: Array<IProject> | undefined = undefined;
-    export let active: string | undefined = undefined;
     export let descriptions = false;
+    export let exclude: Array<string> = [];
 
+    let active: string | undefined;
     let loading: Promise<Array<IProject>>;
+    $: active = $page.params.projectId;
     $: loading = source ? Promise.resolve(source) : Portfolio.findProjects(...projects);
 </script>
 
@@ -27,13 +33,11 @@
         {#await loading}
             <Circle/>
         {:then projects}
-            {#each projects as data}
+            {#each projects.filter(p => p.id !== active && !exclude.includes(p)) as data}
                 {@const p = new Project(data)}
                 <a href="/portfolio/{p.id}{active ? '#more' : ''}"
                    id="{p.id}"
                    class="project"
-                   class:active={p.id === active}
-                   class:secondary={active}
                    style="{getImgStyle(p)}"
                    title="{p.title}">
 
@@ -64,6 +68,7 @@
 
     .project {
         --img: url('/img/portfolio/bg.jpg');
+        --border-gradient: radial-gradient(ellipse, var(--accent-col) 20%, transparent);
 
         position: relative;
         display: flex;
@@ -83,53 +88,18 @@
         text-align: center;
         line-height: 2rem;
 
-        background-image: var(--img);
+        background: var(--bg-gradient), var(--img, var(--main-bg-gradient));
         background-size: cover;
         border: none;
-        z-index: 0;
+        filter: brightness(.8);
+        box-shadow: 3px 4px 20px var(--main-bg-col);
 
         transition: all 200ms ease-out;
     }
 
-    .project::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        opacity: .8;
-        background-image: var(--bg-gradient);
-
-        transition: all 200ms linear;
-    }
-
-    .project.secondary {
-        filter: brightness(.6);
-        transform: scale(.8);
-    }
-
-    .project.active,
     .project:hover {
         filter: brightness(1);
-    }
-
-    .project.active::before,
-    .project:hover::before {
-        opacity: .4;
-    }
-
-    .project.active {
-        cursor: default;
-        border: 2px solid var(--accent-col);
-        transform: scale(1);
-    }
-
-    .project.active::before,
-    .project:hover::before {
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
+        transform: scale(1.01);
     }
 
     .project-logo {

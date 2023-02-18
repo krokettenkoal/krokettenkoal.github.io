@@ -110,6 +110,7 @@ h1, .h1 {
     line-height: 6rem;
     margin-bottom: 2rem;
     font-weight: 500;
+    overflow-wrap: break-word;
 }
 
 h2, .h2 {
@@ -117,6 +118,7 @@ h2, .h2 {
     margin-bottom: 1rem;
     padding-bottom: .5rem;
     border-bottom: 2px solid var(--secondary-text-col);
+    overflow-wrap: break-word;
 }
 
 a {
@@ -143,4 +145,26 @@ a:hover, a:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: red;
+}
+
+@media screen and (max-width: 768px){
+    html {
+        font-size: .8em;
+    }
+
+    h1, .h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2, .h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    h3, .h3 {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+    }
 }

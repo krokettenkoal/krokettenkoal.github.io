@@ -7,6 +7,7 @@ export const DEFAULT_PROJECT: IProject = {
     text: "",
     background: "",
     portrait: "",
+    thumbnail: "",
     logo: "logo.png",
     hasTheme: false,
     links: [],
@@ -33,6 +34,7 @@ export interface IProject {
     background?: string;
     portrait?: string;
     logo?: string;
+    thumbnail?: string;
     hasTheme?: boolean;
     links?: IProjectLink[];
 }
@@ -76,6 +78,7 @@ export class Project implements IProject {
     background?: string;
     portrait?: string;
     logo: string;
+    thumbnail?: string;
     hasTheme?: boolean;
     links?: ProjectLink[];
 
@@ -86,6 +89,7 @@ export class Project implements IProject {
         this.text = data.text || DEFAULT_PROJECT.text;
         this.background = data.background || DEFAULT_PROJECT.background;
         this.portrait = data.portrait || DEFAULT_PROJECT.portrait;
+        this.thumbnail = data.thumbnail || DEFAULT_PROJECT.thumbnail;
         this.hasTheme = data.hasTheme;
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -97,6 +101,10 @@ export class Project implements IProject {
 
     get bg(): string {
         return this.background ? `/img/portfolio/${this.id}/${this.background}` : '';
+    }
+
+    get thumb(): string {
+        return this.thumbnail ? `/img/portfolio/${this.id}/${this.thumbnail}` : '';
     }
 
     get logoUrl(): string {

@@ -12,7 +12,7 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
-		prerender: {entries: ['/', '/bio', '/portfolio', '/portfolio/nftp', '/portfolio/kk']},
+		prerender: {entries: ['/', '/bio', '/portfolio', '/portfolio/nftp', '/portfolio/kk', '/portfolio/jhs']},
 		alias: {
 			'$src': './src',
 			'$data': './src/data',

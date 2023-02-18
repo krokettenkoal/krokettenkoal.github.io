@@ -111,7 +111,7 @@
 
         <section>
             <a class="anchor" id="cv"></a>
-            <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="To top"/></h2>
+            <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
             <p>TBA</p>
         </section>
     </article>
@@ -124,7 +124,7 @@
     .hero-img {
         position: absolute;
         height: 60vh;
-        top: calc(10vh + 1rem);
+        top: calc(var(--navbar-height) + 2rem);
         right: 0;
         filter: grayscale(1);
         mix-blend-mode: lighten;
@@ -134,7 +134,6 @@
 
     div.hero-img {
         width: 100%;
-        height: 60vh;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right;
@@ -148,7 +147,7 @@
         }
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 768px) {
         .hero-img {
             top: 5vh;
         }
