@@ -5,49 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
-      <change afterPath="$PROJECT_DIR$/src/colors.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/themes/nftp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/Hero.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/Theme.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/ProjectEditor.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/portfolio.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/stores/themeStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[...projectId]/+page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stores.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/kk/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/kk/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Footer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Footer.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/PrevNext.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/PrevNext.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/SkipLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/SkipLink.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/navdata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/navdata.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+error.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+error.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/hero.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,8 +120,16 @@
       <workItem from="1676536641054" duration="26000" />
       <workItem from="1676635307970" duration="11288000" />
       <workItem from="1676648560238" duration="25709000" />
-      <workItem from="1676706236612" duration="4640000" />
+      <workItem from="1676706236612" duration="6097000" />
     </task>
+    <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
+      <created>1676712450208</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676712450208</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +191,17 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/admin/portfolio/[...projectId]/proxy+page.js.map" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">

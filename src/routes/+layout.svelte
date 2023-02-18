@@ -4,6 +4,8 @@
     import Footer from '$lib/components/Footer.svelte';
     import '$src/colors.css';
     import '$src/app.css';
+
+    export const prerender = true;
 </script>
 
 <Theme/>
