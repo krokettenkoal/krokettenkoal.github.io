@@ -71,7 +71,7 @@
             </p>
             <ul id="hard-skills">
                 <li>
-                    <h3>Programming/coding languages:</h3>
+                    <h3>Programming & coding languages:</h3>
                     <ul id="prog-lang">
                         <li>C# (.NET)</li>
                         <li>JavaScript/TypeScript</li>
@@ -83,7 +83,7 @@
                 </li>
 
                 <li>
-                    <h3>Technologies/Frameworks:</h3>
+                    <h3>Technologies & frameworks:</h3>
                     <ul id="tech">
                         <li>Unity (engine & editor)</li>
                         <li>Wwise (Unity integration & authoring)</li>
