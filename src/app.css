@@ -65,7 +65,7 @@
 
     /* FONTS */
     --font-normal: 'Raleway', Tahoma, Verdana, Arial, sans-serif;
-    --font-heading: 'Futura Heading';
+    --font-heading: 'Futura Heading', 'Raleway', Tahoma, Verdana, Arial, sans-serif;
 
     /* NAVBAR */
     --navbar-height: 12vh;

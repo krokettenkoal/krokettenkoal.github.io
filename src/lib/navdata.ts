@@ -38,13 +38,18 @@ export const data: NavData = {
     ]
 }
 
-export function getPageIndex(path: string): number {
-    return data.pages.findIndex(p => p.url === path);
+export function getPageIndex(url: string): number {
+    return data.pages.findIndex(p => p.url === url);
 }
 
 export function getPrevNext(currentPath: string): PrevNextData {
-    const idx = getPageIndex(currentPath);
     const prevNext: PrevNextData = {prev: null, next: null};
+
+    const page = matchPage(currentPath);
+    if(!page)
+        return prevNext;
+
+    const idx = getPageIndex(page.url);
 
     if(idx < 0){
         prevNext.prev = {
@@ -68,7 +73,7 @@ export function getPrevNext(currentPath: string): PrevNextData {
 }
 
 export function getPageData(url: string): NavPage | undefined {
-    return data.pages.find(p => p.url == url);
+    return data.pages.find(p => p.url === url);
 }
 
 export function matchPage(path: string): NavPage | undefined {

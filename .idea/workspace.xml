@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Moved themes to static folder to be included in build &#10;Also updated theme loading behaviour to a simple &lt;link&gt; element since they're now served statically">
-      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Minor content changes to improve word wrap">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/navdata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/navdata.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +135,7 @@
       <workItem from="1676648560238" duration="25709000" />
       <workItem from="1676706236612" duration="6640000" />
       <workItem from="1676714437161" duration="53000" />
-      <workItem from="1676747346332" duration="4444000" />
+      <workItem from="1676747346332" duration="6539000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -183,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676751462373</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Minor content changes to improve word wrap">
+      <created>1676751871992</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676751871992</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +308,7 @@
     <MESSAGE value="Some more testing regarding GitHub pages" />
     <MESSAGE value="Added prerender entries to make build successful" />
     <MESSAGE value="Moved themes to static folder to be included in build &#10;Also updated theme loading behaviour to a simple &lt;link&gt; element since they're now served statically" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved themes to static folder to be included in build &#10;Also updated theme loading behaviour to a simple &lt;link&gt; element since they're now served statically" />
+    <MESSAGE value="Minor content changes to improve word wrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor content changes to improve word wrap" />
   </component>
 </project>
