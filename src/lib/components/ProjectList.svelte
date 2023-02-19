@@ -35,7 +35,7 @@
         {:then projects}
             {#each projects.filter(p => p.id !== active && !exclude.includes(p)) as data}
                 {@const p = new Project(data)}
-                <a href="/portfolio/{p.id}{active ? '#more' : ''}"
+                <a href="/portfolio/{p.id}"
                    id="{p.id}"
                    class="project"
                    style="{getImgStyle(p)}"
