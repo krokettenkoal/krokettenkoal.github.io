@@ -2,13 +2,19 @@
     export let bg: string | undefined = undefined;
     export let bgPortrait: string | undefined = undefined;
 
-    let _bgPortrait, _bgStyle, _bgPortraitStyle;
+    let hero: HTMLElement;
+
+    let _bgPortrait, _bgStyle, _bgPortraitStyle, isOverflowing, windowHeight = 0;
     $: _bgPortrait = bgPortrait || bg;
     $: _bgStyle = bg ? `--bg-img: url('${bg}');` : '';
     $: _bgPortraitStyle = _bgPortrait ? `--bg-portrait: url('${_bgPortrait}');` : '';
+    $: isOverflowing = (hero?.getBoundingClientRect().height ?? 0) > (windowHeight * 1.1);
+
 </script>
 
-<div class="hero" style="{_bgStyle}{_bgPortraitStyle}">
+<svelte:window bind:innerHeight={windowHeight}/>
+
+<div class="hero" style="{_bgStyle}{_bgPortraitStyle}" bind:this={hero} class:long={isOverflowing}>
     <slot/>
 </div>
 
@@ -69,11 +75,12 @@
             padding-top: var(--offset-top);
             background: var(--bg-gradient), var(--bg-portrait, var(--default-bg-portrait, var(--main-bg-gradient)));
             background-repeat: repeat-y;
-        }
-
-        .hero {
             padding-left: 1rem;
             padding-right: 1rem;
+        }
+
+        .hero.long {
+            background: var(--main-bg-gradient);
         }
     }
 </style>

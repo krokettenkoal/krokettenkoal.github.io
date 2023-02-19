@@ -4,7 +4,7 @@
 </script>
 
 <script lang="ts">
-    import {theme} from '../../stores';
+    import {theme} from '$stor';
 </script>
 
 {#if $theme}

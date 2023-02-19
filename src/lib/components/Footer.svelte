@@ -1,14 +1,22 @@
 <script>
     import Socials from "$lib/components/Socials.svelte";
+    import Logo from "$lib/components/Logo.svelte";
 </script>
 
 <footer>
-    <ul class="toe">
-        <li>Images from <a href="https://picsum.photos" target="_blank" rel="noreferrer">Lorem picsum</a> & <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a></li>
-        <li>Crafted with love using <a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer">SvelteKit</a></li>
-    </ul>
+    <div class="toe" id="powered">
+        <p>Images from <a href="https://picsum.photos" target="_blank" rel="noreferrer">Lorem picsum</a> & <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a></p>
+        <p>Crafted with love using <a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer">SvelteKit</a></p>
+    </div>
 
-    <Socials/>
+    <div class="toe" id="logo">
+        <Logo size="48"/>
+    </div>
+
+    <div class="toe" id="socials">
+        <Socials/>
+    </div>
+
 </footer>
 
 <style>
@@ -19,14 +27,19 @@
         align-items: flex-start;
         padding: 2rem;
         color: var(--secondary-text-col);
+        gap: .5rem;
     }
 
-    footer .toe {
-        list-style: none;
+    .toe {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: .7rem;
     }
 
-    footer .toe > * {
-        margin-top: .7rem;
+    .toe > * {
+        margin: 0;
     }
 
     @media screen and (max-width: 768px) {
@@ -34,6 +47,15 @@
             flex-flow: column nowrap;
             justify-content: flex-start;
             align-items: center;
+        }
+
+        .toe {
+            align-items: center;
+        }
+
+        #logo {
+            order: 99;
+            transform: scale(.8);
         }
     }
 </style>
