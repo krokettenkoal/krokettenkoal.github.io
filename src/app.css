@@ -150,6 +150,7 @@ a:hover, a:active {
 @media screen and (max-width: 768px){
     html {
         font-size: .8em;
+        line-height: 1em;
     }
 
     h1, .h1 {

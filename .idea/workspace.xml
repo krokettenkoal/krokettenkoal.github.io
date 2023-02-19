@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added fancy logo&#10;Also updated footer to look better on smaller screens" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Removed anchor from project list link">
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +135,7 @@
       <workItem from="1676648560238" duration="25709000" />
       <workItem from="1676706236612" duration="6640000" />
       <workItem from="1676714437161" duration="53000" />
-      <workItem from="1676747346332" duration="20276000" />
+      <workItem from="1676747346332" duration="20603000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -212,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676767729713</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Removed anchor from project list link">
+      <created>1676768121834</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676768121834</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +322,7 @@
     <MESSAGE value="Added heading font fallbacks" />
     <MESSAGE value="Fixed some design issues, mostly regarding responsiveness" />
     <MESSAGE value="Added fancy logo&#10;Also updated footer to look better on smaller screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fancy logo&#10;Also updated footer to look better on smaller screens" />
+    <MESSAGE value="Removed anchor from project list link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed anchor from project list link" />
   </component>
 </project>
