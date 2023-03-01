@@ -13,6 +13,7 @@
     import MoreProjects from "$lib/components/MoreProjects.svelte";
     import {theme} from '$stor';
     import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte'
+    import Slideshow from "$lib/components/Slideshow.svelte";
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -30,7 +31,7 @@
     })
 </script>
 
-<Hero bg="{current.bg}">
+<Hero bg="{current.bg}" wide="{true}">
 
     <div class="logo" style="{getStyle(current)}"></div>
 
@@ -41,19 +42,27 @@
             <p>{current.description}</p>
         </section>
 
+        {#if current.media && current.media.length > 0}
+            <section id="slideshow">
+                <Slideshow media="{current.media}"/>
+            </section>
+        {/if}
+
         <section id="long">
             <SvelteMarkdown source="{current.text}"/>
         </section>
 
-        <section id="links">
-            <h2>Links</h2>
-            <p>Check out the following links if you want to find out more:</p>
-            <ul>
-                {#each current.links as link}
-                    <li><a href="{link.target}" title="{link.title}" target="_blank" rel="noreferrer">{link.label}</a></li>
-                {/each}
-            </ul>
-        </section>
+        {#if current.links && current.links.length > 0}
+            <section id="links">
+                <h2>Links</h2>
+                <p>Check out the following links if you want to find out more:</p>
+                <ul>
+                    {#each current.links as link}
+                        <li><a href="{link.target}" title="{link.title}" target="_blank" rel="noreferrer">{link.label}</a></li>
+                    {/each}
+                </ul>
+            </section>
+        {/if}
     </article>
 
     <MoreProjects current="{current.id}" prev="{prev}" next="{next}"/>
@@ -107,5 +116,14 @@
         margin-top: 3rem;
         display: inline-flex;
         align-items: center;
+    }
+
+
+    ul {
+        list-style: square;
+    }
+
+    ul li {
+        margin-bottom: .5rem;
     }
 </style>

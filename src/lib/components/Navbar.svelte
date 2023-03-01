@@ -1,13 +1,16 @@
 <script lang="ts">
     import {page} from "$app/stores";
     import {data, matchPage} from '$lib/navdata';
-    import type {NavPage} from "$lib/navdata";
+    import type {INavPage} from "$lib/navdata";
+    import {icon} from "$lib/utils";
 
     export let iconSize = 27;
 
-    let scrollY = 0, innerHeight = 1, scrollPos, pageData: NavPage;
+    let scrollY = 0, innerHeight = 1, scrollPos, pageData: INavPage;
     $: scrollPos = scrollY / innerHeight;
     $: pageData = matchPage($page.url.pathname);
+
+
 
 </script>
 
@@ -15,11 +18,17 @@
 
 <nav class:collapsed={scrollPos > 0.2}>
     {#each data.pages as navPage}
-        <a title="{navPage.title}" href="{navPage.url}" class="navlink" class:active={pageData.url === navPage.url}>
+        <a title="{navPage.title}" href="{navPage.url}" class="navlink" class:active={pageData?.url === navPage.url}>
             {#if !!navPage.icon}
-                <span class="navlink-icon">
-                    <svelte:component this="{navPage.icon}" width="{iconSize}" height="{iconSize}"/>
-                </span>
+                {#await icon(navPage.icon)}
+                    <span></span>
+                {:then icon}
+                    <span class="navlink-icon">
+                        <svelte:component this="{icon.default}" width="{iconSize}" height="{iconSize}"/>
+                    </span>
+                {:catch err}
+                    <p>{err.message}</p>
+                {/await}
             {/if}
             <span class="navlink-text">
             {navPage.title}

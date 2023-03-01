@@ -1,49 +1,31 @@
+import site from "$data/site.json";
 import type {SvelteComponent} from "svelte";
-import HumanGreeting from 'svelte-material-icons/HumanGreeting.svelte';
-import CardAccountDetails from 'svelte-material-icons/CardAccountDetails.svelte';
-import FileCertificate from 'svelte-material-icons/FileCertificate.svelte';
 
-export interface NavPage {
+export interface INavPage {
     title: string;
     url: string;
-    icon: typeof SvelteComponent | null;
+    icon?: string;
 }
 
-export interface NavData {
-    pages: NavPage[];
+export interface INavData {
+    pages: INavPage[];
 }
 
-export interface PrevNextData {
-    prev: NavPage | null;
-    next: NavPage | null;
+export interface IPrevNextData {
+    prev: INavPage | null;
+    next: INavPage | null;
 }
 
-export const data: NavData = {
-    pages: [
-        {
-            title: 'Welcome',
-            url: '/',
-            icon: HumanGreeting
-        },
-        {
-            title: 'Bio',
-            url: '/bio',
-            icon: CardAccountDetails,
-        },
-        {
-            title: 'Portfolio',
-            url: '/portfolio',
-            icon: FileCertificate
-        }
-    ]
-}
+export const data: INavData = {
+    pages: site.pages
+};
 
 export function getPageIndex(url: string): number {
     return data.pages.findIndex(p => p.url === url);
 }
 
-export function getPrevNext(currentPath: string): PrevNextData {
-    const prevNext: PrevNextData = {prev: null, next: null};
+export function getPrevNext(currentPath: string): IPrevNextData {
+    const prevNext: IPrevNextData = {prev: null, next: null};
 
     const page = matchPage(currentPath);
     if(!page)
@@ -55,7 +37,7 @@ export function getPrevNext(currentPath: string): PrevNextData {
         prevNext.prev = {
             title: 'Go to start',
             url: '/',
-            icon: null
+            icon: undefined
         };
 
         return prevNext;
@@ -72,11 +54,11 @@ export function getPrevNext(currentPath: string): PrevNextData {
     return prevNext;
 }
 
-export function getPageData(url: string): NavPage | undefined {
+export function getPageData(url: string): INavPage | undefined {
     return data.pages.find(p => p.url === url);
 }
 
-export function matchPage(path: string): NavPage | undefined {
+export function matchPage(path: string): INavPage | undefined {
     const parts = path.split('/').filter(p => p);
 
     if(parts.length === 0)

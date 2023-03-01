@@ -1,6 +1,7 @@
 <script lang="ts">
     export let bg: string | undefined = undefined;
     export let bgPortrait: string | undefined = undefined;
+    export let wide = false;
 
     let hero: HTMLElement;
 
@@ -14,7 +15,11 @@
 
 <svelte:window bind:innerHeight={windowHeight}/>
 
-<div class="hero" style="{_bgStyle}{_bgPortraitStyle}" bind:this={hero} class:long={isOverflowing}>
+<div class="hero"
+     style="{_bgStyle}{_bgPortraitStyle}"
+     bind:this={hero}
+     class:long={isOverflowing}
+     class:wide>
     <slot/>
 </div>
 
@@ -61,7 +66,7 @@
     }
 
     @media screen and (min-width: 1200px){
-        .hero {
+        .hero:not(.wide) {
             padding-left: 25vw;
             padding-right: 25vw;
         }

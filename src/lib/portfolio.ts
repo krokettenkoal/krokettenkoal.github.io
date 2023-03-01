@@ -1,3 +1,4 @@
+import type {IMedia} from "$lib/media";
 import data from '$data/portfolio/portfolio.json'
 
 export const DEFAULT_PROJECT: IProject = {
@@ -11,6 +12,7 @@ export const DEFAULT_PROJECT: IProject = {
     logo: "logo.png",
     hasTheme: false,
     links: [],
+    media: []
 }
 
 /**
@@ -37,6 +39,7 @@ export interface IProject {
     thumbnail?: string;
     hasTheme?: boolean;
     links?: IProjectLink[];
+    media?: IMedia[];
 }
 
 /**
@@ -81,6 +84,7 @@ export class Project implements IProject {
     thumbnail?: string;
     hasTheme?: boolean;
     links?: ProjectLink[];
+    media?: IMedia[];
 
     constructor(data: IProject = DEFAULT_PROJECT) {
         this.id = data.id || DEFAULT_PROJECT.id;
@@ -91,6 +95,7 @@ export class Project implements IProject {
         this.portrait = data.portrait || DEFAULT_PROJECT.portrait;
         this.thumbnail = data.thumbnail || DEFAULT_PROJECT.thumbnail;
         this.hasTheme = data.hasTheme;
+        this.media = data.media;
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         this.logo = data.logo || DEFAULT_PROJECT.logo!;
