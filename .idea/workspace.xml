@@ -4,49 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Increased base line height for small screens">
-      <change afterPath="$PROJECT_DIR$/src/data/site.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/Icon.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/ArrayField.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/JsonEditor.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/NumberField.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/ObjectField.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/TextArea.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/admin/json-editor/TextField.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/media/Audio.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/media/Image.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/media/Text.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/media/Video.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/media.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[projectId]/+page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/portfolio/[projectId]/+page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/city.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/crash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/suburb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/voyager.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.png" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added slideshow and admin section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Hero.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Hero.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Navbar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/navdata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/navdata.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/portfolio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/portfolio.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/detail_helmet.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/city.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/city.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/crash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/crash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/suburb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/suburb.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/voyager.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/voyager.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/collection.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/credits.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/hud.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/transponder.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +111,7 @@
       <recent name="C:\www\krokettenkoal\cgrill-web\src\data\portfolio\css" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -194,7 +167,7 @@
       <workItem from="1676965978206" duration="10000" />
       <workItem from="1677609308059" duration="16900000" />
       <workItem from="1677659771723" duration="965000" />
-      <workItem from="1677690069320" duration="24317000" />
+      <workItem from="1677690069320" duration="25440000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -287,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676768496294</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added slideshow and admin section">
+      <created>1677715004246</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677715004246</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +409,7 @@
     <MESSAGE value="Removed anchor from project list link" />
     <MESSAGE value="Changed base line height for mobile devices" />
     <MESSAGE value="Increased base line height for small screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increased base line height for small screens" />
+    <MESSAGE value="Added slideshow and admin section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added slideshow and admin section" />
   </component>
 </project>
