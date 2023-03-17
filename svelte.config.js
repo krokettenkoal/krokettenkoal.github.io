@@ -22,8 +22,7 @@ const config = {
 			'$src': './src',
 			'$data': './src/data',
 			'$stor': './src/stores.js'
-		},
-		output: "preload-mjs"
+		}
 	}
 };
 
