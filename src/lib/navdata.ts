@@ -1,5 +1,4 @@
-import site from "$data/site.json";
-import type {SvelteComponent} from "svelte";
+import * as site from "$src/site.config.js";
 
 export interface INavPage {
     title: string;

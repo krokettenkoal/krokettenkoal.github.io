@@ -5,17 +5,21 @@
     import TextField from "./TextField.svelte";
     import ArrayField from "./ArrayField.svelte";
     import ObjectField from "./ObjectField.svelte";
+    import BoolField from "./BoolField.svelte";
 
     export function getValueField(v: unknown): SvelteComponent | undefined {
-        if(!v)
+        if(v === undefined || v === null)
             return;
+
+        if(v.constructor === Boolean)
+            return BoolField;
 
         if(v.constructor === Number)
             return NumberField;
 
         if(v.constructor === String){
-            const s = new String(v);
-            if(s.length > 50)
+            const s = String(v);
+            if(s.length > 100)
                 return TextArea;
 
             return TextField;

@@ -1,9 +1,9 @@
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-static'
-import portfolio from "./src/data/portfolio/portfolio.json" assert { type: "json" };
-import site from "./src/data/site.json" assert { type: "json" };
+import portfolio from "./src/data/portfolio/portfolio.data.js";
+import {pages as p} from "./src/site.config.js";
 
-const pages = site.pages.map(p => p.url);
+const pages = p.map(p => p.url);
 const portfolioPages = portfolio.projects.map(p => '/portfolio/' + p.id);
 
 /** @type {import('@sveltejs/kit').Config} */

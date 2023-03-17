@@ -14,8 +14,8 @@
     $: collapseIcon = collapsed ? MenuRight : MenuDown;
 
     function createElement(): any {
-        if(!value?.length){
-            console.error(`[${key}] Elements can not be added to empty arrays at the moment. At least one existing element is needed as a template.`);
+        if(!(value?.length)){
+            console.error(`[${key}] Elements can not be added to empty arrays. At least one existing element is needed as a template.`);
             return false;
         }
 
@@ -29,6 +29,9 @@
 
         //  Force svelte to update component
         value = value;
+
+        console.log(`Added element to ${key}:`);
+        console.log(clone);
 
         return clone;
     }
@@ -63,9 +66,9 @@
     {#if value}
         <ul class="elems">
 
-        {#each value as elem, i}
+        {#each value as elem, i (elem.id ?? i)}
             <li>
-                <svelte:component this={getValueField(elem)} bind:value={elem} key="{key}: {elem.id || i}" />
+                <svelte:component this={getValueField(elem)} bind:value={elem} key="{key} - {elem.id || i}" />
                 <button class="icon remove" type="button" on:click={removeElement.bind(null, i)}>
                     <Delete size="1.5rem"/>
                 </button>
@@ -74,8 +77,8 @@
 
         </ul>
         {#if value.length > 0}
-            <button type="button" class="add">
-                <Plus size="2.5rem"/> Add to {key}
+            <button type="button" class="add" on:click={createElement}>
+                <Plus size="2.5rem"/> Create element in {key}
             </button>
         {/if}
     {/if}

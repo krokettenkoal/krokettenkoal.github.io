@@ -2,7 +2,9 @@
     import Plus from 'svelte-material-icons/Plus.svelte';
     import Delete from 'svelte-material-icons/Delete.svelte';
     import Hero from "$lib/components/Hero.svelte";
-    import src from '$data/site.json';
+    import * as src from '$src/site.config.js';
+
+    export const prerender = false;
 
     let data = src;
 

@@ -1,15 +1,11 @@
 <script lang="ts">
     import Hero from "$lib/components/Hero.svelte";
+    import portfolio from '$data/portfolio/portfolio.data.js';
     import JsonEditor from "$lib/components/admin/json-editor/JsonEditor.svelte";
 
-    /** @type {import('./$types').PageData} */
-    export let data;
+    export const prerender = false;
 </script>
 
 <Hero wide="{true}">
-    <JsonEditor src="{data.project}" filename="{data.project.title}"/>
+    <JsonEditor src="{portfolio}" filename="portfolio.json"/>
 </Hero>
-
-<style>
-
-</style>

@@ -42,8 +42,8 @@
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        backdrop-filter: brightness(0.3) sepia(1) hue-rotate(30deg);
-        -webkit-backdrop-filter: brightness(0.3) sepia(1) hue-rotate(30deg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
 
         transition: all 200ms linear;
     }

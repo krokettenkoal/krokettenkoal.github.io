@@ -25,8 +25,6 @@
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: center;
-
-        box-shadow: 0 5px 20px black;
     }
 
 </style>

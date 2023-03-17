@@ -41,8 +41,10 @@
                    style="{getImgStyle(p)}"
                    title="{p.title}">
 
-                    <img class="project-logo" src="{p.logoUrl}" width="80" alt="{p.title} logo"/>
-                    <span class="project-title">{p.title}</span>
+                    <span class="header">
+                        <img class="project-logo" src="{p.logoUrl}" height="80" alt="{p.title} logo"/>
+                        <span class="project-title">{p.title}</span>
+                    </span>
 
                     {#if descriptions && p.id !== active}
                         <span class="project-description">{TextUtils.limit(p.description, 150)}</span>
@@ -73,13 +75,14 @@
         position: relative;
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        flex-grow: 1;
-        gap: 1.1rem;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 1rem;
         border-radius: .5rem;
         padding: 3rem;
         overflow: clip;
+        flex-grow: 1;
+        min-height: 20rem;
 
         color: var(--main-text-col);
         font-family: var(--font-heading);
@@ -88,21 +91,44 @@
         text-align: center;
         line-height: 2rem;
 
-        background: var(--bg-gradient), var(--img, var(--main-bg-gradient));
+        background: linear-gradient(to top, black 20%, transparent 90%), var(--img, var(--main-bg-gradient));
         background-size: cover;
+        background-position: center;
         border: none;
-        filter: brightness(.8);
-        box-shadow: 3px 4px 20px var(--main-bg-col);
 
-        transition: all 200ms ease-out;
+        transition: box-shadow 200ms ease-out;
     }
 
     .project:hover {
-        filter: brightness(1);
-        transform: scale(1.01);
+        box-shadow: 3px 4px 20px rgba(0, 0, 0, .2);
+    }
+
+    .project::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        backdrop-filter: blur(5px);
+        transition: all 300ms ease-out;
+    }
+
+    .project:hover::before {
+        backdrop-filter: unset;
+    }
+
+    .project .header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .8rem;
     }
 
     .project-logo {
+        height: 2.2rem;
         opacity: .8;
     }
 
@@ -113,12 +139,17 @@
     }
 
     .project-description {
-        padding: 1rem;
         font-family: var(--font-normal);
         font-size: 1.3rem;
         line-height: 1.3rem;
         text-align: justify;
         font-weight: normal;
-        opacity: .8;
+        opacity: .5;
+    }
+
+    @media only screen and (min-width: 1200px){
+        .project-description {
+            max-width: 50%;
+        }
     }
 </style>

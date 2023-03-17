@@ -1,5 +1,5 @@
 import type {IMedia} from "$lib/media";
-import data from '$data/portfolio/portfolio.json'
+import data from '$data/portfolio/portfolio.data.js'
 
 export const DEFAULT_PROJECT: IProject = {
     id: "new-project",
