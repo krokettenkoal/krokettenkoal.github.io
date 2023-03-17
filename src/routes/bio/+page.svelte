@@ -77,11 +77,9 @@
                     <h3>Programming & coding languages:</h3>
                     <ul id="prog-lang">
                         <li>C# (.NET)</li>
-                        <li>JavaScript/TypeScript</li>
-                        <li>C++</li>
-                        <li>SQL</li>
+                        <li>JavaScript / TypeScript</li>
                         <li>PHP</li>
-                        <li>Python</li>
+                        <li>HTML5 / CSS3</li>
                     </ul>
                 </li>
 

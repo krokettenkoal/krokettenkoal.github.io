@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Slightly improved performance&#10;Added preloading of hero images and web fonts&#10;Changed SvelteKit preload strategy to `preload-mjs`">
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Revert SvelteKit preload strategy&#10;`preload-mjs` has been removed as `output` setting from svelte.config.js because it is an unrecognized option. Need to investigate why since it should be available: https://kit.svelte.dev/docs/configuration#output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <recent name="C:\www\krokettenkoal\cgrill-web\src\lib\components\admin\json-editor" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -128,7 +129,18 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="preview" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="npm.preview" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.build" />
     </list>
@@ -172,7 +184,7 @@
       <workItem from="1678815811272" duration="20000" />
       <workItem from="1678815844713" duration="2304000" />
       <workItem from="1678979566114" duration="21095000" />
-      <workItem from="1679062801842" duration="15225000" />
+      <workItem from="1679062801842" duration="16954000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -307,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679083453655</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Revert SvelteKit preload strategy&#10;`preload-mjs` has been removed as `output` setting from svelte.config.js because it is an unrecognized option. Need to investigate why since it should be available: https://kit.svelte.dev/docs/configuration#output">
+      <created>1679084027931</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679084027931</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +361,10 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
       </list>
     </option>
   </component>
@@ -350,7 +373,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -377,6 +412,7 @@
     <MESSAGE value="Updated portfolio and build settings" />
     <MESSAGE value="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions" />
     <MESSAGE value="Slightly improved performance&#10;Added preloading of hero images and web fonts&#10;Changed SvelteKit preload strategy to `preload-mjs`" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slightly improved performance&#10;Added preloading of hero images and web fonts&#10;Changed SvelteKit preload strategy to `preload-mjs`" />
+    <MESSAGE value="Revert SvelteKit preload strategy&#10;`preload-mjs` has been removed as `output` setting from svelte.config.js because it is an unrecognized option. Need to investigate why since it should be available: https://kit.svelte.dev/docs/configuration#output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert SvelteKit preload strategy&#10;`preload-mjs` has been removed as `output` setting from svelte.config.js because it is an unrecognized option. Need to investigate why since it should be available: https://kit.svelte.dev/docs/configuration#output" />
   </component>
 </project>
