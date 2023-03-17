@@ -5,6 +5,7 @@
     src: url('/fonts/raleway.ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -12,22 +13,7 @@
     src: url('/fonts/raleway-italic.ttf');
     font-weight: normal;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Bangers';
-    src:    url('/fonts/bangers.ttf'),
-            url('/fonts/bangers.woff2') format('woff2'),
-            url('/fonts/bangers.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Yanone';
-    src:    url('/fonts/yanone.ttf');
-    font-weight: normal;
-    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -37,6 +23,7 @@
             url('/fonts/futura-cond-medium-oblique.woff') format('woff');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 
 /* GLOBAL STYLE */

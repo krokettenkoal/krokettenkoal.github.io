@@ -15,6 +15,11 @@
 
 <svelte:window bind:innerHeight={windowHeight}/>
 
+<svelte:head>
+    <link rel="preload" href="{bg ?? 'https://picsum.photos/1920/1080'}" as="image" />
+    <link rel="preload" href="{bgPortrait ?? 'https://picsum.photos/600/1067'}" as="image" />
+</svelte:head>
+
 <div class="hero"
      style="{_bgStyle}{_bgPortraitStyle}"
      bind:this={hero}

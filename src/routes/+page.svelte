@@ -3,9 +3,9 @@
     import PrevNext from "$lib/components/PrevNext.svelte";
     import HumanGreeting from 'svelte-material-icons/HumanGreeting.svelte';
     import Seo from '$lib/components/Seo.svelte'
-</script>;
+</script>
 
-<Seo description="I am an Austrian software developer/designer with a focus on (full stack) web and game development." />
+<Seo description="I am an Austrian software engineer with a focus on (full stack) web and game development." />
 
 <Hero>
     <article id="welcome">

@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated portfolio and build settings">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/Seo.svelte" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Hero.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Hero.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
       <workItem from="1678815811272" duration="20000" />
       <workItem from="1678815844713" duration="2304000" />
       <workItem from="1678979566114" duration="21095000" />
-      <workItem from="1679062801842" duration="11294000" />
+      <workItem from="1679062801842" duration="14721000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -298,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679075339436</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions">
+      <created>1679079368535</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1679079368535</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +372,7 @@
     <MESSAGE value="Compressed images" />
     <MESSAGE value="Added default portfolio bg" />
     <MESSAGE value="Updated portfolio and build settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated portfolio and build settings" />
+    <MESSAGE value="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions" />
   </component>
 </project>
