@@ -18,7 +18,10 @@
     import ChevronDoubleUp from 'svelte-material-icons/ChevronDoubleUp.svelte';
     import SkipLink from "$lib/components/SkipLink.svelte";
     import PrevNext from "$lib/components/PrevNext.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 </script>
+
+<Seo title="Bio" description="Where I'm from, where I'm at and where I'll be." />
 
 <a class="anchor" id="top"></a>
 

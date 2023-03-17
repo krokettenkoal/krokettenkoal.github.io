@@ -14,6 +14,7 @@
     import {theme} from '$stor';
     import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte'
     import Slideshow from "$lib/components/Slideshow.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 
     /** @type {import('./$types').PageData} */
     export let data;
@@ -30,6 +31,10 @@
         $theme = undefined;
     })
 </script>
+
+{#if current}
+    <Seo title="{current.title}" description="{current.description}" />
+{/if}
 
 <Hero bg="{current.bg}" wide="{true}">
 
