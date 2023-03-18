@@ -113,7 +113,7 @@
         <section>
             <a class="anchor" id="cv"></a>
             <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
-            <p>TBA</p>
+            <img id="curriculum-vitae" src="/img/cv.jpg" alt="CV - Cajetan Grill" class="">
         </section>
     </article>
 
@@ -194,5 +194,9 @@
         top: calc(var(--navbar-height) * -1);
         visibility: hidden;
         z-index: -99;
+    }
+
+    #curriculum-vitae {
+        width: 100%;
     }
 </style>
