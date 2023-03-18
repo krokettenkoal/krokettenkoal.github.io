@@ -47,7 +47,7 @@
                     </span>
 
                     {#if descriptions && p.id !== active}
-                        <span class="project-description">{TextUtils.limit(p.description, 150)}</span>
+                        <span class="project-description">{TextUtils.limit(p.description, 200)}</span>
                     {/if}
                 </a>
 
