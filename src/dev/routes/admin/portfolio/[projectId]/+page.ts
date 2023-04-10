@@ -1,4 +1,4 @@
-import portfolio from "$data/portfolio/portfolio.json";
+import portfolio from "$data/portfolio/portfolio.data";
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }: any) {

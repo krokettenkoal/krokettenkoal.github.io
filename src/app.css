@@ -33,6 +33,7 @@
     /* COLORS */
     --main-bg-col: var(--ci-dark-blue);
     --main-text-col: var(--ci-white);
+    --secondary-bg-col: var(--ci-dark-grey);
     --secondary-text-col: var(--ci-grey);
     --accent-col: var(--ci-pink);
     --accent-col-shade: var(--ci-pink-shade);
