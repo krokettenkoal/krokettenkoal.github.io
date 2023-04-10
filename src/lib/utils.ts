@@ -28,3 +28,13 @@ export class TextUtils {
 export function icon(name: string): Promise<SvelteComponent> {
     return import(`../../node_modules/svelte-material-icons/${name}.svelte`);
 }
+
+export function mmss(seconds: number): string {
+    const mins = Math.trunc(seconds / 60);
+    const secs = seconds % 60;
+
+    const mm = ('0' + mins).slice(-2);
+    const ss = ('0' + secs).slice(-2);
+
+    return `${mm}:${ss}`;
+}
