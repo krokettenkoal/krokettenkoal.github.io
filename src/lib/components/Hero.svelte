@@ -5,7 +5,7 @@
 
     let hero: HTMLElement;
 
-    let _bgPortrait, _bgStyle, _bgPortraitStyle, isOverflowing, windowHeight = 0;
+    let _bgPortrait, _bgStyle, _bgPortraitStyle, isOverflowing, windowHeight = 0, windowWidth = 0;
     $: _bgPortrait = bgPortrait || bg;
     $: _bgStyle = bg ? `--bg-img: url('${bg}');` : '';
     $: _bgPortraitStyle = _bgPortrait ? `--bg-portrait: url('${_bgPortrait}');` : '';
@@ -13,11 +13,14 @@
 
 </script>
 
-<svelte:window bind:innerHeight={windowHeight}/>
+<svelte:window bind:innerHeight={windowHeight} bind:innerWidth={windowWidth}/>
 
 <svelte:head>
-    <link rel="preload" href="{bg ?? 'https://picsum.photos/1920/1080'}" as="image" />
-    <link rel="preload" href="{bgPortrait ?? 'https://picsum.photos/600/1067'}" as="image" />
+    {#if windowWidth <= 768}
+        <link rel="preload" href="{bgPortrait ?? 'https://picsum.photos/600/1067'}" as="image" />
+    {:else}
+        <link rel="preload" href="{bg ?? 'https://picsum.photos/1920/1080'}" as="image" />
+    {/if}
 </svelte:head>
 
 <div class="hero"
