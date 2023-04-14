@@ -51,7 +51,7 @@ export default {
             "type": "img",
             "source": "/media/nftp/ui/settings_video.jpg",
             "caption": "UI: Video settings"
-        }, {"type": "img", "source": "/media/nftp/ui/startscreen.png", "caption": "UI: Start screen"}, {
+        }, {"type": "img", "source": "/media/nftp/ui/startscreen.jpg", "caption": "UI: Start screen"}, {
             "type": "img",
             "source": "/media/nftp/ui/transponder.jpg",
             "caption": "UI: Transponder"

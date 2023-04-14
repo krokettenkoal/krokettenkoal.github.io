@@ -4,39 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Fixed unnecessary preloading of background images for both orientations">
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/overview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/staff/overview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Converted &amp; compressed large media files to reduce network load">
       <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/detail_helmet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/collection.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/credits.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/hud.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/transponder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/overview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/overview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +209,7 @@
       <workItem from="1681232093124" duration="320000" />
       <workItem from="1681282432669" duration="163000" />
       <workItem from="1681304720071" duration="22000" />
-      <workItem from="1681464292479" duration="17697000" />
+      <workItem from="1681464292479" duration="18275000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -473,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681485752968</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Converted &amp; compressed large media files to reduce network load">
+      <created>1681486730538</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681486730538</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added heading font fallbacks" />
     <MESSAGE value="Fixed some design issues, mostly regarding responsiveness" />
     <MESSAGE value="Added fancy logo&#10;Also updated footer to look better on smaller screens" />
     <MESSAGE value="Removed anchor from project list link" />
@@ -611,6 +586,7 @@
     <MESSAGE value="Updated quiz and improved responsiveness" />
     <MESSAGE value="Improved responsiveness in portfolio" />
     <MESSAGE value="Fixed unnecessary preloading of background images for both orientations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed unnecessary preloading of background images for both orientations" />
+    <MESSAGE value="Converted &amp; compressed large media files to reduce network load" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted &amp; compressed large media files to reduce network load" />
   </component>
 </project>
