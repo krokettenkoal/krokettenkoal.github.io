@@ -43,19 +43,19 @@ export default {
             "type": "img",
             "source": "/media/nftp/intro/spaceship.jpg",
             "caption": "Concept art: Alien spaceship landing on Earth"
-        }, {"type": "img", "source": "/media/nftp/ui/collection.png", "caption": "UI: Collected items"}, {
+        }, {"type": "img", "source": "/media/nftp/ui/collection.jpg", "caption": "UI: Collected items"}, {
             "type": "img",
-            "source": "/media/nftp/ui/credits.png",
+            "source": "/media/nftp/ui/credits.jpg",
             "caption": "UI: Credits"
-        }, {"type": "img", "source": "/media/nftp/ui/hud.png", "caption": "HUD: Notification"}, {
+        }, {"type": "img", "source": "/media/nftp/ui/hud.jpg", "caption": "HUD: Notification"}, {
             "type": "img",
-            "source": "/media/nftp/ui/settings_video.png",
+            "source": "/media/nftp/ui/settings_video.jpg",
             "caption": "UI: Video settings"
         }, {"type": "img", "source": "/media/nftp/ui/startscreen.png", "caption": "UI: Start screen"}, {
             "type": "img",
-            "source": "/media/nftp/ui/transponder.png",
+            "source": "/media/nftp/ui/transponder.jpg",
             "caption": "UI: Transponder"
-        }, {"type": "img", "source": "/media/nftp/detail_helmet.png", "caption": "In-game: Detail view"}]
+        }, {"type": "img", "source": "/media/nftp/detail_helmet.jpg", "caption": "In-game: Detail view"}]
     }, {
         "id": "cajetan",
         "title": "cajetan.dev",
@@ -92,27 +92,27 @@ export default {
         }],
         "media": [{
             "type": "img",
-            "source": "/media/orderbar/guest/welcome.png",
+            "source": "/media/orderbar/guest/welcome.jpg",
             "caption": "Guest: Welcome view"
         }, {
             "type": "img",
-            "source": "/media/orderbar/guest/overview.png",
+            "source": "/media/orderbar/guest/overview.jpg",
             "caption": "Guest: Overview"
         }, {
             "type": "img",
-            "source": "/media/orderbar/guest/drinks.png",
+            "source": "/media/orderbar/guest/drinks.jpg",
             "caption": "Guest: Order drinks"
         }, {
             "type": "img",
-            "source": "/media/orderbar/guest/order-submit.png",
+            "source": "/media/orderbar/guest/order-submit.jpg",
             "caption": "Guest: Review order"
         }, {
             "type": "img",
-            "source": "/media/orderbar/staff/overview.png",
+            "source": "/media/orderbar/staff/overview.jpg",
             "caption": "Staff: Overview"
         }, {
             "type": "img",
-            "source": "/media/orderbar/staff/table-view.png",
+            "source": "/media/orderbar/staff/table-view.jpg",
             "caption": "Staff: Table view"
         }]
     }]
