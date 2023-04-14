@@ -9,7 +9,7 @@ export const DEFAULT_PROJECT: IProject = {
     background: "",
     portrait: "",
     thumbnail: "",
-    logo: "logo.png",
+    logo: "logo.webp",
     hasTheme: false,
     links: [],
     media: []

@@ -28,7 +28,7 @@
 <Hero>
     <article class="hero" id="bio">
         <h1>Cajetan Grill</h1>
-        <div class="hero-img" style="background-image:url('/img/cgrill.jpg')" />
+        <div class="hero-img" style="background-image:url('/img/cgrill_opaque.webp')" />
 
         <section>
             <a class="anchor" id="history"></a>
@@ -113,7 +113,7 @@
         <section>
             <a class="anchor" id="cv"></a>
             <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
-            <img id="curriculum-vitae" src="/img/cv.jpg" alt="CV - Cajetan Grill" class="">
+            <img id="curriculum-vitae" src="/img/cv.webp" alt="CV - Cajetan Grill" class="">
         </section>
     </article>
 
