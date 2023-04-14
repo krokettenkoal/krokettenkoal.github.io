@@ -304,6 +304,7 @@
         padding-bottom: 1rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
+        transform-origin: top left;
 
         transition: font-size 200ms ease-out;
     }

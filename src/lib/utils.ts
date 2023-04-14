@@ -38,3 +38,13 @@ export function mmss(seconds: number): string {
 
     return `${mm}:${ss}`;
 }
+
+export function isUuid(str: string) {
+    // Regular expression to check if string is a valid UUID
+    const regexExp = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
+    return regexExp.test(str);
+}
+
+export function clone<T>(obj: T): T {
+    return JSON.parse(JSON.stringify(obj)) as T;
+}

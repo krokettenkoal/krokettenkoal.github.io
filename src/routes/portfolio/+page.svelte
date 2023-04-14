@@ -13,7 +13,7 @@
 
 <Seo title="Portfolio" description="{pageDescription}" />
 
-<Hero wide="{true}">
+<Hero>
     <h1>Portfolio <span class="title-icon"><FileCertificate color="#efd358"/></span></h1>
     <p>{pageDescription}</p>
     <ProjectList source="{data.projects}" descriptions="{true}"/>

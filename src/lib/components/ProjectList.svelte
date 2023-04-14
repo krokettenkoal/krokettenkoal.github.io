@@ -29,7 +29,7 @@
     $: loading = source ? Promise.resolve(source) : Portfolio.findProjects(...projects);
 </script>
 
-<section class="projects">
+<section class="projects" class:fullsize={descriptions}>
         {#await loading}
             <Circle/>
         {:then projects}
@@ -83,6 +83,8 @@
         overflow: clip;
         flex-grow: 1;
         min-height: 20rem;
+        flex-basis: 45%;
+        box-sizing: border-box;
 
         color: var(--main-text-col);
         font-family: var(--font-heading);
@@ -97,6 +99,16 @@
         border: none;
 
         transition: box-shadow 200ms ease-out;
+    }
+
+    .projects.fullsize .project {
+        flex-basis: 100%;
+    }
+
+    @media screen and (max-width: 768px){
+        .project {
+            flex-basis: 100%;
+        }
     }
 
     .project:hover {
@@ -125,6 +137,7 @@
         justify-content: flex-start;
         align-items: center;
         gap: .8rem;
+        text-align: left;
     }
 
     .project-logo {
@@ -147,9 +160,19 @@
         opacity: .5;
     }
 
-    @media only screen and (min-width: 1200px){
+    @media only screen and (min-width: 1600px){
         .project-description {
-            max-width: 50%;
+            max-width: 75%;
+        }
+    }
+
+    @media only screen and (max-width: 768px){
+        .project::before {
+            backdrop-filter: unset;
+        }
+
+        .project-description {
+            display: none;
         }
     }
 </style>

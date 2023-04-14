@@ -1,16 +1,28 @@
 import { v4 as uuid } from "uuid";
 import {get} from "svelte/store";
 import {highscore} from "./Highscore";
+import { isUuid } from "$lib/utils";
 
-interface IQuizAnswer {
+export interface IQuizAnswer {
+  id?: string;
   text: string;
   correct?: boolean;
 }
 
-interface IQuizQuestion {
+export const NEW_ANSWER: IQuizAnswer = {
+  text: ""
+}
+
+export interface IQuizQuestion {
+  id?: string;
   text: string;
   answers: IQuizAnswer[];
   difficulty?: number;
+}
+
+export const NEW_QUESTION: IQuizQuestion = {
+  text: "",
+  answers: []
 }
 
 export interface IQuiz {
@@ -20,6 +32,11 @@ export interface IQuiz {
   description?: string;
   questions: IQuizQuestion[];
   baseScore?: number;
+}
+
+export const NEW_QUIZ: IQuiz = {
+  title: "New quiz",
+  questions: [],
 }
 
 export interface IQuestionResult {
@@ -34,8 +51,8 @@ export class QuizAnswer implements IQuizAnswer {
   text: string;
   correct?: boolean;
 
-  constructor({text, correct}: IQuizAnswer) {
-    this.id = uuid();
+  constructor({id, text, correct}: IQuizAnswer = NEW_ANSWER) {
+    this.id = id ?? uuid();
     this.text = text;
     this.correct = correct;
   }
@@ -48,8 +65,8 @@ export class QuizQuestion implements IQuizQuestion {
   answers: QuizAnswer[];
   submitted: boolean;
 
-  constructor({text, difficulty, answers}: IQuizQuestion) {
-    this.id = uuid();
+  constructor({id, text, difficulty, answers}: IQuizQuestion = NEW_QUESTION) {
+    this.id = id ?? uuid();
     this.text = text;
     this.difficulty = difficulty ?? 1;
     this.answers = answers.map(ans => new QuizAnswer(ans));
@@ -86,6 +103,9 @@ export class QuizQuestion implements IQuizQuestion {
   }
 }
 
+/**
+ * Class representing an answerable quiz
+ */
 export class Quiz implements IQuiz {
   id: string;
   title: string;
@@ -99,7 +119,7 @@ export class Quiz implements IQuiz {
 
   private currentIdx: number;
 
-  constructor({id, title, icon, questions, description, baseScore}: IQuiz) {
+  constructor({id, title, icon, questions, description, baseScore}: IQuiz = NEW_QUIZ) {
     this.id = id ?? uuid();
     this.title = title;
     this.icon = icon;
@@ -181,5 +201,28 @@ export class Quiz implements IQuiz {
     this.currentIdx = -1;
 
     this.questions.forEach(q => q.reset());
+  }
+
+  private static serializeProperty(key: string|number, value: any): any {
+    switch (key){
+      case 'id':
+        if(isUuid(value))
+          return undefined;
+        break;
+      case 'score':
+      case 'startTime':
+      case 'endTime':
+      case 'currentIdx':
+      case 'submitted':
+        return undefined;
+
+      default: break;
+    }
+
+    return value;
+  }
+
+  serialize(): string {
+    return JSON.stringify(this, Quiz.serializeProperty, 2);
   }
 }
