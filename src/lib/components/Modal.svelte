@@ -56,7 +56,7 @@
         background: var(--main-bg-gradient);
         border: none;
         color: var(--main-text-col);
-
+        box-sizing: border-box;
     }
 
     dialog[data-open="false"]{
@@ -107,5 +107,17 @@
 
     button.icon:hover {
         opacity: 1;
+    }
+
+    @media screen and (max-width: 1200px) {
+        dialog {
+            min-width: 85vw;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        dialog {
+            min-width: 98vw;
+        }
     }
 </style>

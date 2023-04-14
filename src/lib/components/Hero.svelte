@@ -44,7 +44,7 @@
         font-size: 1.5rem;
         line-height: 1.8rem;
         background: var(--bg-gradient), var(--bg-img, var(--default-bg-img, var(--main-bg-gradient)));
-        background-size: cover;
+        background-size: cover !important;
         background-attachment: fixed;
         background-repeat: no-repeat;
         backdrop-filter: blur(10px);
@@ -70,10 +70,31 @@
         text-align: justify;
     }
 
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1600px){
         .hero:not(.wide) {
             padding-left: 25vw;
             padding-right: 25vw;
+        }
+    }
+
+    @media screen and (min-width: 1200px){
+        .hero:not(.wide) {
+            padding-left: 18vw;
+            padding-right: 18vw;
+        }
+    }
+
+    @media screen and (max-width: 1200px){
+        .hero {
+            padding-left: 8vw;
+            padding-right: 8vw;
+        }
+    }
+
+    @media screen and (max-width: 1000px){
+        .hero {
+            padding-left: 10vw;
+            padding-right: 10vw;
         }
     }
 

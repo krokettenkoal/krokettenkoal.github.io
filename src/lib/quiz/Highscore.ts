@@ -36,15 +36,37 @@ export class Highscore extends Map<string, number> {
   }
 
   get level(): number {
-    return 1 + Math.trunc(Math.sqrt(this.total / 100));
+    return 1 + Math.trunc(Math.sqrt(this.total) / 10);
   }
 
   get exp(): number {
-    return Math.sqrt(this.total / 100) - this.level + 1;
+    const levelUpPoints = this.pointsForNextLevel - this.pointsForCurrentLevel;
+    return (levelUpPoints - this.pointsUntilNextLevel) / levelUpPoints;
+    //return Math.sqrt(this.total) / 10 - this.level + 1;
   }
 
   get expPercent(): number {
     return Math.trunc(this.exp * 100);
+  }
+
+  get pointsForCurrentLevel(): number {
+    return Highscore.pointsForLevel(this.level);
+  }
+
+  get pointsForNextLevel(): number {
+    return Highscore.pointsForLevel(this.level + 1);
+  }
+
+  get pointsUntilNextLevel(): number {
+    return this.pointsForNextLevel - this.total;
+  }
+
+  get pointsInCurrentLevel(): number {
+    return this.pointsForNextLevel - this.pointsForCurrentLevel - this.pointsUntilNextLevel;
+  }
+
+  static pointsForLevel(level: number): number {
+    return 100 * Math.pow(level - 1, 2) - 100;
   }
 
   private serialize(): string {
@@ -56,6 +78,7 @@ export class Highscore extends Map<string, number> {
 
     return JSON.stringify(entries);
   }
+
 
   static load(): Highscore|null {
     if(!browser)
