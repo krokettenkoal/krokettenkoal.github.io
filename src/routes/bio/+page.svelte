@@ -19,6 +19,8 @@
     import SkipLink from "$lib/components/SkipLink.svelte";
     import PrevNext from "$lib/components/PrevNext.svelte";
     import Seo from "$lib/components/Seo.svelte";
+    import MiniQuiz from "$lib/components/quiz/MiniQuiz.svelte";
+    import PersonalTriviaQuiz from "$data/quiz/personal-trivia.quiz";
 </script>
 
 <Seo title="Bio" description="Where I'm from, where I'm at and where I'll be." />
@@ -114,6 +116,10 @@
             <a class="anchor" id="cv"></a>
             <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
             <img id="curriculum-vitae" src="/img/cv.webp" alt="CV - Cajetan Grill" class="">
+        </section>
+
+        <section>
+            <MiniQuiz src={PersonalTriviaQuiz} />
         </section>
     </article>
 
