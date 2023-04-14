@@ -4,79 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Fixed broken media URL">
-      <change afterPath="$PROJECT_DIR$/static/img/cgrill.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/cgrill_opaque.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/cv.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/bg.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/bg.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/city.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/crash.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/suburb.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/intro/voyager.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/overview.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/staff/overview.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/portfolio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/portfolio.ts" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Converted static images to webp">
       <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cgrill.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cgrill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cv.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/detail_helmet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/city.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/crash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/suburb.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/voyager.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/collection.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/credits.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/hud.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/transponder.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/overview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/overview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +209,7 @@
       <workItem from="1681232093124" duration="320000" />
       <workItem from="1681282432669" duration="163000" />
       <workItem from="1681304720071" duration="22000" />
-      <workItem from="1681464292479" duration="20019000" />
+      <workItem from="1681464292479" duration="20924000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -527,7 +456,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681487301978</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Converted static images to webp">
+      <created>1681491738250</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681491738250</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Converted static images to webp">
+      <created>1681491753836</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1681491753836</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added fancy logo&#10;Also updated footer to look better on smaller screens" />
     <MESSAGE value="Removed anchor from project list link" />
     <MESSAGE value="Changed base line height for mobile devices" />
     <MESSAGE value="Increased base line height for small screens" />
@@ -669,6 +611,7 @@
     <MESSAGE value="Fixed unnecessary preloading of background images for both orientations" />
     <MESSAGE value="Converted &amp; compressed large media files to reduce network load" />
     <MESSAGE value="Fixed broken media URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed broken media URL" />
+    <MESSAGE value="Converted static images to webp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Converted static images to webp" />
   </component>
 </project>
