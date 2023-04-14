@@ -21,14 +21,14 @@
 
     let current: Project;
     let idx: number, next: string | undefined, prev: string | undefined;
-    $: current = new Project(data.current);
+    $: current = new Project(data?.current);
     $: idx = data?.projects.findIndex(p => p.id === current.id) ?? -1;
-    $: prev = idx > 0 ? (data.projects[idx - 1]?.id ?? undefined) : undefined;
-    $: next = idx < (data.projects.length - 1) ? (data.projects[idx + 1]?.id ?? undefined) : undefined;
+    $: prev = idx > 0 ? (data?.projects[idx - 1]?.id ?? undefined) : undefined;
+    $: next = idx < (data?.projects.length - 1) ? (data?.projects[idx + 1]?.id ?? undefined) : undefined;
     $: $theme = current.hasTheme ? current.id : '';
 
     onDestroy(() => {
-        $theme = undefined;
+        $theme = '';
     })
 </script>
 
@@ -36,7 +36,7 @@
     <Seo title="{current.title}" description="{current.description}" />
 {/if}
 
-<Hero bg="{current.bg}" wide="{true}">
+<Hero bg="{current.bg}">
 
     <div class="logo" style="{getStyle(current)}"></div>
 
@@ -76,9 +76,6 @@
 </Hero>
 
 <style>
-    h1 {
-        font-size: 5rem;
-    }
 
     .logo {
         position: absolute;
@@ -94,6 +91,7 @@
     }
 
     div.logo {
+        --logo: url('/img/favicon.png');
         width: 100%;
         background-image: var(--logo);
         background-size: contain;
