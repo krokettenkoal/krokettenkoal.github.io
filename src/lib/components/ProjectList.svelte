@@ -69,7 +69,7 @@
     }
 
     .project {
-        --img: url('/img/portfolio/bg.jpg');
+        --img: url('/img/portfolio/bg.webp');
         --border-gradient: radial-gradient(ellipse, var(--accent-col) 20%, transparent);
 
         position: relative;
