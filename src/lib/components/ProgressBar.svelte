@@ -98,10 +98,9 @@
   }
 
   .percent {
-    color: var(--main-bg-col);
+    color: var(--secondary-bg-col);
     font-size: 1rem;
     font-weight: bold;
     z-index: 1;
-    text-shadow: 0 0 0 var(--progress-foreground);
   }
 </style>
