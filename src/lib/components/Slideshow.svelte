@@ -125,8 +125,23 @@
         border-radius: .5rem;
         overflow: clip;
         opacity: 0;
+        min-height: 40vh;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
 
         transition: transform 400ms ease-out, opacity 250ms linear;
+    }
+
+    .slide :global(> *){
+        border-radius: .5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .slide {
+            min-height: 20vh;
+        }
     }
 
     .slide::after {

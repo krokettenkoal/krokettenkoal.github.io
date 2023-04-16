@@ -81,12 +81,18 @@
   .stats-title {
       font-family: var(--font-heading);
       text-transform: uppercase;
-      font-size: 2.5rem;
+      font-size: 2rem;
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
       gap: .7rem;
+  }
+
+  @media screen and (max-width: 768px) {
+      .stats-title {
+          font-size: 1.5rem;
+      }
   }
 
   .stats p {
@@ -102,6 +108,11 @@
       margin: 2.5rem 0;
   }
 
+  @media screen and (max-width: 768px) {
+      .stats .level {
+          font-size: 3rem;
+      }
+  }
 
   .stats .exp,
   .stats .score {

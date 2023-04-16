@@ -72,12 +72,64 @@ export default {
         "title": "Jesus Heist, Superstar",
         "description": "Playing the Anointed Savior himself, you are on a holy mission to collect the humanly debts from the central bank vault. Since god's plan is - again - not meet and right so to do in many terrestrial eyes, you have to be careful! Try not to get caught and haul as much sinful cash as possible, but watch out: Your time on earth is limited.",
         "text": "## Mission objectives\n\nIn order to gain access to the main vault, you need to find the according keycard in the map. There are three different types of keycards:\n- Employee Keycard\n- CEO Keycard\n- Security Keycard\n\nThe keycards spawn on random positions in the world and unlock various numbers of doors according to their security level. Having acquired all necessary keycards, your next goal is to find and open the main vault. Grab as much cash and valuables you can and escape by using one of the getaway opportunities before time runs off.\n\nAdditionally to the main objectives, you can also try to gain access to the security room and disable all CCTV cameras. This gives you a time bonus and makes moving inside the building easier.\n\n## Code-locked doors\n\nAs soon as the alarm is triggered, all doors are being closed and locked by a random 4-digit numeric code. To unlock a code-locked door, type in the highlighted digits in ascending order in the keypad.",
-        "background": "bg.webp",
+        "background": "poster.webp",
         "links": [{
             "target": "https://git.nwt.fhstp.ac.at/mt201096/jesus-heist-superstar",
             "label": "Source code",
             "title": "jesus-heist-superstar on FH GitLab"
-        }]
+        }],
+        "media": [
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/spawn.webp",
+                "caption": "In-game: Outside"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/entry.webp",
+                "caption": "In-game: Hall"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/cctv.webp",
+                "caption": "In-game: CCTV"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/atm.webp",
+                "caption": "In-game: ATM"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/lasers.webp",
+                "caption": "In-game: Security system"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/alarm_engaged.webp",
+                "caption": "In-game: Alarm engaged"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/screenshots/ui_menu.webp",
+                "caption": "In-game: Pause menu"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/graphics/mission_complete.webp",
+                "caption": "Artwork: Mission complete"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/graphics/mission_failed.webp",
+                "caption": "Artwork: Mission failed"
+            },
+            {
+                "type": "img",
+                "source": "/media/jhs/graphics/poster.webp",
+                "caption": "Artwork: Poster"
+            }
+        ]
     }, {
         "id": "orderbar",
         "title": "Orderbar",

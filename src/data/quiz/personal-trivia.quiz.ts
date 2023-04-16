@@ -47,7 +47,7 @@ const data: IQuiz = {
       ]
     },
     {
-      "text": "Where did I work before studying at the St. Pölten UAS? 🏢",
+      "text": "Where did I work before studying at St. Pölten UAS? 🏢",
       "difficulty": 1,
       "answers": [
         {
