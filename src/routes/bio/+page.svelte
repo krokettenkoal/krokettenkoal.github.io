@@ -114,11 +114,13 @@
 
         <section>
             <a class="anchor" id="cv"></a>
-            <h2>Curriculum Vitae <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
+            <h2>Curriculum Vitae <SkipLink target="#quiz"/></h2>
             <img id="curriculum-vitae" src="/img/cv.webp" alt="CV - Cajetan Grill" class="">
         </section>
 
         <section>
+            <a class="anchor" id="quiz"></a>
+            <h2>Let's play! <SkipLink target="#top" icon="{ChevronDoubleUp}" text="Top"/></h2>
             <MiniQuiz src={PersonalTriviaQuiz} />
         </section>
     </article>

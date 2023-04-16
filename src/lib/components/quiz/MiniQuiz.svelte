@@ -9,19 +9,18 @@
   import CheckBold from 'svelte-material-icons/CheckBold.svelte';
   import CloseThick from 'svelte-material-icons/CloseThick.svelte';
   import type { IQuestionResult } from "$lib/quiz/Quiz";
-  import { QuizAnswer, Quiz } from "$lib/quiz/Quiz";
+  import { QuizAnswer, Quiz, QuizResult } from "$lib/quiz/Quiz";
   import Icon from "$lib/components/Icon.svelte";
   import ProgressBar from "$lib/components/ProgressBar.svelte";
   import Countdown from "$lib/components/Countdown.svelte";
   import { mmss } from "$lib/utils";
   import { highscore } from "$lib/quiz/Highscore";
   import PlayerLevel from "$lib/components/quiz/PlayerLevel.svelte";
+  import { onDestroy, onMount } from "svelte";
 
   export let src: Quiz;
   export let timePerQuestion = 30;
   export let score = 0;
-
-  $: score = Math.trunc(src.score);
 
   let selected = new Set<QuizAnswer>(),
     scoreChange: number,
@@ -30,8 +29,20 @@
     totalCorrectAnswers = 0,
     wrongAnswers = 0,
     ratio = 0,
-    time,
-    paused;
+    time: number,
+    paused: boolean,
+    openStats: () => void,
+    result: QuizResult|null;
+
+  $: score = Math.trunc(src.score);
+
+  onMount((): void => {
+    src?.onComplete.on(onQuizComplete);
+  });
+
+  onDestroy((): void => {
+    src?.onComplete.off(onQuizComplete);
+  });
 
   function toggleAnswer(ans: QuizAnswer): void {
     if(src.current?.submitted)
@@ -70,6 +81,7 @@
 
   function restartQuiz(): void {
     correctAnswers = totalCorrectAnswers = wrongAnswers = scoreChange = 0;
+    result = null;
     src.reset();
 
     src = src;
@@ -115,6 +127,10 @@
 
     return "Is you the Cajetan himself???";
   }
+
+  function onQuizComplete(res: QuizResult): void {
+    result = res;
+  }
 </script>
 
 <article class="quiz">
@@ -123,7 +139,9 @@
       {#if src.icon}
         <Icon name={src.icon} />
       {/if}
-      Quiz: {src.title}
+      <span>
+        Quiz: {src.title}
+      </span>
     </p>
 
     {#if !src.started}
@@ -152,8 +170,17 @@
       <section id="quiz_{src.id}_results">
         <p class="title done rainbow">
           <PartyPopper />
-          Done!
+          Quiz completed
         </p>
+
+        {#if result?.hasAchievements}
+          <div class="achievements">
+            {#each [...result.achievements] as achievement}
+              <div class="achievement" data-achievement="{achievement}"></div>
+            {/each}
+          </div>
+        {/if}
+
         <div class="results">
           <p class="result score" data-label="score">{score}</p>
           {#if src.totalTime >= 0}
@@ -242,13 +269,17 @@
               Submit
             </button>
           {/if}
+          <button on:click={restartQuiz} class="cancel">
+            <SendLock />
+            End quiz
+          </button>
         </div>
       </section>
 
     {/if}
 
   <div class="player-stats">
-    <PlayerLevel />
+    <PlayerLevel bind:openStats />
   </div>
 </article>
 
@@ -322,6 +353,18 @@
         font-size: 3rem;
         color: yellowgreen;
         justify-content: center;
+    }
+
+    .title span {
+        flex-grow: 1;
+        text-align: left;
+        line-height: 1.1;
+    }
+
+    @media screen and (max-width: 768px){
+        .title {
+            font-size: 2rem;
+        }
     }
 
     .answers {
@@ -471,6 +514,30 @@
     .controls {
         margin-top: 2rem;
         margin-bottom: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .controls > * {
+        width: unset;
+    }
+
+    .controls > .cancel {
+        flex-grow: 0;
+    }
+
+    button.cancel {
+        border: none;
+        border-radius: 0;
+        color: var(--main-text-col);
+    }
+
+    button.cancel:hover {
+        background-color: transparent;
+        color: var(--accent-col);
     }
 
     .result-msg {
@@ -523,6 +590,31 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
+    }
+
+    .achievements {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1rem;
+        row-gap: .5rem;
+    }
+
+    .achievement {
+        font-size: 1rem;
+        padding: .1rem .75rem;
+        background-color: var(--accent-col);
+        border-radius: 1rem;
+        font-weight: bold;
+    }
+
+    .achievement[data-achievement="0"]::before {
+      content: 'Personal best';
+    }
+
+    .achievement[data-achievement="1"]::before {
+        content: 'Level up';
     }
 
     @keyframes timer-flash {
