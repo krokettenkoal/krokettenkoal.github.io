@@ -1,17 +1,22 @@
 import { browser } from "$app/environment";
 import {writable} from "svelte/store";
 
+export enum Achievement {PersonalBest, LevelUp}
+
 export class Highscore extends Map<string, number> {
 
   save(): void {
     localStorage.setItem('highscore', this.serialize());
   }
 
-  add(id: string, score: number): void {
+  add(id: string, score: number): boolean {
     if(!this.has(id) || (this.get(id) ?? 0) < score) {
       this.set(id, score);
       highscore.update(hs => this);
+      return true;
     }
+
+    return false;
   }
 
   tryGet(id: string): number {
@@ -36,13 +41,12 @@ export class Highscore extends Map<string, number> {
   }
 
   get level(): number {
-    return 1 + Math.trunc(Math.sqrt(this.total) / 10);
+    return Math.trunc(Math.sqrt(this.total / 100 + 1)) || 1;
   }
 
   get exp(): number {
     const levelUpPoints = this.pointsForNextLevel - this.pointsForCurrentLevel;
     return (levelUpPoints - this.pointsUntilNextLevel) / levelUpPoints;
-    //return Math.sqrt(this.total) / 10 - this.level + 1;
   }
 
   get expPercent(): number {
@@ -66,7 +70,7 @@ export class Highscore extends Map<string, number> {
   }
 
   static pointsForLevel(level: number): number {
-    return 100 * Math.pow(level - 1, 2) - 100;
+    return 100 * Math.pow(level, 2) - 100;
   }
 
   private serialize(): string {

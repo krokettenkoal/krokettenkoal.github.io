@@ -4,11 +4,11 @@
   import ProgressBar from "$lib/components/ProgressBar.svelte";
   import ChartBellCurveCumulative from 'svelte-material-icons/ChartBellCurveCumulative.svelte';
 
-
-  let openModal: () => void, closeModal: (any?) => void;
+  export let openStats: () => void;
+  export let closeStats: (any?) => void;
 </script>
 
-<button class="player-level" title="Level: {$highscore.level}&#13;Score: {$highscore.total}&#13;XP: {$highscore.expPercent}%" on:click={openModal}>
+<button class="player-level" title="Level: {$highscore.level}&#13;Score: {$highscore.total}&#13;XP: {$highscore.expPercent}%" on:click={openStats}>
   <span class="label">
     Level
   </span>
@@ -17,7 +17,7 @@
   </span>
 </button>
 
-<Modal bind:showModal={openModal} bind:closeModal={closeModal}>
+<Modal bind:showModal={openStats} bind:closeModal={closeStats}>
   <span slot="title">
       <span class="stats-title">
         <ChartBellCurveCumulative size="2rem" />
@@ -32,8 +32,8 @@
     </p>
       <ProgressBar
         progress={$highscore.exp}
-        min={$highscore.pointsForCurrentLevel}
-        max={$highscore.pointsForNextLevel}
+        min={$highscore.pointsForCurrentLevel.toString()}
+        max={$highscore.pointsForNextLevel.toString()}
         background="var(--main-bg-col)"
         foreground="var(--accent-col)"
       />
@@ -66,13 +66,14 @@
       background-color: var(--accent-col);
       background-image: linear-gradient(0deg, #23A4A8 calc(var(--exp, 0) - 5%), var(--accent-col-shade) calc(var(--exp, 0) + 5%));
       border-radius: 100%;
-      width: 2ch;
-      height: 2ch;
+      width: 3ch;
+      height: 3ch;
       display: flex;
       color: var(--main-bg-col);
       flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
+      letter-spacing: 0;
 
       transition: background 1s ease-out;
   }

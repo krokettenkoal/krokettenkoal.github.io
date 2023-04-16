@@ -23,9 +23,21 @@
         dialog?.close();
         isOpen = false;
     }
+
+    function closeOnOutsideClick(ev: PointerEvent){
+        const rect = dialog.getBoundingClientRect();
+
+        if(ev.x < rect.x
+            || ev.x > (rect.x + rect.width)
+            || ev.y < rect.y
+            || ev.y > (rect.y + rect.height)){
+            //  Clicked outside dialog
+            closeModal();
+        }
+    }
 </script>
 
-<dialog bind:this={dialog} data-open="{isOpen}">
+<dialog bind:this={dialog} data-open="{isOpen}" on:click={closeOnOutsideClick}>
     <div class="top">
         <span></span>
         <slot name="title"></slot>

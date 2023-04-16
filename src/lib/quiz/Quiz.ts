@@ -1,7 +1,8 @@
 import { v4 as uuid } from "uuid";
-import {get} from "svelte/store";
-import {highscore} from "./Highscore";
+import { get } from "svelte/store";
+import { Achievement, highscore } from "./Highscore";
 import { isUuid } from "$lib/utils";
+import { TypedEvent } from "$lib/quiz/TypedEvent";
 
 export interface IQuizAnswer {
   id?: string;
@@ -103,6 +104,36 @@ export class QuizQuestion implements IQuizQuestion {
   }
 }
 
+export interface IQuizResult {
+  score: number;
+  levelUp?: boolean;
+  personalRecord?: boolean;
+}
+
+export class QuizResult implements IQuizResult {
+  score: number;
+  levelUp?: boolean;
+  personalRecord?: boolean;
+  achievements: Set<Achievement>;
+
+  constructor({score, levelUp, personalRecord}: IQuizResult) {
+    this.score = score;
+    this.levelUp = levelUp;
+    this.personalRecord = personalRecord;
+    this.achievements = new Set<Achievement>();
+
+    if(this.levelUp)
+      this.achievements.add(Achievement.LevelUp);
+
+    if(this.personalRecord)
+      this.achievements.add(Achievement.PersonalBest);
+  }
+
+  get hasAchievements(): boolean {
+    return this.achievements.size > 0;
+  }
+}
+
 /**
  * Class representing an answerable quiz
  */
@@ -117,19 +148,22 @@ export class Quiz implements IQuiz {
   startTime: number;
   endTime: number;
 
+  onComplete: TypedEvent<IQuizResult>;
+
   private currentIdx: number;
 
   constructor({id, title, icon, questions, description, baseScore}: IQuiz = NEW_QUIZ) {
     this.id = id ?? uuid();
     this.title = title;
     this.icon = icon;
-    this.questions = questions.map(q => new QuizQuestion(q));
+    this.questions = questions.map(q => new QuizQuestion(q)).sort((a, b) => a.difficulty - b.difficulty);
     this.description = description;
     this.baseScore = baseScore ?? 100;
     this.currentIdx = -1;
     this.score = 0;
     this.startTime = -1;
     this.endTime = -1;
+    this.onComplete = new TypedEvent<any>();
   }
 
   get current(): QuizQuestion|null {
@@ -177,6 +211,7 @@ export class Quiz implements IQuiz {
   /**
    * Submits the specified answers to the current question
    * @param answers The answers selected by the user
+   * @event onComplete Raised if the submitted question is the last in the quiz
    * @returns The score achieved with the specified answers
    */
   submit(...answers: QuizAnswer[]): IQuestionResult|null {
@@ -190,7 +225,14 @@ export class Quiz implements IQuiz {
     if(!this.hasNext) {
       this.endTime = Date.now();
       const hs = get(highscore);
-      hs.add(this.id, Math.trunc(this.score));
+
+      const qRes: IQuizResult = {
+        score: result.score,
+        levelUp: result.score >= hs.pointsForNextLevel,
+      };
+
+      qRes.personalRecord = hs.add(this.id, Math.trunc(this.score));
+      this.onComplete.emit(new QuizResult(qRes));
     }
 
     return result;
