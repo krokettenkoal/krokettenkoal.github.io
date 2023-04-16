@@ -1,7 +1,7 @@
 import { browser } from "$app/environment";
 import {writable} from "svelte/store";
 
-export enum Achievement {PersonalBest, LevelUp}
+export enum Achievement {PersonalBest = 'Personal best', LevelUp = 'Level up'}
 
 export class Highscore extends Map<string, number> {
 

@@ -8,14 +8,16 @@
   import PartyPopper from 'svelte-material-icons/PartyPopper.svelte';
   import CheckBold from 'svelte-material-icons/CheckBold.svelte';
   import CloseThick from 'svelte-material-icons/CloseThick.svelte';
+  import ExitToApp from 'svelte-material-icons/ExitToApp.svelte';
   import type { IQuestionResult } from "$lib/quiz/Quiz";
   import { QuizAnswer, Quiz, QuizResult } from "$lib/quiz/Quiz";
   import Icon from "$lib/components/Icon.svelte";
   import ProgressBar from "$lib/components/ProgressBar.svelte";
   import Countdown from "$lib/components/Countdown.svelte";
+  import PlayerLevel from "$lib/components/quiz/PlayerLevel.svelte";
+  import Achievement from "$lib/components/quiz/Achievement.svelte";
   import { mmss } from "$lib/utils";
   import { highscore } from "$lib/quiz/Highscore";
-  import PlayerLevel from "$lib/components/quiz/PlayerLevel.svelte";
   import { onDestroy, onMount } from "svelte";
 
   export let src: Quiz;
@@ -176,7 +178,9 @@
         {#if result?.hasAchievements}
           <div class="achievements">
             {#each [...result.achievements] as achievement}
-              <div class="achievement" data-achievement="{achievement}"></div>
+              <Achievement>
+                {achievement}
+              </Achievement>
             {/each}
           </div>
         {/if}
@@ -270,7 +274,7 @@
             </button>
           {/if}
           <button on:click={restartQuiz} class="cancel">
-            <SendLock />
+            <ExitToApp />
             End quiz
           </button>
         </div>
@@ -599,22 +603,6 @@
         align-items: center;
         column-gap: 1rem;
         row-gap: .5rem;
-    }
-
-    .achievement {
-        font-size: 1rem;
-        padding: .1rem .75rem;
-        background-color: var(--accent-col);
-        border-radius: 1rem;
-        font-weight: bold;
-    }
-
-    .achievement[data-achievement="0"]::before {
-      content: 'Personal best';
-    }
-
-    .achievement[data-achievement="1"]::before {
-        content: 'Level up';
     }
 
     @keyframes timer-flash {
