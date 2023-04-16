@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated quiz and highscore&#10;- Levels/XP are now calculated correctly&#10;- Quiz results now display achievements&#10;- Added typed events, raised e.g. by a quiz on completion&#10;- Added 'End quiz' button&#10;- Modals can now be closed by clicking outside of them&#10;- Progress bars can now display labels for their min/max values">
-      <change afterPath="$PROJECT_DIR$/src/lib/components/quiz/Achievement.svelte" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Added confetti&#10;- Moved achievements into their own components&#10;- Clicking achievements now triggers a confetti effect&#10;- Progress bar percent value now looks better">
+      <change afterPath="$PROJECT_DIR$/src/lib/components/SkillBadge.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/poster.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_complete.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_failed.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/graphics/poster.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/alarm_engaged.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/atm.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/cctv.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/entry.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/lasers.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/spawn.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/ui_menu.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/ProgressBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProgressBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/quiz/personal-trivia.quiz.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/quiz/personal-trivia.quiz.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/media/Image.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/media/Image.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/components/quiz/MiniQuiz.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/quiz/MiniQuiz.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/quiz/Highscore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/quiz/Highscore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/quiz/PlayerLevel.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/quiz/PlayerLevel.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/bg.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +82,7 @@
         <option value="+page" />
         <option value="Achievement" />
         <option value="TypeScript File" />
+        <option value="SkillBadge" />
       </list>
     </option>
   </component>
@@ -91,32 +108,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/www/krokettenkoal/cgrill-web/src/lib&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.tslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/www/krokettenkoal/cgrill-web/src/lib",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.tslint",
+    "ts.external.directory.path": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\www\krokettenkoal\cgrill-web\static\img\portfolio" />
@@ -151,6 +168,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="host" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="host" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="preview" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -162,9 +189,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.preview" />
       <item itemvalue="npm.dev" />
+      <item itemvalue="npm.host" />
       <item itemvalue="npm.build" />
+      <item itemvalue="npm.preview" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -217,7 +245,8 @@
       <workItem from="1681282432669" duration="163000" />
       <workItem from="1681304720071" duration="22000" />
       <workItem from="1681464292479" duration="28475000" />
-      <workItem from="1681639795106" duration="8463000" />
+      <workItem from="1681639795106" duration="9139000" />
+      <workItem from="1681669492311" duration="6249000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -492,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681644101373</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Added confetti&#10;- Moved achievements into their own components&#10;- Clicking achievements now triggers a confetti effect&#10;- Progress bar percent value now looks better">
+      <created>1681648895655</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681648895655</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,6 +703,10 @@
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
         <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/[projectId]/proxy+page.js.map" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js" />
+        <option value="$PROJECT_DIR$/.svelte-kit/types/src/routes/portfolio/proxy+page.js.map" />
       </list>
     </option>
   </component>
@@ -695,7 +735,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Increased base line height for small screens" />
     <MESSAGE value="Added slideshow and admin section" />
     <MESSAGE value="Compressed images" />
     <MESSAGE value="Added default portfolio bg" />
@@ -720,6 +759,7 @@
     <MESSAGE value="Converted static images to webp" />
     <MESSAGE value="Added quiz to bio" />
     <MESSAGE value="Updated quiz and highscore&#10;- Levels/XP are now calculated correctly&#10;- Quiz results now display achievements&#10;- Added typed events, raised e.g. by a quiz on completion&#10;- Added 'End quiz' button&#10;- Modals can now be closed by clicking outside of them&#10;- Progress bars can now display labels for their min/max values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated quiz and highscore&#10;- Levels/XP are now calculated correctly&#10;- Quiz results now display achievements&#10;- Added typed events, raised e.g. by a quiz on completion&#10;- Added 'End quiz' button&#10;- Modals can now be closed by clicking outside of them&#10;- Progress bars can now display labels for their min/max values" />
+    <MESSAGE value="Added confetti&#10;- Moved achievements into their own components&#10;- Clicking achievements now triggers a confetti effect&#10;- Progress bar percent value now looks better" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added confetti&#10;- Moved achievements into their own components&#10;- Clicking achievements now triggers a confetti effect&#10;- Progress bar percent value now looks better" />
   </component>
 </project>
