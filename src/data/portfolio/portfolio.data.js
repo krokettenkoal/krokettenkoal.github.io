@@ -19,43 +19,73 @@ export default {
             "label": "Source code",
             "title": "nftp-game on FH GitLab"
         }],
-        "media": [{
-            "type": "img",
-            "source": "/media/nftp/intro/city.webp",
-            "caption": "Concept art: Alien civilization"
-        }, {
-            "type": "img",
-            "source": "/media/nftp/intro/suburb.webp",
-            "caption": "Concept art: Post-apocalyptic suburb"
-        }, {
-            "type": "img",
-            "source": "/media/nftp/intro/voyager.webp",
-            "caption": "Concept art: Voyager probe approaching a foreign planet"
-        }, {
-            "type": "img",
-            "source": "/media/nftp/intro/golden-record.webp",
-            "caption": "Concept art: Golden record"
-        }, {
-            "type": "img",
-            "source": "/media/nftp/intro/crash.webp",
-            "caption": "Concept art: Voyager probe crashing on a foreign planet"
-        }, {
-            "type": "img",
-            "source": "/media/nftp/intro/spaceship.webp",
-            "caption": "Concept art: Alien spaceship landing on Earth"
-        }, {"type": "img", "source": "/media/nftp/ui/collection.webp", "caption": "UI: Collected items"}, {
-            "type": "img",
-            "source": "/media/nftp/ui/credits.webp",
-            "caption": "UI: Credits"
-        }, {"type": "img", "source": "/media/nftp/ui/hud.webp", "caption": "HUD: Notification"}, {
-            "type": "img",
-            "source": "/media/nftp/ui/settings_video.webp",
-            "caption": "UI: Video settings"
-        }, {"type": "img", "source": "/media/nftp/ui/startscreen.webp", "caption": "UI: Start screen"}, {
-            "type": "img",
-            "source": "/media/nftp/ui/transponder.webp",
-            "caption": "UI: Transponder"
-        }, {"type": "img", "source": "/media/nftp/detail_helmet.webp", "caption": "In-game: Detail view"}]
+        "media": [
+            {
+                "type": "img",
+                "source": "/media/nftp/detail_helmet.webp",
+                "caption": "In-game: Detail view"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/hud.webp",
+                "caption": "HUD: Notification"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/city.webp",
+                "caption": "Concept art: Alien civilization"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/suburb.webp",
+                "caption": "Concept art: Post-apocalyptic suburb"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/voyager.webp",
+                "caption": "Concept art: Voyager probe approaching a foreign planet"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/golden-record.webp",
+                "caption": "Concept art: Golden record"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/crash.webp",
+                "caption": "Concept art: Voyager probe crashing on a foreign planet"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/intro/spaceship.webp",
+                "caption": "Concept art: Alien spaceship landing on Earth"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/collection.webp",
+                "caption": "UI: Collected items"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/credits.webp",
+                "caption": "UI: Credits"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/settings_video.webp",
+                "caption": "UI: Video settings"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/startscreen.webp",
+                "caption": "UI: Start screen"
+            },
+            {
+                "type": "img",
+                "source": "/media/nftp/ui/transponder.webp",
+                "caption": "UI: Transponder"
+            }
+        ]
     }, {
         "id": "cajetan",
         "title": "cajetan.dev",
