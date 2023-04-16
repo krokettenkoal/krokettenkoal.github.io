@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import Hero from "$lib/components/Hero.svelte";
     import Forest from 'svelte-material-icons/Forest.svelte';
     import DesktopClassic from 'svelte-material-icons/DesktopClassic.svelte';
@@ -16,11 +16,13 @@
     import Waveform from 'svelte-material-icons/Waveform.svelte';
     import Multimedia from 'svelte-material-icons/Multimedia.svelte';
     import ChevronDoubleUp from 'svelte-material-icons/ChevronDoubleUp.svelte';
+    import { Dotnet, Typescript, Php, Html5, Unity, Wwise, Adobecreativecloud, Svelte, Nodedotjs, Git, Jira } from "@icons-pack/svelte-simple-icons";
     import SkipLink from "$lib/components/SkipLink.svelte";
     import PrevNext from "$lib/components/PrevNext.svelte";
     import Seo from "$lib/components/Seo.svelte";
     import MiniQuiz from "$lib/components/quiz/MiniQuiz.svelte";
     import PersonalTriviaQuiz from "$data/quiz/personal-trivia.quiz";
+    import SkillBadge from "$lib/components/SkillBadge.svelte";
 </script>
 
 <Seo title="Bio" description="Where I'm from, where I'm at and where I'll be." />
@@ -74,26 +76,82 @@
             <p>
                 Having gathered extensive development and design experience over the years, I can fondly count the following <strong>hard skills</strong> to my repertoire:
             </p>
-            <ul id="hard-skills">
+            <ul class="skills-list" id="hard-skills">
                 <li>
                     <h3>Programming & coding languages:</h3>
-                    <ul id="prog-lang">
-                        <li>C# (.NET)</li>
-                        <li>JavaScript / TypeScript</li>
-                        <li>PHP</li>
-                        <li>HTML5 / CSS3</li>
+                    <ul class="skill-badges" id="prog-lang">
+                        <li>
+                            <SkillBadge color="#5027d5">
+                                <Dotnet slot="icon" />
+                                C# (.NET)
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#2d79c7">
+                                <Typescript slot="icon" />
+                                JavaScript / TypeScript
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#787cb4">
+                                <Php slot="icon" />
+                                PHP
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#e44d26">
+                                <Html5 slot="icon" />
+                                HTML5 / CSS3
+                            </SkillBadge>
+                        </li>
                     </ul>
                 </li>
 
                 <li>
                     <h3>Technologies & frameworks:</h3>
-                    <ul id="tech">
-                        <li>Unity (engine & editor)</li>
-                        <li>Wwise (Unity integration & authoring)</li>
-                        <li>Adobe CC (Photoshop, Illustrator, XD)</li>
-                        <li>Web stack (Svelte[Kit], Node.js, mongodb ...)</li>
-                        <li>Git</li>
-                        <li>Scrum (utilizing Jira)</li>
+                    <ul class="skill-badges" id="tech">
+                        <li>
+                            <SkillBadge color="#000000">
+                                <Unity slot="icon" />
+                                Unity
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#00549f">
+                                <Wwise slot="icon" />
+                                Wwise
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#ff3c00">
+                                <Svelte slot="icon" />
+                                Svelte(Kit)
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#539e43">
+                                <Nodedotjs slot="icon" />
+                                Node.js
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#f05030">
+                                <Git slot="icon" />
+                                Git
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#da1f26">
+                                <Adobecreativecloud slot="icon" />
+                                Adobe CC
+                            </SkillBadge>
+                        </li>
+                        <li>
+                            <SkillBadge color="#0071ed">
+                                <Jira slot="icon" />
+                                Scrum (Jira)
+                            </SkillBadge>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -206,5 +264,23 @@
 
     #curriculum-vitae {
         width: 100%;
+    }
+
+    ul.skills-list {
+        list-style: none;
+    }
+
+    ul.skill-badges {
+        list-style: none;
+        padding: 0;
+    }
+
+    .skill-badges {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 1rem;
+        row-gap: .5rem;
     }
 </style>

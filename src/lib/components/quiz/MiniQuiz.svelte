@@ -84,6 +84,7 @@
   function restartQuiz(): void {
     correctAnswers = totalCorrectAnswers = wrongAnswers = scoreChange = 0;
     result = null;
+    selected.clear();
     src.reset();
 
     src = src;
@@ -359,6 +360,12 @@
         justify-content: center;
     }
 
+    @media screen and (max-width: 768px) {
+        .title.done {
+            font-size: 1.8rem;
+        }
+    }
+
     .title span {
         flex-grow: 1;
         text-align: left;
@@ -376,8 +383,8 @@
         padding: 0;
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        align-items: stretch;
         align-content: center;
         gap: .5rem;
     }
@@ -389,9 +396,17 @@
 
     .answer button {
         width: 100%;
+        height: 100%;
         background-color: var(--secondary-bg-col);
         color: var(--main-text-col);
         border-color: transparent;
+    }
+
+    @media screen and (max-width: 768px) {
+        .answer button {
+            font-size: 1rem;
+            font-weight: normal;
+        }
     }
 
     .answer button:hover {
