@@ -16,7 +16,17 @@
     import Waveform from 'svelte-material-icons/Waveform.svelte';
     import Multimedia from 'svelte-material-icons/Multimedia.svelte';
     import ChevronDoubleUp from 'svelte-material-icons/ChevronDoubleUp.svelte';
-    import { Dotnet, Typescript, Php, Html5, Unity, Wwise, Adobecreativecloud, Svelte, Nodedotjs, Git, Jira } from "@icons-pack/svelte-simple-icons";
+    import Dotnet from '$lib/components/svelte-simple-icons/src/components/Dotnet.svelte';
+    import Typescript from '$lib/components/svelte-simple-icons/src/components/Typescript.svelte';
+    import Php from '$lib/components/svelte-simple-icons/src/components/Php.svelte';
+    import Html5 from '$lib/components/svelte-simple-icons/src/components/Html5.svelte';
+    import Unity from '$lib/components/svelte-simple-icons/src/components/Unity.svelte';
+    import Wwise from '$lib/components/svelte-simple-icons/src/components/Wwise.svelte';
+    import Adobecreativecloud from '$lib/components/svelte-simple-icons/src/components/Adobecreativecloud.svelte';
+    import Svelte from '$lib/components/svelte-simple-icons/src/components/Svelte.svelte';
+    import Nodedotjs from '$lib/components/svelte-simple-icons/src/components/Nodedotjs.svelte';
+    import Git from '$lib/components/svelte-simple-icons/src/components/Git.svelte';
+    import Jira from '$lib/components/svelte-simple-icons/src/components/Jira.svelte';
     import SkipLink from "$lib/components/SkipLink.svelte";
     import PrevNext from "$lib/components/PrevNext.svelte";
     import Seo from "$lib/components/Seo.svelte";
