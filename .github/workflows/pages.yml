@@ -23,6 +23,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: git submodule update --init --recursive
       - uses: actions/configure-pages@v1
         id: pages
       - uses: actions/setup-node@v3
