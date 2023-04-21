@@ -1,0 +1,3 @@
+[submodule "src/lib/components/svelte-simple-icons"]
+	path = src/lib/components/svelte-simple-icons
+	url = https://github.com/icons-pack/svelte-simple-icons
