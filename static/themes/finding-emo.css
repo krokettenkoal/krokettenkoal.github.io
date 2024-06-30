@@ -1,0 +1,8 @@
+:root {
+    --main-bg-col: rgb(6, 7, 8);
+    --accent-col: rgb(243, 95, 241);
+    --accent-col-shade: rgb(110, 51, 124);
+    --bg-gradient: radial-gradient(ellipse at center, var(--main-bg-col), rgba(22, 21, 18, 0.8) 40%, rgba(22, 21, 18, 0.6));
+    --main-bg-gradient: radial-gradient(ellipse at top left, rgb(22, 21, 18) 10%, rgb(8, 8, 6) 70%);
+    --title-gradient: linear-gradient(to bottom, var(--accent-col) 60%, var(--accent-col-shade));
+}

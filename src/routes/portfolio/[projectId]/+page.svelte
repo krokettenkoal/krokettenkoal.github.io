@@ -8,6 +8,7 @@
 
 <script lang="ts">
     import {onDestroy} from "svelte";
+    import type {PageData} from "./$types";
     import SvelteMarkdown from "svelte-markdown";
     import Hero from "$lib/components/Hero.svelte";
     import MoreProjects from "$lib/components/MoreProjects.svelte";
@@ -16,8 +17,7 @@
     import Slideshow from "$lib/components/Slideshow.svelte";
     import Seo from "$lib/components/Seo.svelte";
 
-    /** @type {import('./$types').PageData} */
-    export let data;
+    export let data: PageData;
 
     let current: Project;
     let idx: number, next: string | undefined, prev: string | undefined;
@@ -70,7 +70,7 @@
         {/if}
     </article>
 
-    <MoreProjects current="{current.id}" prev="{prev}" next="{next}"/>
+    <MoreProjects current={current.id} prev={prev} next={next} />
 
     <a href="/portfolio" title="Back to portfolio" class="back"><ChevronLeft/> Back to portfolio</a>
 </Hero>

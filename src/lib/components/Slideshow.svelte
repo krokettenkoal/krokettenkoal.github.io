@@ -1,5 +1,14 @@
 <script context="module" lang="ts">
-    import {SvelteComponent} from "svelte";
+</script>
+
+<script lang="ts">
+    import {onDestroy, onMount, type ComponentType} from "svelte";
+    import Circle from "svelte-material-icons/Circle.svelte";
+    import CircleSlice8 from "svelte-material-icons/CircleSlice8.svelte";
+    import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
+    import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
+    import VideoIcon from 'svelte-material-icons/Video.svelte';
+    import Waveform from "svelte-material-icons/Waveform.svelte";
     import {MediaType} from "$lib/media";
     import type {IMedia} from "$lib/media";
     import Image from "$lib/components/media/Image.svelte";
@@ -7,7 +16,19 @@
     import Video from "$lib/components/media/Video.svelte";
     import Text from "$lib/components/media/Text.svelte";
 
-    function getMediaComponent(t: IMedia): SvelteComponent {
+    export let media: IMedia[];
+    export let current = 0;
+    export let autoplay = true;
+    export let duration = 7;
+
+    let curr: IMedia | undefined;
+
+    $: current = media ? (media.length + current) % media.length : -1;
+    $: curr = media ? media[current] : undefined;
+
+    let currentTimeout: number;
+
+    function getMediaComponent(t: IMedia): ComponentType {
         switch (t.type){
             case MediaType.Image:
                 return Image;
@@ -19,26 +40,19 @@
 
         return Text;
     }
-</script>
 
-<script lang="ts">
-    import {onDestroy, onMount} from "svelte";
-    import Circle from "svelte-material-icons/Circle.svelte";
-    import CircleSlice8 from "svelte-material-icons/CircleSlice8.svelte";
-    import ChevronLeft from 'svelte-material-icons/ChevronLeft.svelte';
-    import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
+    function getMediaIndicator(t: IMedia): ComponentType {
+        switch (t.type){
+            case MediaType.Image:
+                return Circle;
+            case MediaType.Audio:
+                return Waveform;
+            case MediaType.Video:
+                return VideoIcon;
+        }
 
-    export let media: IMedia[];
-    export let current = 0;
-    export let autoplay = true;
-    export let duration = 5;
-
-    let curr: IMedia | undefined;
-
-    $: current = media ? (media.length + current) % media.length : -1;
-    $: curr = media ? media[current] : undefined;
-
-    let currentTimeout;
+        return Circle;
+    }
 
     function show(idx: number): void {
         current = idx;
@@ -57,27 +71,35 @@
         show(current + 1);
     }
 
-    onMount(() => {
+    function pause(): void {
+        if(currentTimeout)
+            clearTimeout(currentTimeout);
+    }
+
+    function play(): void {
         if(autoplay)
             show(current);
+    }
+
+    onMount(() => {
+        play();
     });
 
     onDestroy(() => {
-        if(currentTimeout)
-            clearTimeout(currentTimeout);
+        pause();
     });
 
 </script>
 
 <div class="slideshow">
 
-    {#each media as m, i}
+    {#each media as m, i (i)}
     {@const comp = getMediaComponent(m)}
         <div class="slide" data-caption="{m.caption}"
             class:current={i === current}
             class:previous={i < current}
             class:next={i > current}>
-            <svelte:component this="{comp}" media="{m}"/>
+            <svelte:component this={comp} media={m} on:play={pause} on:ended={play} />
         </div>
     {/each}
 
@@ -90,15 +112,16 @@
     </button>
 
     <div class="indicators">
-        {#each media as m, i}
+        {#each media as m, i (i)}
         {@const isActive = i === current}
-            <span class="indicator" class:active={isActive} on:click={show.bind(null, i)} title="{m.caption}">
+        {@const ind = getMediaIndicator(m)}
+            <button class="indicator" class:active={isActive} on:click={show.bind(null, i)} title="{m.caption}">
                 {#if isActive}
                     <CircleSlice8 />
                 {:else}
-                    <Circle />
+                    <svelte:component this={ind} />
                 {/if}
-            </span>
+            </button>
         {/each}
     </div>
 </div>
@@ -109,7 +132,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: 3rem auto 3rem;
-        grid-template-rows: 2rem auto 2rem;
+        grid-template-rows: 3rem auto 3rem;
         grid-template-areas:
             "header header header"
             "prev main next"
@@ -130,7 +153,6 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-
         transition: transform 400ms ease-out, opacity 250ms linear;
     }
 
@@ -149,8 +171,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        bottom: 0;
         right: 0;
+        max-height: 30%;
         display: flex;
         flex-flow: column nowrap;
         justify-content: flex-end;
@@ -159,10 +181,9 @@
         padding: 1rem 2rem;
         font-size: 1rem;
         z-index: 5;
-
-        background: linear-gradient(to top, var(--main-bg-col) 2%, transparent 60%);
+        background: linear-gradient(to bottom, var(--main-bg-col) 2%, transparent 60%);
         opacity: 0;
-
+        pointer-events: none;
         transition: opacity 300ms ease-out;
     }
 
@@ -185,7 +206,6 @@
 
     .indicators {
         grid-area: footer;
-
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
@@ -194,12 +214,16 @@
         z-index: 10;
     }
 
+    button.indicator {
+        border: none;
+        background: none;
+    }
+
     .indicator {
         color: var(--main-text-col);
         cursor: pointer;
         opacity: .6;
         font-size: 1rem;
-
         transition: all 200ms ease-out;
     }
 

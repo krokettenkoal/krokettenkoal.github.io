@@ -4,13 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Re-arranged nftp slideshow images">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/components/svelte-simple-icons" afterDir="false" />
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/portfolio/finding-emo/logo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_00.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_01.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_02.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_03.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_04.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_05.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_06.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_07.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_08.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_09.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_10.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_11.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_12.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_13.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_14.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_15.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_16.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_17.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_18.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_19.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_20.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_21.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/video/finding-emo-720p.webm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/finding-emo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/bio/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/bio/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/media/Audio.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/media/Audio.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/components/media/Video.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/media/Video.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/site.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cgrill.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cgrill.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cgrill_opaque.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cgrill_opaque.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cv.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cv.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/bg.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/poster.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/poster.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/mission_complete.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_complete.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/mission_failed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_failed.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/poster.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/poster.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/alarm_engaged.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/alarm_engaged.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/atm.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/atm.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/cctv.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/cctv.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/entry.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/entry.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/lasers.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/lasers.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/spawn.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/spawn.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/ui_menu.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/ui_menu.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/detail_helmet.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/city.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/city.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/crash.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/crash.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/suburb.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/suburb.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/voyager.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/voyager.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/collection.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/credits.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/hud.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/transponder.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/overview.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/staff/overview.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.webp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +130,6 @@
         <option value="JavaScript File" />
         <option value="Modal" />
         <option value="BoolField" />
-        <option value="CSS File" />
         <option value="Meta" />
         <option value="MiniQuiz" />
         <option value="+page.svelte" />
@@ -66,6 +141,7 @@
         <option value="Achievement" />
         <option value="TypeScript File" />
         <option value="SkillBadge" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -83,6 +159,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2KvGl9UFdjBLlHqOmN9aNheavZe" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -91,32 +171,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/www/krokettenkoal/cgrill-web/src/lib&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.tslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/www/krokettenkoal/cgrill-web/src/lib",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.tslint",
+    "ts.external.directory.path": "C:\\www\\krokettenkoal\\cgrill-web\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\www\krokettenkoal\cgrill-web\static\img\portfolio" />
@@ -178,6 +259,13 @@
       <item itemvalue="npm.preview" />
     </list>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17890.13" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -232,7 +320,11 @@
       <workItem from="1681669492311" duration="8199000" />
       <workItem from="1681715352370" duration="400000" />
       <workItem from="1681911959539" duration="2081000" />
-      <workItem from="1682077222630" duration="759000" />
+      <workItem from="1682077222630" duration="3123000" />
+      <workItem from="1682406902740" duration="17000" />
+      <workItem from="1685083955888" duration="173000" />
+      <workItem from="1685814850279" duration="73000" />
+      <workItem from="1719769652349" duration="11832000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
@@ -535,7 +627,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681677551196</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Fixed broken svelte-simple-icons package">
+      <created>1682078095439</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1682078095439</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules">
+      <created>1682078462174</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1682078462174</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,8 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated portfolio and build settings" />
-    <MESSAGE value="Improved SEO&#10;Pages are now titled dynamically and include meta descriptions" />
     <MESSAGE value="Slightly improved performance&#10;Added preloading of hero images and web fonts&#10;Changed SvelteKit preload strategy to `preload-mjs`" />
     <MESSAGE value="Revert SvelteKit preload strategy&#10;`preload-mjs` has been removed as `output` setting from svelte.config.js because it is an unrecognized option. Need to investigate why since it should be available: https://kit.svelte.dev/docs/configuration#output" />
     <MESSAGE value="Added source maps&#10;Source maps have been enabled in the Vite build options&#10;Programming languages have been updated in Bio" />
@@ -619,6 +723,8 @@
     <MESSAGE value="Added media for jhs&#10;Also improved responsiveness of slideshows" />
     <MESSAGE value="Added skill badges&#10;- Skills in bio are now displayed as nice little badges (pills)&#10;- Fixed answers staying selected after canceling a running quiz&#10;- Added new icons pack (svelte-simple-icons)&#10;- Fixed answer button size/arrangement and improved responsiveness&#10;- General minor mobile optimizations" />
     <MESSAGE value="Re-arranged nftp slideshow images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-arranged nftp slideshow images" />
+    <MESSAGE value="Fixed broken svelte-simple-icons package" />
+    <MESSAGE value="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules" />
   </component>
 </project>
