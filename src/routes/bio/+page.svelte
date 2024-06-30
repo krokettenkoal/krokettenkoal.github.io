@@ -60,8 +60,9 @@
             <div class="emoji-row"><CityVariant size="2rem"/><Bookshelf size="2rem"/><FaceAgent size="2rem"/></div>
 
             <p>
-                Years went by and the urge to improve my skills and to develop my full potential grew in me, which finally made me start studying <a href="https://www.fhstp.ac.at/en/academic-studies-continuing-education/media-digital-technologies/media-technology/course-contents" target="_blank" rel="noreferrer"><em>Media Technology</em></a> at FH St. Pölten, moving to my former school's town, <strong>Melk</strong>.
+                Years went by and the urge to improve my skills and to develop my full potential grew in me, which finally made me start studying <a href="https://www.fhstp.ac.at/en/academic-studies-continuing-education/media-digital-technologies/media-technology/course-contents" target="_blank" rel="noreferrer"><em>Media Technology</em></a> at St. Pölten UAS, moving to my former school's town, <strong>Melk</strong>.
                 Originally primarily interested in the programme's audio production part (my second favorite hobby), I re-discovered my love for programming and I specialized in <em><strong>Interactive Media</strong></em> and its <em><strong>Digital Game Production</strong></em> module.
+                Finishing my studies with a <strong>Bachelor's degree</strong> in 2023, I have decided to deepen and expand my knowledge in the field by starting a <strong>Master's degree</strong> in <a href="https://www.fhstp.ac.at/en/academic-studies-continuing-education/media-digital-technologies/interactive-technologies" target="_blank" rel="noreferrer">Interactive Technologies</a> at St. Pölten UAS (visit the page to see me on the cover photo). To further specialize, I chose <a href="https://www.fhstp.ac.at/en/onepager/master-class-augmented-virtual-reality" target="_blank" rel="noreferrer">Augmented & Virtual Reality</a> as a masterclass.
             </p>
             <div class="emoji-row"><NaturePeople size="2rem"/><Controller size="2rem"/><Creation size="2rem"/></div>
         </section>
@@ -239,6 +240,10 @@
         margin: 3rem 0 3rem 0;
         gap: 2rem;
         opacity: .3;
+    }
+
+    .emoji-row:last-child {
+        margin-bottom: 0;
     }
 
     section {
