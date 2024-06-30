@@ -5,5 +5,5 @@
 <article class="projects-more" id="more">
     <h2>More projects</h2>
 
-    <ProjectList/>
+    <ProjectList />
 </article>

@@ -5,13 +5,13 @@ export const pages = [
         "icon": "HumanGreeting"
     },
     {
+        "title": "Portfolio",
+        "url": "/portfolio",
+        "icon": "FileCertificate"
+    },
+    {
         "title": "Bio",
         "url": "/bio",
         "icon": "CardAccountDetails"
     },
-    {
-        "title": "Portfolio",
-        "url": "/portfolio",
-        "icon": "FileCertificate"
-    }
 ];

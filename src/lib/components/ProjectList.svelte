@@ -14,7 +14,7 @@
 
 <script lang="ts">
     import {page} from "$app/stores";
-    import {Portfolio} from "$lib/portfolio.ts";
+    import {Portfolio} from "$lib/portfolio";
     import {TextUtils} from "$lib/utils";
     import {Circle} from "svelte-loading-spinners";
 
