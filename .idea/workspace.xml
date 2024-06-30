@@ -4,90 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/portfolio/finding-emo/logo.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_00.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_01.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_02.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_03.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_04.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_05.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_06.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_07.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_08.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_09.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_10.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_11.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_12.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_13.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_14.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_15.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_16.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_17.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_18.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_19.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_20.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/frames/frame_21.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/media/finding-emo/video/finding-emo-720p.webm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/themes/finding-emo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/portfolio/portfolio.data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/MoreProjects.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/ProjectList.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/media/Audio.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/media/Audio.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/media/Video.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/media/Video.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/portfolio/[projectId]/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/site.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/site.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cgrill.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cgrill.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cgrill_opaque.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cgrill_opaque.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/cv.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/cv.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/bg.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/cajetan/thumb.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/jhs/poster.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/jhs/poster.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/bg.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/nftp/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/bg.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/orderbar/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/mission_complete.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_complete.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/mission_failed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/mission_failed.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/graphics/poster.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/graphics/poster.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/alarm_engaged.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/alarm_engaged.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/atm.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/atm.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/cctv.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/cctv.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/entry.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/entry.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/lasers.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/lasers.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/spawn.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/spawn.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/jhs/screenshots/ui_menu.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/jhs/screenshots/ui_menu.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/detail_helmet.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/detail_helmet.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/city.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/city.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/crash.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/crash.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/golden-record.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/spaceship.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/suburb.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/suburb.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/intro/voyager.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/intro/voyager.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/collection.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/collection.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/credits.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/credits.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/hud.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/hud.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/settings_video.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/startscreen.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/nftp/ui/transponder.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/nftp/ui/transponder.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/drinks.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-add.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-confirmed.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/order-submit.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/overview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/guest/welcome.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/overview.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/staff/overview.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/orderbar/staff/table-view.webp" afterDir="false" />
-    </list>
+    <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Updated pages.yml&#10;Trying to fix failed builds due to missing submodules" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,7 +241,7 @@
       <workItem from="1682406902740" duration="17000" />
       <workItem from="1685083955888" duration="173000" />
       <workItem from="1685814850279" duration="73000" />
-      <workItem from="1719769652349" duration="11832000" />
+      <workItem from="1719769652349" duration="11931000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
