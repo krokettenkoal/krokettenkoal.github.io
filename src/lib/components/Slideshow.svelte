@@ -210,6 +210,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
+        overflow-x: auto;
         gap: .5rem;
         z-index: 10;
     }
