@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a252bfb9-6053-4a6f-9ec1-e64a60d6578b" name="Changes" comment="Add Finding Emo project&#10;Also includes some tweaks and fixes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/components/Slideshow.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/www/krokettenkoal/cgrill-web/src/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/www/fhstp/labservice/mtsc-sonos&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -173,16 +172,16 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.build" />
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.host" />
-      <item itemvalue="npm.build" />
       <item itemvalue="npm.preview" />
     </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17890.13" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-WS-252.25557.126" />
       </set>
     </attachedChunks>
   </component>
@@ -245,7 +244,8 @@
       <workItem from="1685083955888" duration="173000" />
       <workItem from="1685814850279" duration="73000" />
       <workItem from="1719769652349" duration="13516000" />
-      <workItem from="1719834029655" duration="271000" />
+      <workItem from="1719834029655" duration="1479000" />
+      <workItem from="1757872764207" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="Major update&#10;Tweaked/changed/finished a lot of components so that the site now has all necessary base features">
       <created>1676712450208</created>
