@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { ModeWatcher } from 'mode-watcher';
+import ModeToggle from '$lib/components/svelte/mode-toggle.svelte';
 ---
 
 <html lang="en">
@@ -12,5 +14,7 @@ import '../styles/global.css';
 </head>
 <body>
 <h1>Astro</h1>
+<ModeWatcher client:load />
+<ModeToggle client:load />
 </body>
 </html>
