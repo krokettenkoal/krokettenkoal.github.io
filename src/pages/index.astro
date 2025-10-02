@@ -1,27 +1,11 @@
 ---
-import '../styles/global.css';
-import { ModeWatcher } from 'mode-watcher';
-import ModeToggle from '$lib/components/svelte/mode-toggle.svelte';
-import '@fontsource/geist-sans';
+import RootLayout from '../layouts/root-layout.astro';
 ---
 
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="generator" content={Astro.generator} />
-	<title>Astro</title>
-</head>
-<body>
-<section class="w-screen h-screen grid place-content-center place-items-center">
-	<h1 class="scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl">
-		Hello there!
-	</h1>
-</section>
-<ModeWatcher client:load />
-<div class="fixed top-3 right-5">
-	<ModeToggle client:load />
-</div>
-</body>
-</html>
+<RootLayout>
+	<section class="w-screen h-screen grid place-content-center place-items-center">
+		<h1 class="scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl">
+			Hello there!
+		</h1>
+	</section>
+</RootLayout>

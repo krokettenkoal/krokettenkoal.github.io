@@ -1,0 +1,31 @@
+---
+import '@fontsource/geist-sans';
+import '../styles/global.css';
+import { BaseHead } from 'astro-toolkit/seo';
+import { ModeWatcher } from 'mode-watcher';
+import ModeToggle from '$lib/components/svelte/mode-toggle.svelte';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'Cajetan Grill', description = 'I create stuff on my laptop.' } = Astro.props;
+---
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<BaseHead title={title} description={description} />
+</head>
+<body>
+<slot />
+<div class="fixed top-3 right-5">
+	<ModeToggle client:load />
+</div>
+<ModeWatcher client:load />
+</body>
+</html>
