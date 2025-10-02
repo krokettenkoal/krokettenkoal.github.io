@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^7.2.0",
+    "@fontsource/geist-sans": "^5.2.5",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
     "mode-watcher": "^1.1.0",

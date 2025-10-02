@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { ModeWatcher } from 'mode-watcher';
 import ModeToggle from '$lib/components/svelte/mode-toggle.svelte';
+import '@fontsource/geist-sans';
 ---
 
 <html lang="en">
@@ -13,8 +14,14 @@ import ModeToggle from '$lib/components/svelte/mode-toggle.svelte';
 	<title>Astro</title>
 </head>
 <body>
-<h1>Astro</h1>
+<section class="w-screen h-screen grid place-content-center place-items-center">
+	<h1 class="scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl">
+		Hello there!
+	</h1>
+</section>
 <ModeWatcher client:load />
-<ModeToggle client:load />
+<div class="fixed top-3 right-5">
+	<ModeToggle client:load />
+</div>
 </body>
 </html>
