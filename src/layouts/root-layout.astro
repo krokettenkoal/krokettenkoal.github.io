@@ -16,10 +16,11 @@ const { title = 'Cajetan Grill', description = 'I create stuff on my laptop.' } 
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="generator" content={Astro.generator} />
-	<SEO title={title} description={description} />
+	<SEO title={title} description={description} extend={{
+		link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+	}} />
 </head>
 <body>
 <slot />
