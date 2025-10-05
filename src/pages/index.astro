@@ -1,11 +1,44 @@
 ---
-import RootLayout from '../layouts/root-layout.astro';
+import RootLayout from '$layouts/root-layout.astro';
+import ButtonScrollTo from '$lib/components/svelte/button-scroll-to.svelte';
+import { Icon } from 'astro-icon/components';
+import { getCollection } from 'astro:content';
+const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
 ---
 
 <RootLayout>
-	<section class="w-screen h-screen grid place-content-center place-items-center">
-		<h1 class="scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl">
-			Hello there!
-		</h1>
-	</section>
+	<main class="container mx-auto">
+		<section class="w-full h-screen flex justify-center items-center flex-col px-2">
+			<h1 class="scroll-m-20 text-5xl font-black lg:text-6xl">
+				Hello there!
+			</h1>
+			<p class="text-muted-foreground text-xl mt-2 text-center">
+				Thanks for stopping by.
+			</p>
+			<p class="text-muted-foreground text-xl text-center">
+				Feel free to look around or jump to my <a href="/projects">projects</a> or <a
+				href="/bio">bio</a> page right away.
+			</p>
+
+			<ButtonScrollTo client:idle
+											target="#featured-projects" variant="outline" size="icon"
+											class="size-12 rounded-full justify-self-end md:motion-safe:animate-bounce">
+				<Icon name="lucide:arrow-down" />
+			</ButtonScrollTo>
+		</section>
+
+		<section id="featured-projects" class="w-full p-2 my-10">
+			<h2>Featured Projects</h2>
+			<ul>
+				{featuredProjects.map(project => (
+					<li>
+						<a href={`/projects/${project.id}`}>
+							<h3>{project.data.title}</h3>
+							<p>{project.data.description}</p>
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+	</main>
 </RootLayout>
