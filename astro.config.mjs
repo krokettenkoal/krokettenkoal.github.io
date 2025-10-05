@@ -11,9 +11,17 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), robotsTxt(), icon()],
-    vite: {
-        plugins: [tailwindcss()]
-    },
-    site: 'https://cajetan.dev'
+	integrations: [
+		svelte(),
+		robotsTxt(),
+		icon({
+			include: {
+				lucide: ['*'] // TODO: limit to only the icons used in the project
+			}
+		})
+	],
+	vite: {
+		plugins: [tailwindcss()]
+	},
+	site: 'https://cajetan.dev'
 });
