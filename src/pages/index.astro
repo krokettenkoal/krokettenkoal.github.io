@@ -1,6 +1,6 @@
 ---
-import RootLayout from '$layouts/root-layout.astro';
-import ButtonScrollTo from '$lib/components/svelte/button-scroll-to.svelte';
+import RootLayout from '@/layouts/root-layout.astro';
+import { ButtonScrollTo } from '@/components/react/button-scroll-to';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
@@ -23,11 +23,11 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 				</p>
 			</div>
 
-		<ButtonScrollTo client:idle
-										target="#featured-projects" variant="outline" size="icon"
-										class="size-12 rounded-full md:motion-safe:animate-bounce">
-			<Icon name="lucide:arrow-down" />
-		</ButtonScrollTo>
+			<ButtonScrollTo client:idle
+											targetSelector="#featured-projects" variant="outline" size="icon"
+											className="size-12 rounded-full md:motion-safe:animate-bounce">
+				<Icon name="lucide:arrow-down" />
+			</ButtonScrollTo>
 		</section>
 
 		<section id="featured-projects" class="w-full p-2 my-10">

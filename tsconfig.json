@@ -10,24 +10,11 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"$data": [
-				"./src/data"
-			],
-			"$data/*": [
-				"./src/data/*"
-			],
-			"$layouts": [
-				"./src/layouts"
-			],
-			"$layouts/*": [
-				"./src/layouts/*"
-			],
-			"$lib": [
-				"./src/lib"
-			],
-			"$lib/*": [
-				"./src/lib/*"
+			"@/*": [
+				"./src/*"
 			]
-		}
+		},
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
 	}
 }
