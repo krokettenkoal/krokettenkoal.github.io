@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 const projectTags = ['web', 'game', 'xr', 'unity', 'wwise', 'mobile'] as const;
 
 const projects = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/data/projects' }),
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/data/projects' }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),

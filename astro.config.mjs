@@ -5,15 +5,17 @@ import robotsTxt from 'astro-robots-txt';
 import icon from 'astro-icon';
 import react from '@astrojs/react';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [react(), robotsTxt(), icon({
-		include: {
-			lucide: ['*'] // TODO: limit to only the icons used in the project
-		}
-	})],
-	vite: {
-		plugins: [tailwindcss()]
-	},
-	site: 'https://cajetan.dev'
+    integrations: [react(), robotsTxt(), icon({
+        include: {
+            lucide: ['*'] // TODO: limit to only the icons used in the project
+        }
+    }), mdx()],
+    vite: {
+        plugins: [tailwindcss()]
+    },
+    site: 'https://cajetan.dev'
 });
