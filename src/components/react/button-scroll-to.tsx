@@ -3,14 +3,17 @@ import { Button } from '@/components/ui/button';
 
 export function ButtonScrollTo({
 																 targetSelector,
+																 onClick,
 																 children,
 																 ...props
-															 }: Omit<React.ComponentProps<typeof Button>, 'onClick'> & {
+															 }: React.ComponentProps<typeof Button> & {
 	targetSelector: string;
 }) {
-	const handleClick = () => {
-		const element = document.querySelector(targetSelector);
+	const handleClick: typeof onClick = (ev) => {
+		onClick?.(ev);
+		ev.currentTarget.dataset.clicked = '';
 
+		const element = document.querySelector(targetSelector);
 		if (!element) {
 			console.warn(`Element not found for selector: ${targetSelector}`);
 			return;
@@ -24,4 +27,4 @@ export function ButtonScrollTo({
 			{children}
 		</Button>
 	);
-};
+}

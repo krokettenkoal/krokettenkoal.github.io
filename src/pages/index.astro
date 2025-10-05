@@ -25,7 +25,7 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 
 			<ButtonScrollTo client:idle
 											targetSelector="#featured-projects" variant="outline" size="icon"
-											className="size-12 rounded-full md:motion-safe:animate-bounce">
+											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
 				<Icon name="lucide:arrow-down" />
 			</ButtonScrollTo>
 		</section>
