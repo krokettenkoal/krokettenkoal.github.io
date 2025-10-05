@@ -7,9 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import robotsTxt from 'astro-robots-txt';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [svelte(), robotsTxt()],
+    integrations: [svelte(), robotsTxt(), icon()],
     vite: {
         plugins: [tailwindcss()]
     },
