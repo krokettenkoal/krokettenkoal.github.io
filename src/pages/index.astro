@@ -11,7 +11,7 @@ import { getCollection } from 'astro:content';
 const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
 ---
 
-<RootLayout>
+<RootLayout title="Home">
 	<main class="container mx-auto">
 		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
 			<LightRays client:idle />

@@ -14,7 +14,7 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
-<RootLayout>
+<RootLayout title={project.data.title} description={project.data.description}>
 	<main class="container mx-auto mt-16">
 		<h1>{project.data.title}</h1>
 		<Content />

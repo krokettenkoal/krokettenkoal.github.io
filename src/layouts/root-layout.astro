@@ -9,7 +9,7 @@ interface Props {
 	description?: string;
 }
 
-const { title = 'Cajetan Grill', description = 'I create stuff on my laptop.' } = Astro.props;
+const { title, description = 'I create stuff on my laptop.' } = Astro.props;
 const { pathname } = Astro.url;
 console.log(pathname);
 ---
@@ -38,9 +38,9 @@ console.log(pathname);
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="generator" content={Astro.generator} />
-	<SEO title={title} description={description} extend={{
-	link: [{ rel: 'icon', type: 'image/png', href: '/images/favicon.png' }, { rel: 'sitemap', href: '/sitemap-index.xml' }]
-}} />
+	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+	<SEO title={title} titleTemplate="%s | Cajetan Grill" titleDefault="Cajetan Grill" description={description} />
 	</head>
 <body>
 <header class="fixed top-0 left-0 right-0 h-16 backdrop-blur-lg z-50 border-b-2">
