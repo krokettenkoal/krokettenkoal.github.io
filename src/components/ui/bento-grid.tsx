@@ -85,7 +85,7 @@ const BentoCard = ({
 					variant="link"
 					asChild
 					size="sm"
-					className="pointer-events-auto p-0"
+					className="pointer-events-auto p-0 text-foreground"
 				>
 					<a href={href}>
 						{cta}
