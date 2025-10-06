@@ -18,5 +18,9 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()]
 	},
-	site: 'https://cajetan.dev'
+	site: 'https://cajetan.dev',
+	redirects: {
+		'/portfolio': '/projects',
+		'/portfolio/[id]': '/projects/[id]'
+	}
 });
