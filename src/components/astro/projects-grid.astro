@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid.tsx';
+import { Image } from 'astro:assets';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<BentoGrid client:visible>
+	{projects.map((project, idx) => (
+		<BentoCard
+			client:visible
+			key={idx}
+			href={`/projects/${project.id}`}
+			name={project.data.title}
+			description={project.data.description}
+			cta="Go to project"
+			tags={project.data.tags}
+			className={`col-span-${project.data.gridSize}`}
+		>
+			<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
+						 class="w-full h-full object-cover object-center" />
+		</BentoCard>
+	))}
+</BentoGrid>

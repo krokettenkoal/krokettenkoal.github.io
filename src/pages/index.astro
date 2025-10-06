@@ -5,8 +5,7 @@ import { Icon } from 'astro-icon/components';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { LightRays } from '@/components/ui/light-rays';
-import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
-import { Image } from 'astro:assets';
+import ProjectsGrid from '@/components/astro/projects-grid.astro';
 import { getCollection } from 'astro:content';
 const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
 ---
@@ -50,23 +49,7 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 				<AuroraText client:visible>Projects</AuroraText>
 			</h2>
 			<div class="mt-4">
-				<BentoGrid client:visible>
-					{featuredProjects.map((project, idx) => (
-						<BentoCard
-							client:visible
-							key={idx}
-							href={`/projects/${project.id}`}
-							name={project.data.title}
-							description={project.data.description}
-							cta="Go to project"
-							tags={project.data.tags}
-							className={`col-span-${project.data.gridSize}`}
-						>
-							<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
-										 class="w-full h-full object-cover object-center" />
-						</BentoCard>
-					))}
-				</BentoGrid>
+				<ProjectsGrid projects={featuredProjects} />
 			</div>
 		</section>
 	</main>
