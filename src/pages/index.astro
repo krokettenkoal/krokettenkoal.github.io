@@ -2,6 +2,10 @@
 import RootLayout from '@/layouts/root-layout.astro';
 import { ButtonScrollTo } from '@/components/react/button-scroll-to';
 import { Icon } from 'astro-icon/components';
+import { BlurFade } from '@/components/ui/blur-fade';
+import { AuroraText } from '@/components/ui/aurora-text';
+import { LightRays } from '@/components/ui/light-rays';
+import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
 import { getCollection } from 'astro:content';
 const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
 ---
@@ -9,18 +13,25 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 <RootLayout>
 	<main class="container mx-auto">
 		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
+			<LightRays client:idle />
 			<div></div>
 			<div class="text-center">
-				<h1 class="scroll-m-20 text-5xl font-black lg:text-6xl">
-					Hello there!
-				</h1>
-				<p class="text-muted-foreground text-xl mt-4">
-					Thanks for stopping by.
-				</p>
-				<p class="text-muted-foreground text-xl">
-					Feel free to look around or jump to my <a href="/projects">projects</a> or <a
-					href="/bio">bio</a> page right away.
-				</p>
+				<BlurFade client:load>
+					<h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
+						Hello there! 👋
+					</h1>
+				</BlurFade>
+				<BlurFade client:load delay={.5} direction="left">
+					<p class="text-muted-foreground text-xl mt-4">
+						Thanks for stopping by.
+					</p>
+				</BlurFade>
+				<BlurFade client:load delay={.75}>
+					<p class="text-muted-foreground text-xl">
+						Feel free to look around or jump to my <a href="/projects" class="underline underline-offset-2 decoration-2">projects</a> or <a
+						href="/bio" class="underline underline-offset-2 decoration-2">bio</a> page right away.
+					</p>
+				</BlurFade>
 			</div>
 
 			<ButtonScrollTo client:idle
@@ -30,18 +41,27 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 			</ButtonScrollTo>
 		</section>
 
-		<section id="featured-projects" class="w-full p-2 my-10">
-			<h2>Featured Projects</h2>
-			<ul>
-				{featuredProjects.map(project => (
-					<li>
-						<a href={`/projects/${project.id}`}>
-							<h3>{project.data.title}</h3>
-							<p>{project.data.description}</p>
-						</a>
-					</li>
-				))}
-			</ul>
+		<section id="featured-projects" class="w-full p-2 my-20">
+			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
+				Featured
+				<AuroraText>Projects</AuroraText>
+			</h2>
+			<div class="mt-4">
+				<BentoGrid client:visible>
+					{featuredProjects.map((project, idx) => (
+						<BentoCard
+							client:visible
+							key={idx}
+							href={`/projects/${project.id}`}
+							name={project.data.title}
+							description={project.data.description}
+							background={project.data.thumbnail}
+							cta="Go to project"
+							className={`col-span-${project.data.gridSize}`}
+						/>
+					))}
+				</BentoGrid>
+			</div>
 		</section>
 	</main>
 </RootLayout>

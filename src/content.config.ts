@@ -11,6 +11,7 @@ const projects = defineCollection({
 		thumbnail: z.string(),
 		tags: z.enum(projectTags).array(),
 		featured: z.boolean().default(false),
+		gridSize: z.number().min(1).default(1),
 		relatedProjects: z.array(reference('projects'))
 	})
 });

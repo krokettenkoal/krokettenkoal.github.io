@@ -10,6 +10,8 @@ interface Props {
 }
 
 const { title = 'Cajetan Grill', description = 'I create stuff on my laptop.' } = Astro.props;
+const { pathname } = Astro.url;
+console.log(pathname);
 ---
 
 <script is:inline>
@@ -41,9 +43,40 @@ const { title = 'Cajetan Grill', description = 'I create stuff on my laptop.' } 
 }} />
 	</head>
 <body>
+<header class="fixed top-0 left-0 right-0 h-16 backdrop-blur-lg z-50 border-b-2">
+	<div class="h-full flex justify-between items-center py-2 px-5">
+		<div></div>
+		<nav>
+			<ul
+				class="flex justify-center items-center gap-6 [&_a]:text-muted-foreground [&_a]:transition-colors [&_a]:hover:underline [&_a]:hover:text-foreground [&_a.active]:text-foreground [&_a.active]:font-semibold [&_a.active]:underline [&_a.active]:underline-offset-4 [&_a.active]:decoration-2">
+				<li>
+					<a href="/" class:list={[{ 'active': (pathname === '/') }]}>Home</a>
+				</li>
+				<li>
+					<a href="/projects" class:list={[{ 'active': (pathname.startsWith('/projects')) }]}>Projects</a>
+				</li>
+				<li>
+					<a href="/bio" class:list={[{ 'active': (pathname === '/bio') }]}>Bio</a>
+				</li>
+			</ul>
+		</nav>
+		<div>
+			<ModeToggle client:load />
+		</div>
+	</div>
+</header>
+
 <slot />
-<div class="fixed top-3 right-5">
-	<ModeToggle client:load />
-</div>
+
+<footer>
+	<div class="container mx-auto p-4 text-center text-sm text-muted-foreground">
+		<p>&copy; {new Date().getFullYear()} Cajetan Grill. All rights reserved.</p>
+		<p>
+			Made with 💜 using <a href="https://astro.build" class="underline hover:text-primary">Astro</a>,{' '}
+			<a href="https://reactjs.org" class="underline hover:text-primary">React</a>, and{' '}
+			<a href="https://tailwindcss.com" class="underline hover:text-primary">Tailwind CSS</a>.
+		</p>
+	</div>
+</footer>
 </body>
 </html>
