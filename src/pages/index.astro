@@ -59,6 +59,7 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 							name={project.data.title}
 							description={project.data.description}
 							cta="Go to project"
+							tags={project.data.tags}
 							className={`col-span-${project.data.gridSize}`}
 						>
 							<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}

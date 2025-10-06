@@ -1,8 +1,8 @@
 import { type ComponentPropsWithoutRef, type ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 interface BentoGridProps extends ComponentPropsWithoutRef<'div'> {
 	children: ReactNode;
@@ -15,6 +15,7 @@ interface BentoCardProps extends ComponentPropsWithoutRef<'div'> {
 	description: string;
 	href: string;
 	cta: string;
+	tags?: string[];
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
@@ -37,6 +38,7 @@ const BentoCard = ({
 										 description,
 										 href,
 										 cta,
+										 tags,
 										 children,
 										 ...props
 									 }: BentoCardProps) => (
@@ -65,6 +67,13 @@ const BentoCard = ({
 					{name}
 				</h3>
 				<p className="max-w-lg text-neutral-400">{description}</p>
+				{tags?.length && (
+					<ul className="flex flex-wrap gap-2">
+						{tags.map(tag => (
+							<li key={tag}><Badge>{tag}</Badge></li>
+						))}
+					</ul>
+				)}
 			</div>
 
 			<div
