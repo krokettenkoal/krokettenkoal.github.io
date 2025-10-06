@@ -9,7 +9,9 @@ import { LightRays } from '@/components/ui/light-rays';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { ButtonScrollTo } from '@/components/react/button-scroll-to';
 import { cn } from '@/lib/utils';
-const projects = (await getCollection('projects')).sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+import { YouTube } from 'astro-embed';
+import { Image } from 'astro:assets';
+const projects = (await getCollection('projects')).sort((a, b) => (new Date(b.data.date)).getTime() - (new Date(a.data.date)).getTime());
 const featuredProjects = projects.filter(project => project.data.featured);
 const xrProjects = projects.filter(project => project.data.tags.includes('xr'));
 const webProjects = projects.filter(project => project.data.tags.includes('web'));
@@ -51,7 +53,9 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 
 		<!-- FEATURED PROJECTS -->
 		{featuredProjects.map((project, index) => (
-			<section data-feature={index} class="w-full h-svh flex justify-between items-center flex-col p-2">
+			<section data-feature={index} class="relative w-full h-svh flex justify-between items-center flex-col p-2">
+				<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
+							 class="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none blur-sm opacity-30 mask-y-from-70% mask-y-to-90%" />
 				<div></div>
 				<div class="text-center">
 					<BlurFade client:visible>
@@ -67,7 +71,11 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 						</p>
 					</BlurFade>
 
-					<a href={`/projects/${project.id}`} class={cn(buttonVariants({ variant: 'default', size: 'lg' }), 'mt-12 text-lg')}>
+					{project.data.youtube &&
+						<YouTube id={project.data.youtube} class="mx-auto my-12" />}
+
+					<a href={`/projects/${project.id}`}
+						 class={cn(buttonVariants({ variant: 'default', size: 'lg' }), 'mt-8 text-lg')}>
 						Explore Project
 						<Icon name="lucide:arrow-right" class="inline-block ml-2" />
 					</a>
@@ -76,7 +84,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 				<ButtonScrollTo client:visible
 												targetSelector={(index === featuredProjects.length - 1) ? `#projects-xr` : `[data-feature="${index + 1}"]`}
 												variant="outline" size="icon"
-												className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
+												className="size-12 rounded-full">
 					<Icon name="lucide:arrow-down" />
 				</ButtonScrollTo>
 			</section>
