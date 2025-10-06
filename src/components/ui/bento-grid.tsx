@@ -12,7 +12,6 @@ interface BentoGridProps extends ComponentPropsWithoutRef<'div'> {
 interface BentoCardProps extends ComponentPropsWithoutRef<'div'> {
 	name: string;
 	className: string;
-	background: string;
 	description: string;
 	href: string;
 	cta: string;
@@ -35,10 +34,10 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
 const BentoCard = ({
 										 name,
 										 className,
-										 background,
 										 description,
 										 href,
 										 cta,
+										 children,
 										 ...props
 									 }: BentoCardProps) => (
 	<div
@@ -54,8 +53,10 @@ const BentoCard = ({
 		{...props}
 	>
 		<div>
-			<img src={background} alt={name}
-					 className="absolute inset-0 w-full h-full object-cover object-center border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105" />
+			<div
+				className="absolute inset-0 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105">
+				{children}
+			</div>
 		</div>
 		<div className="p-4">
 			<div

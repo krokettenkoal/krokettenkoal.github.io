@@ -6,6 +6,7 @@ import { BlurFade } from '@/components/ui/blur-fade';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { LightRays } from '@/components/ui/light-rays';
 import { BentoGrid, BentoCard } from '@/components/ui/bento-grid';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
 ---
@@ -28,8 +29,10 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 				</BlurFade>
 				<BlurFade client:load delay={.75}>
 					<p class="text-muted-foreground text-xl">
-						Feel free to look around or jump to my <a href="/projects" class="underline underline-offset-2 decoration-2">projects</a> or <a
-						href="/bio" class="underline underline-offset-2 decoration-2">bio</a> page right away.
+						Feel free to look around or jump to my <a href="/projects"
+																											class="underline underline-offset-2 decoration-2">projects</a> or
+						<a
+							href="/bio" class="underline underline-offset-2 decoration-2">bio</a> page right away.
 					</p>
 				</BlurFade>
 			</div>
@@ -44,7 +47,7 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 		<section id="featured-projects" class="w-full p-2 my-20">
 			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
 				Featured
-				<AuroraText>Projects</AuroraText>
+				<AuroraText client:visible>Projects</AuroraText>
 			</h2>
 			<div class="mt-4">
 				<BentoGrid client:visible>
@@ -55,10 +58,12 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 							href={`/projects/${project.id}`}
 							name={project.data.title}
 							description={project.data.description}
-							background={project.data.thumbnail}
 							cta="Go to project"
 							className={`col-span-${project.data.gridSize}`}
-						/>
+						>
+							<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
+										 class="w-full h-full object-cover object-center" />
+						</BentoCard>
 					))}
 				</BentoGrid>
 			</div>
