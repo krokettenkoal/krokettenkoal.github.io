@@ -1,16 +1,122 @@
 ---
 import RootLayout from '@/layouts/root-layout.astro';
+import ProjectsGrid from '@/components/astro/projects-grid.astro';
+import { AuroraText } from '@/components/ui/aurora-text';
+import { Icon } from 'astro-icon/components';
+import { buttonVariants } from '@/components/ui/button';
 import { getCollection } from 'astro:content';
-const projects = await getCollection('projects');
+import { LightRays } from '@/components/ui/light-rays';
+import { BlurFade } from '@/components/ui/blur-fade';
+import { ButtonScrollTo } from '@/components/react/button-scroll-to';
+import { cn } from '@/lib/utils';
+const projects = (await getCollection('projects')).sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+const featuredProjects = projects.filter(project => project.data.featured);
+const xrProjects = projects.filter(project => project.data.tags.includes('xr'));
+const webProjects = projects.filter(project => project.data.tags.includes('web'));
 ---
 
 <RootLayout title="Projects">
-	<main class="container mx-auto mt-16">
-		<h1>Projects</h1>
-		<ul>
-			{projects.map(project => (
-				<li><a href={`/projects/${project.id}`}>{project.data.title}</a></li>
-			))}
-		</ul>
-	</main>
+	<main class="container mx-auto">
+		<!-- INTRO SECTION -->
+		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
+			<LightRays client:idle />
+			<div></div>
+			<div class="text-center">
+				<BlurFade client:load>
+					<h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
+						<AuroraText>
+							Projects
+						</AuroraText>
+					</h1>
+				</BlurFade>
+				<BlurFade client:load delay={.5} direction="left">
+					<p class="text-muted-foreground text-xl mt-4">
+						A selection of my most recent, relevant or fun projects.
+					</p>
+				</BlurFade>
+				<BlurFade client:load delay={.75}>
+					<p class="text-muted-foreground text-xl">
+						Feel free to check out the projects' additional links for more info.
+					</p>
+				</BlurFade>
+			</div>
+
+			<ButtonScrollTo client:idle
+											targetSelector="[data-feature='0']" variant="outline" size="icon"
+											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
+				<Icon name="lucide:arrow-down" />
+			</ButtonScrollTo>
+		</section>
+		<!-- END INTRO SECTION -->
+
+		<!-- FEATURED PROJECTS -->
+		{featuredProjects.map((project, index) => (
+			<section data-feature={index} class="w-full h-svh flex justify-between items-center flex-col p-2">
+				<div></div>
+				<div class="text-center">
+					<BlurFade client:visible>
+						<h2 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
+							<AuroraText>
+								{project.data.title}
+							</AuroraText>
+						</h2>
+					</BlurFade>
+					<BlurFade client:visible delay={.5} direction="left">
+						<p class="text-muted-foreground text-xl mt-4">
+							{project.data.description}
+						</p>
+					</BlurFade>
+
+					<a href={`/projects/${project.id}`} class={cn(buttonVariants({ variant: 'default', size: 'lg' }), 'mt-12 text-lg')}>
+						Explore Project
+						<Icon name="lucide:arrow-right" class="inline-block ml-2" />
+					</a>
+				</div>
+
+				<ButtonScrollTo client:visible
+												targetSelector={(index === featuredProjects.length - 1) ? `#projects-xr` : `[data-feature="${index + 1}"]`}
+												variant="outline" size="icon"
+												className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
+					<Icon name="lucide:arrow-down" />
+				</ButtonScrollTo>
+			</section>
+		))}
+
+		<!-- END FEATURED PROJECTS -->
+
+		<!-- XR PROJECTS -->
+		<section id="projects-xr" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+				<AuroraText client:visible>XR</AuroraText>
+				Projects
+			</h2>
+			<div class="mt-4">
+				<ProjectsGrid projects={xrProjects} />
+			</div>
+		</section>
+		<!-- END XR PROJECTS -->
+
+		<!-- WEB PROJECTS -->
+		<section id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+				<AuroraText client:visible>Web</AuroraText>
+				Projects
+			</h2>
+			<div class="mt-4">
+				<ProjectsGrid projects={webProjects} />
+			</div>
+		</section>
+		<!-- END WEB PROJECTS -->
+
+		<!-- ALL PROJECTS -->
+		<section id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+				<AuroraText client:visible>All</AuroraText>
+				Projects
+			</h2>
+			<div class="mt-4">
+				<ProjectsGrid projects={projects} />
+			</div>
+		</section>
+		<!-- END ALL PROJECTS -->
 </RootLayout>

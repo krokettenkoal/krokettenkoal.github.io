@@ -7,7 +7,7 @@ import { AuroraText } from '@/components/ui/aurora-text';
 import { LightRays } from '@/components/ui/light-rays';
 import ProjectsGrid from '@/components/astro/projects-grid.astro';
 import { getCollection } from 'astro:content';
-const featuredProjects = await getCollection('projects', ({ data }) => data.featured);
+const featuredProjects = (await getCollection('projects', ({ data }) => data.featured)).sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
 <RootLayout title="Home">
@@ -18,7 +18,9 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 			<div class="text-center">
 				<BlurFade client:load>
 					<h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
-						Hello there! 👋
+						<AuroraText>
+							Hello there!
+						</AuroraText>
 					</h1>
 				</BlurFade>
 				<BlurFade client:load delay={.5} direction="left">
@@ -37,13 +39,13 @@ const featuredProjects = await getCollection('projects', ({ data }) => data.feat
 			</div>
 
 			<ButtonScrollTo client:idle
-											targetSelector="#featured-projects" variant="outline" size="icon"
+											targetSelector="#projects-featured" variant="outline" size="icon"
 											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
 				<Icon name="lucide:arrow-down" />
 			</ButtonScrollTo>
 		</section>
 
-		<section id="featured-projects" class="w-full p-2 my-20">
+		<section id="projects-featured" class="w-full p-2 my-20 scroll-m-18">
 			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
 				Featured
 				<AuroraText client:visible>Projects</AuroraText>
