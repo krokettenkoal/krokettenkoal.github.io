@@ -9,7 +9,7 @@ interface Props {
 
 const { projects } = Astro.props;
 
-const gridSizes = {
+const gridSizes: Record<number, string> = {
 	1: 'col-span-3 lg:col-span-1',
 	2: 'col-span-3 lg:col-span-2',
 	3: 'col-span-3 lg:col-span-3'
@@ -26,7 +26,7 @@ const gridSizes = {
 			description={project.data.description}
 			cta="Explore project"
 			tags={project.data.tags}
-			className={gridSizes[project.data.gridSize]}
+			className={gridSizes[project.data.gridSize] ?? gridSizes[1]!}
 		>
 			<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
 						 class="w-full h-full object-cover object-center" />

@@ -13,7 +13,7 @@ const projects = defineCollection({
 		date: z.string().date(),
 		tags: z.enum(projectTags).array(),
 		featured: z.boolean().default(false),
-		youtube: z.string().url().optional(),
+		youtube: z.string().optional(),
 		gridSize: z.number().min(1).max(3).default(1),
 		relatedProjects: z.array(reference('projects'))
 	})

@@ -1,16 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
 import RootLayout from '@/layouts/root-layout.astro';
 import ProjectsGrid from '@/components/astro/projects-grid.astro';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Icon } from 'astro-icon/components';
-import { buttonVariants } from '@/components/ui/button';
-import { getCollection } from 'astro:content';
 import { LightRays } from '@/components/ui/light-rays';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { ButtonScrollTo } from '@/components/react/button-scroll-to';
-import { cn } from '@/lib/utils';
-import { YouTube } from 'astro-embed';
-import { Image } from 'astro:assets';
+import { ProjectsCarousel } from '@/components/react/projects-carousel';
 const projects = (await getCollection('projects')).sort((a, b) => (new Date(b.data.date)).getTime() - (new Date(a.data.date)).getTime());
 const featuredProjects = projects.filter(project => project.data.featured);
 const xrProjects = projects.filter(project => project.data.tags.includes('xr'));
@@ -18,7 +15,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 ---
 
 <RootLayout title="Projects">
-	<main class="container mx-auto">
+	<main>
 		<!-- INTRO SECTION -->
 		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
 			<LightRays client:idle />
@@ -44,7 +41,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 			</div>
 
 			<ButtonScrollTo client:idle
-											targetSelector="[data-feature='0']" variant="outline" size="icon"
+											targetSelector="#projects-featured" variant="outline" size="icon"
 											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
 				<Icon name="lucide:arrow-down" />
 			</ButtonScrollTo>
@@ -52,79 +49,47 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 		<!-- END INTRO SECTION -->
 
 		<!-- FEATURED PROJECTS -->
-		{featuredProjects.map((project, index) => (
-			<section data-feature={index} class="relative w-full h-svh flex justify-between items-center flex-col p-2">
-				<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
-							 class="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none blur-sm opacity-30 mask-y-from-70% mask-y-to-90%" />
-				<div></div>
-				<div class="text-center">
-					<BlurFade client:visible>
-						<h2 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
-							<AuroraText>
-								{project.data.title}
-							</AuroraText>
-						</h2>
-					</BlurFade>
-					<BlurFade client:visible delay={.5} direction="left">
-						<p class="text-muted-foreground text-xl mt-4">
-							{project.data.description}
-						</p>
-					</BlurFade>
-
-					{project.data.youtube &&
-						<YouTube id={project.data.youtube} class="mx-auto my-12" />}
-
-					<a href={`/projects/${project.id}`}
-						 class={cn(buttonVariants({ variant: 'default', size: 'lg' }), 'mt-8 text-lg')}>
-						Explore Project
-						<Icon name="lucide:arrow-right" class="inline-block ml-2" />
-					</a>
-				</div>
-
-				<ButtonScrollTo client:visible
-												targetSelector={(index === featuredProjects.length - 1) ? `#projects-xr` : `[data-feature="${index + 1}"]`}
-												variant="outline" size="icon"
-												className="size-12 rounded-full">
-					<Icon name="lucide:arrow-down" />
-				</ButtonScrollTo>
-			</section>
-		))}
-
+		<section id="projects-featured" class="scroll-m-18">
+			<ProjectsCarousel client:visible projects={featuredProjects} className="h-svh" />
+		</section>
 		<!-- END FEATURED PROJECTS -->
 
-		<!-- XR PROJECTS -->
-		<section id="projects-xr" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
-			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
-				<AuroraText client:visible>XR</AuroraText>
-				Projects
-			</h2>
-			<div class="mt-4">
-				<ProjectsGrid projects={xrProjects} />
+		<section class="container mx-auto">
+			<!-- XR PROJECTS -->
+			<div id="projects-xr" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+					<AuroraText client:visible>XR</AuroraText>
+					Projects
+				</h2>
+				<div class="mt-4">
+					<ProjectsGrid projects={xrProjects} />
+				</div>
 			</div>
-		</section>
-		<!-- END XR PROJECTS -->
+			<!-- END XR PROJECTS -->
 
-		<!-- WEB PROJECTS -->
-		<section id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
-			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
-				<AuroraText client:visible>Web</AuroraText>
-				Projects
-			</h2>
-			<div class="mt-4">
-				<ProjectsGrid projects={webProjects} />
+			<!-- WEB PROJECTS -->
+			<div id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+					<AuroraText client:visible>Web</AuroraText>
+					Projects
+				</h2>
+				<div class="mt-4">
+					<ProjectsGrid projects={webProjects} />
+				</div>
 			</div>
-		</section>
-		<!-- END WEB PROJECTS -->
+			<!-- END WEB PROJECTS -->
 
-		<!-- ALL PROJECTS -->
-		<section id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
-			<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
-				<AuroraText client:visible>All</AuroraText>
-				Projects
-			</h2>
-			<div class="mt-4">
-				<ProjectsGrid projects={projects} />
+			<!-- ALL PROJECTS -->
+			<div id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+					<AuroraText client:visible>All</AuroraText>
+					Projects
+				</h2>
+				<div class="mt-4">
+					<ProjectsGrid projects={projects} />
+				</div>
 			</div>
 		</section>
 		<!-- END ALL PROJECTS -->
+	</main>
 </RootLayout>
