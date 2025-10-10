@@ -3,11 +3,40 @@ import '@fontsource/geist-sans';
 import '../styles/global.css';
 import { SEO } from 'astro-seo';
 import { ModeToggle } from '@/components/react/mode-toggle';
+import { Icon } from 'astro-icon/components';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button.tsx';
 
 interface Props {
 	title?: string;
 	description?: string;
 }
+
+interface NavLink {
+	href: string;
+	label: string;
+	iconName: string;
+	isActive?: (pathname: string) => boolean;
+}
+
+const navLinks: NavLink[] = [
+	{
+		href: '/',
+		label: 'Home',
+		iconName: 'lucide:home'
+	},
+	{
+		href: '/projects',
+		label: 'Projects',
+		iconName: 'lucide:folder-open',
+		isActive: (pathname) => pathname.startsWith('/projects')
+	},
+	{
+		href: '/bio',
+		label: 'Bio',
+		iconName: 'lucide:user'
+	}
+];
 
 const { title, description = 'I create stuff on my laptop.' } = Astro.props;
 const { pathname } = Astro.url;
@@ -42,21 +71,25 @@ const { pathname } = Astro.url;
 	<SEO title={title} titleTemplate="%s | Cajetan Grill" titleDefault="Cajetan Grill" description={description} />
 	</head>
 <body>
-<header class="fixed top-0 left-0 right-0 h-16 backdrop-blur-lg z-50 border-b-2">
+<header
+	class="fixed bg-background/60 max-lg:bottom-0 lg:top-0 left-0 right-0 h-16 backdrop-blur-xl z-50 max-lg:border-t-2 lg:border-b-2">
 	<div class="h-full flex justify-between items-center py-2 px-5">
 		<div></div>
-		<nav>
+		<nav class="grow">
 			<ul
-				class="flex justify-center items-center gap-6 [&_a]:text-muted-foreground [&_a]:transition-colors [&_a]:hover:underline [&_a]:hover:text-foreground [&_a.active]:text-foreground [&_a.active]:font-semibold [&_a.active]:underline [&_a.active]:underline-offset-4 [&_a.active]:decoration-2">
-				<li>
-					<a href="/" class:list={[{ 'active': (pathname === '/') }]}>Home</a>
-				</li>
-				<li>
-					<a href="/projects" class:list={[{ 'active': (pathname.startsWith('/projects')) }]}>Projects</a>
-				</li>
-				<li>
-					<a href="/bio" class:list={[{ 'active': (pathname === '/bio') }]}>Bio</a>
-				</li>
+				class="flex justify-center items-center gap-10 lg:gap-8"
+			>
+				{navLinks.map(navLink => (
+					<li>
+						<a href={navLink.href}
+							 class={cn(buttonVariants({ variant: 'link' }), ['flex items-center gap-1 text-muted-foreground transition-colors hover:underline hover:text-foreground', { 'text-foreground font-semibold underline underline-offset-4 decoration-2': (navLink.isActive?.(pathname) ?? pathname === navLink.href) }])}>
+							<Icon name={navLink.iconName} class="size-6 lg:size-4" />
+							<span class="hidden md:block">
+								{navLink.label}
+							</span>
+						</a>
+					</li>
+				))}
 			</ul>
 		</nav>
 		<div>
