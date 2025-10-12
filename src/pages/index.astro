@@ -53,6 +53,10 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.fea
 			<div class="mt-4">
 				<ProjectsGrid projects={featuredProjects} />
 			</div>
+			<a href="/projects" class="mt-2 text-lg underline inline-block">
+				View all projects
+				<Icon name="lucide:arrow-right" class="inline-block size-4 ml-1" />
+			</a>
 		</section>
 	</main>
 </RootLayout>
