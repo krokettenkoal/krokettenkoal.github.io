@@ -50,29 +50,36 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 			))}
 
 			<div className="container mx-auto">
-				<Carousel plugins={[Autoplay({delay: 7000})]} setApi={setApi} {...restProps}>
+				<Carousel plugins={[Autoplay({ delay: 7000 })]} setApi={setApi} {...restProps}>
 					<CarouselContent className="h-svh">
 						{projects.map((project) => (
 							<CarouselItem key={project.id} className="lg:my-auto">
 
 								<BlurFade inView={true} className="mt-8 mb-6 lg:hidden">
-									<h2 className="scroll-m-20 px-2 text-5xl font-black tracking-tight text-balance lg:text-6xl uppercase">
-										<AuroraText>
+									<h2
+										className="scroll-m-20 px-2 text-5xl font-black tracking-tight text-balance lg:text-6xl uppercase">
+										<AuroraText colors={project.data.colors}>
 											{project.data.title}
 										</AuroraText>
 									</h2>
 								</BlurFade>
 
-								{project.data.youtube && (
-									<div className="mb-10 lg:mb-0 lg:w-1/2 lg:float-left lg:mr-12">
+								<div
+									className="mb-10 w-full max-h-[40vh] overflow-clip lg:mb-0 lg:w-[45%] lg:float-left lg:mr-12 lg:rounded-md">
+									{project.data.youtube ? (
 										<LiteYouTubeEmbed id={project.data.youtube} title={project.data.title} />
-									</div>
-								)}
+									) : (
+										<img src={project.data.thumbnail.src} width={project.data.thumbnail.width}
+												 height={project.data.thumbnail.height} alt={project.data.thumbnailAlt ?? project.data.title}
+												 loading="lazy" className="w-full h-full object-cover object-center" />
+									)}
+								</div>
 
 								<div className="max-w-[120ch] my-auto">
 									<BlurFade inView={true} className="hidden lg:block">
-										<h2 className="scroll-m-20 px-2 text-5xl font-black tracking-tight text-balance lg:text-6xl uppercase">
-											<AuroraText>
+										<h2
+											className="scroll-m-20 px-2 text-5xl font-black tracking-tight text-balance lg:text-6xl uppercase">
+											<AuroraText colors={project.data.colors}>
 												{project.data.title}
 											</AuroraText>
 										</h2>
@@ -85,11 +92,11 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 
 									<div className="flex justify-center lg:block">
 
-									<a href={`/projects/${project.id}`}
-										 className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'mt-8 text-lg select-none')}>
-										Explore Project
-										<Icon icon="lucide:arrow-right" className="inline-block ml-2" />
-									</a>
+										<a href={`/projects/${project.id}`}
+											 className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'mt-8 text-lg select-none')}>
+											Explore Project
+											<Icon icon="lucide:arrow-right" className="inline-block ml-2" />
+										</a>
 									</div>
 								</div>
 							</CarouselItem>
