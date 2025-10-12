@@ -17,7 +17,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 <RootLayout title="Projects">
 	<main>
 		<!-- INTRO SECTION -->
-		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
+		<section class="w-full h-hero flex justify-between items-center flex-col p-2">
 			<LightRays client:idle />
 			<div></div>
 			<div class="text-center">
@@ -42,7 +42,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 
 			<ButtonScrollTo client:idle
 											targetSelector="#projects-featured" variant="outline" size="icon"
-											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
+											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
 				<Icon name="lucide:arrow-down" />
 			</ButtonScrollTo>
 		</section>
@@ -50,7 +50,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 
 		<!-- FEATURED PROJECTS -->
 		<section id="projects-featured" class="scroll-m-18">
-			<ProjectsCarousel client:visible projects={featuredProjects} className="h-svh" />
+			<ProjectsCarousel client:visible projects={featuredProjects} className="h-hero" />
 		</section>
 		<!-- END FEATURED PROJECTS -->
 

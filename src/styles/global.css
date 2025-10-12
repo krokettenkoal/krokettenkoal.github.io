@@ -114,10 +114,11 @@
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
     --animate-aurora: aurora 8s ease-in-out infinite alternate;
+    --animate-bounce-offset: bounce-offset 5s infinite;
 
     @keyframes aurora {
         0% {
-            background-position: 0% 50%;
+            background-position: 0 50%;
             transform: rotate(-5deg) scale(0.9);
         }
         25% {
@@ -129,14 +130,38 @@
             transform: rotate(-3deg) scale(0.95);
         }
         75% {
-            background-position: 50% 0%;
+            background-position: 50% 0;
             transform: rotate(3deg) scale(1.05);
         }
         100% {
-            background-position: 0% 50%;
+            background-position: 0 50%;
             transform: rotate(-5deg) scale(0.9);
         }
     }
+
+    @keyframes bounce-offset {
+        90% {
+            transform: translateY(-25%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+
+        0%, 100% {
+            transform: none;
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+}
+
+:root {
+    --header-height: calc(var(--spacing) * 16);
+}
+
+@utility h-header {
+    height: var(--header-height);
+}
+
+@utility h-hero {
+    height: calc(100dvh - var(--header-height));
 }
 
 @layer base {

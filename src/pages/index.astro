@@ -12,7 +12,7 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.fea
 
 <RootLayout title="Home">
 	<main class="container mx-auto">
-		<section class="w-full h-svh flex justify-between items-center flex-col p-2">
+		<section class="w-full h-hero flex justify-between items-center flex-col p-2">
 			<LightRays client:idle />
 			<div></div>
 			<div class="text-center">
@@ -40,7 +40,7 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.fea
 
 			<ButtonScrollTo client:idle
 											targetSelector="#projects-featured" variant="outline" size="icon"
-											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce">
+											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
 				<Icon name="lucide:arrow-down" />
 			</ButtonScrollTo>
 		</section>
