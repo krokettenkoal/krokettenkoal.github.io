@@ -16,6 +16,7 @@ import { buttonVariants } from '@/components/ui/button';
 import * as React from 'react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { TagList } from '@/components/react/tag-list.tsx';
 
 type ProjectsCarouselProps = React.ComponentProps<typeof Carousel> & {
 	projects: CollectionEntry<'projects'>[];
@@ -84,6 +85,9 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 										</AuroraText>
 									</h2>
 								</BlurFade>
+
+								<TagList tags={project.data.tags} className="p-2 lg:p-0 lg:mt-2" variant="outline" />
+
 								<BlurFade inView={true} delay={.5} direction="left">
 									<p className="text-muted-foreground text-lg lg:text-xl lg:mt-4 p-2">
 										{project.data.description}
