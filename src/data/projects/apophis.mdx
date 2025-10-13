@@ -19,6 +19,66 @@ relatedProjects:
   - twisted-funland
   - finding-emo
 ---
+import { Image } from 'astro:assets';
+import imgRender from '@/assets/projects/apophis/thumbnail.jpg';
+import imgVehicle from '@/assets/projects/apophis/vehicle.webp';
 
-Apophis is a new kind of VR experience. Explore, collect, restore and progress through a hostile, fractured world to
-uncover the truth about your lost friend's whereabouts.
+## Overview
+
+Imagine a world suspended in the vast void of space, shaped by surreal organic forms and shimmering crystalline structures.
+In Apophis, players don’t just explore this mysterious landscape—they unravel a tale of discovery, survival, and innovation.
+This VR adventure combines exploration, resource management, and immersive storytelling to create an experience like no other.
+
+<figure>
+	<Image src={imgRender} alt="A render of the in-game world of Apophis" class="w-auto min-h-[30vh] max-h-[40vh]" />
+	<figcaption>A render of the in-game world of Apophis</figcaption>
+</figure>
+
+At the heart of Apophis lies the desire to create a fresh and captivating VR experience.
+Players take on the role of a scientist piloting a versatile vehicle designed for exploration and resource collection.
+_Their journey?_ To traverse an alien world filled with obstacles, puzzles, and secrets, all while facing a looming threat embodied by a mischievous off-screen antagonist.
+
+## Gameplay
+Designed for the Meta Quest 3 VR headset, Apophis prioritizes simple, intuitive gameplay to ensure accessibility for new VR players while still captivating seasoned explorers.
+The single-player experience offers a smooth and immersive world that encourages players to advance at their own pace.
+
+<figure>
+	<Image src={imgVehicle} alt="An outside look at the player's vehicle" class="w-auto min-h-[30vh] max-h-[40vh]" />
+	<figcaption>An outside look at the player's vehicle</figcaption>
+</figure>
+
+The gameplay in Apophis revolves around three primary elements:
+1. **Exploration:** Navigate four distinct areas, each presenting unique environments, dangers, and opportunities.
+2. **Resource Management:** Destroy certain parts of the world to gather resources and unlock new paths. Players can use harvested materials to replicate key items, progressing further into the game.
+3. **Obstacle Navigation:** Utilize the vehicle’s various modes, including a gravity gun, laser, and flamethrower, to overcome different challenges.
+
+Each obstacle requires players to think critically and leverage their resources wisely.
+Tutorials guide players when encountering new mechanics, ensuring a seamless and engaging learning curve.
+
+## Development
+
+Apophis was developed as part of the master class _Augmented & Virtual Reality_ within the _Interactive Technologies_ master program at UAS St. Pöten during the 2024 summer and winter semesters.
+
+My roles in the project were audio lead, UI/PX lead and developer. I was responsible for conceptualizing and implementing the game's audio and crafting an intuitive user interface and an enjoyable player experience.
+Additionally, I contributed to various development tasks, including gameplay mechanics and system integration.
+As for tools, everything was developed in Unity using C#. Audio was implemented using the Wwise middleware. The 3D team used a combination of Maya and Blender for creating our assets. Furthermore, Notion was used for project management.
+
+### Team
+
+- [**Lukas Heinzl**](https://lheinzl.com): project lead, development lead
+- **Cajetan Grill (me):** audio lead, UI/PX lead, development
+- **Dawid Lewandowski:** world building, level design, 3D
+- **Srdjan Pajic:** story lead, animation, 3D
+- **Ewelina Pawlik:** 3D lead, environment design
+- **Martin Steinmetz:** game design lead, development
+- **Isabella Willmann:** story, marketing, graphics
+
+Supported by:
+
+- **Alma Dzehverovic:** audio / sound design
+- **Arno Enk:** 3D modelling
+- **Finn Schneppenheim:** logo, UI design
+- **Manuel Bonell:** project supervision
+- **Flavia Mazzanti:** project supervision
+- **Matthias Husinsky:** project supervision, head of master class
+- **Peter Judmaier:** project supervision, deputy head of master class
