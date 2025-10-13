@@ -39,6 +39,7 @@
 	"devDependencies": {
 		"@iconify-json/lucide": "^1.2.68",
 		"@iconify/react": "^6.0.2",
+		"@tailwindcss/typography": "^0.5.19",
 		"@types/react": "^19.2.0",
 		"clsx": "^2.1.1",
 		"tailwind-merge": "^3.3.1",

@@ -1,6 +1,17 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import RootLayout from '@/layouts/root-layout.astro';
+import ProjectsGrid from '@/components/astro/projects-grid.astro';
+import Prose from '@/components/astro/prose.astro';
+import TagList from '@/components/astro/tag-list.astro';
+import { AuroraText } from '@/components/ui/aurora-text';
+import { BlurFade } from '@/components/ui/blur-fade';
+import { Icon } from 'astro-icon/components';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 export async function getStaticPaths() {
 	const projects = await getCollection('projects');
@@ -12,11 +23,61 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+const relatedProjects = await Promise.all(project.data.relatedProjects.map(p => getEntry(p)));
+const projectDate = new Date(project.data.date);
 ---
 
 <RootLayout title={project.data.title} description={project.data.description}>
-	<main class="container mx-auto">
-		<h1>{project.data.title}</h1>
-		<Content />
+	<Image src={project.data.thumbnail} alt="" width={project.data.thumbnail.width} height={project.data.thumbnail.height}
+				 class="fixed inset-0 w-full h-full object-cover object-center -z-10 filter blur-lg opacity-30 saturate-[75%]"
+	/>
+
+	<main class="container mx-auto p-2">
+		<a href="/projects" class={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'my-4')}>
+			<Icon name="lucide:arrow-left" class="inline-block size-4 mr-1" />
+			All Projects
+		</a>
+
+		<article class="max-w-[65ch] my-4 mx-auto lg:my-12">
+			<BlurFade client:load>
+				<h1 class="scroll-m-20 text-5xl font-extrabold tracking-tight text-balance lg:text-6xl">
+					<AuroraText client:load colors={project.data.colors}>
+						{project.data.title}
+					</AuroraText>
+				</h1>
+			</BlurFade>
+
+
+			<BlurFade client:load delay={.5} direction="left">
+				<p class="text-muted-foreground text-xl mt-2">
+					{project.data.description}
+				</p>
+			</BlurFade>
+
+			<TagList class="mt-2 mb-4" tags={project.data.tags} />
+			<p class="text-muted-foreground italic mb-4">Created: {projectDate.toLocaleDateString()}</p>
+
+			{project.data.youtube && (
+				<div class="my-4 -mx-2">
+					<LiteYouTubeEmbed client:load id={project.data.youtube} title={project.data.title} />
+				</div>
+			)}
+
+			<section class="my-8">
+				<Prose class="mx-auto">
+					<Content />
+				</Prose>
+			</section>
+
+		</article>
+		<section id="projects-related" class="my-20 scroll-m-18">
+			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
+				<AuroraText client:visible>Related</AuroraText>
+				Projects
+			</h2>
+			<div class="mt-4 -mx-2">
+				<ProjectsGrid projects={relatedProjects} gridClass="grid-cols-2" cardClass="col-span-2 lg:col-span-1" />
+			</div>
+		</section>
 	</main>
 </RootLayout>

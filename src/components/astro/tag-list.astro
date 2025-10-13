@@ -1,0 +1,22 @@
+---
+import { Badge, badgeVariants } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+import type { VariantProps } from 'class-variance-authority';
+
+interface Props extends VariantProps<typeof badgeVariants> {
+	tags: string[];
+	class?: string;
+}
+
+const { tags, class: className = '', variant } = Astro.props;
+---
+
+{tags?.length && (
+<ul class={cn('flex flex-wrap gap-2', className)}>
+	{tags.map(tag => (
+		<li>
+			<Badge client:visible variant={variant}>{tag}</Badge>
+		</li>
+	))}
+</ul>
+	)}
