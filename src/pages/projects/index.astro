@@ -14,43 +14,32 @@ const xrProjects = projects.filter(project => project.data.tags.includes('xr'));
 const webProjects = projects.filter(project => project.data.tags.includes('web'));
 ---
 
-<RootLayout title="Projects">
+<RootLayout title="Projects" description="A selection of my most recent, relevant or fun projects">
 	<main>
-		<!-- INTRO SECTION -->
-		<section class="w-full h-hero flex justify-between items-center flex-col p-2">
-			<LightRays client:idle />
-			<div></div>
-			<div class="text-center">
+		<!-- FEATURED PROJECTS -->
+		<section id="projects-featured" class="scroll-m-18 relative h-hero flex flex-col justify-between items-center py-2">
+			<hgroup class="p-2 lg:text-center">
 				<BlurFade client:load>
-					<h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
-						<AuroraText>
-							Projects
-						</AuroraText>
+					<h1 class="text-3xl font-black tracking-tight text-balance lg:text-4xl">
+						Projects
 					</h1>
 				</BlurFade>
 				<BlurFade client:load delay={.5} direction="left">
-					<p class="text-muted-foreground text-xl mt-4">
+					<p class="text-muted-foreground text-lg lg:text-xl mt-2">
 						A selection of my most recent, relevant or fun projects.
 					</p>
 				</BlurFade>
-				<BlurFade client:load delay={.75}>
-					<p class="text-muted-foreground text-xl">
-						Feel free to check out the projects' additional links for more info.
-					</p>
-				</BlurFade>
+			</hgroup>
+
+			<ProjectsCarousel client:visible projects={featuredProjects} className="container grow lg:grow-0" />
+
+			<div>
+				<ButtonScrollTo client:idle
+												targetSelector="#projects-xr" variant="outline" size="icon"
+												className="max-lg:hidden size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
+					<Icon name="lucide:arrow-down" />
+				</ButtonScrollTo>
 			</div>
-
-			<ButtonScrollTo client:idle
-											targetSelector="#projects-featured" variant="outline" size="icon"
-											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
-				<Icon name="lucide:arrow-down" />
-			</ButtonScrollTo>
-		</section>
-		<!-- END INTRO SECTION -->
-
-		<!-- FEATURED PROJECTS -->
-		<section id="projects-featured" class="scroll-m-18">
-			<ProjectsCarousel client:visible projects={featuredProjects} className="h-hero" />
 		</section>
 		<!-- END FEATURED PROJECTS -->
 
