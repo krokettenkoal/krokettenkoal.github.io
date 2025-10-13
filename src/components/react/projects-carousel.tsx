@@ -43,7 +43,7 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 						 alt={project.data.thumbnailAlt ?? project.data.title}
 						 loading="lazy"
 						 className={cn(
-							 'absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none blur-sm mask-y-from-70% mask-y-to-90% opacity-0 transition-opacity duration-500',
+							 'absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none mask-y-from-70% mask-y-to-90% filter saturate-[75%] blur-lg opacity-0 transition-opacity duration-500',
 							 { 'opacity-30': idx === current }
 						 )}
 				/>
