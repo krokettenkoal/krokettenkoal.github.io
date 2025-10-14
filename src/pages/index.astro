@@ -50,7 +50,7 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.fea
 				Featured
 				<AuroraText client:visible>Projects</AuroraText>
 			</h2>
-			<div class="mt-4">
+			<div class="mt-4 -mx-2">
 				<ProjectsGrid projects={featuredProjects} />
 			</div>
 			<a href="/projects" class="mt-2 text-lg underline inline-block">
