@@ -8,6 +8,6 @@ const { class: className = '' } = Astro.props;
 ---
 
 <div
-	class={cn('prose prose-neutral lg:prose-xl dark:prose-invert prose-h2:font-semibold prose-h2:text-3xl prose-h2:border-b prose-h2:pb-2 prose-a:underline prose-p:text-justify prose-figure:my-8 prose-figure:-mx-2 prose-figcaption:text-muted-foreground prose-figcaption:text-center lg:prose-img:rounded-xl prose-img:object-cover prose-img:object-center', className)}>
+	class={cn('prose prose-neutral lg:prose-xl dark:prose-invert prose-h2:font-semibold prose-h2:text-3xl prose-h2:border-b prose-h2:pb-2 prose-h2:mb-2 prose-a:underline prose-figure:my-8 prose-figure:-mx-2 prose-figcaption:text-muted-foreground prose-figcaption:text-center lg:prose-img:rounded-xl prose-img:object-cover prose-img:object-center', className)}>
 	<slot />
 </div>

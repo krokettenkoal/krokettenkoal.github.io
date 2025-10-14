@@ -49,7 +49,7 @@ const projectDate = new Date(project.data.date);
 
 
 			<BlurFade client:load delay={.5} direction="left">
-				<p class="text-muted-foreground text-xl mt-2">
+				<p class="text-muted-foreground text-lg lg:text-xl mt-2">
 					{project.data.description}
 				</p>
 			</BlurFade>
@@ -58,19 +58,19 @@ const projectDate = new Date(project.data.date);
 			<p class="text-muted-foreground italic mb-4">Created: {projectDate.toLocaleDateString()}</p>
 
 			{project.data.youtube && (
-				<div class="my-4 -mx-2">
+				<div class="my-8 -mx-2">
 					<LiteYouTubeEmbed client:load id={project.data.youtube} title={project.data.title} />
 				</div>
 			)}
 
-			<section class="my-8">
+			<section>
 				<Prose class="mx-auto">
 					<Content />
 				</Prose>
 			</section>
 
 		</article>
-		<section id="projects-related" class="my-20 scroll-m-18">
+		<section id="projects-related" class="mt-32 scroll-m-18">
 			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
 				<AuroraText client:visible>Related</AuroraText>
 				Projects
