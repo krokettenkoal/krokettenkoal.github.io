@@ -35,7 +35,7 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 
 			<div>
 				<ButtonScrollTo client:idle
-												targetSelector="#projects-xr" variant="outline" size="icon"
+												targetSelector="#projects-all" variant="outline" size="icon"
 												className="max-lg:hidden size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
 					<Icon name="lucide:arrow-down" />
 				</ButtonScrollTo>
@@ -44,32 +44,8 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 		<!-- END FEATURED PROJECTS -->
 
 		<section class="container mx-auto">
-			<!-- XR PROJECTS -->
-			<div id="projects-xr" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
-				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
-					<AuroraText client:visible>XR</AuroraText>
-					Projects
-				</h2>
-				<div class="mt-4 -mx-2">
-					<ProjectsGridAstro projects={xrProjects} />
-				</div>
-			</div>
-			<!-- END XR PROJECTS -->
-
-			<!-- WEB PROJECTS -->
-			<div id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
-				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
-					<AuroraText client:visible>Web</AuroraText>
-					Projects
-				</h2>
-				<div class="mt-4 -mx-2">
-					<ProjectsGridAstro projects={webProjects} />
-				</div>
-			</div>
-			<!-- END WEB PROJECTS -->
-
 			<!-- ALL PROJECTS -->
-			<div id="projects-web" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
+			<div id="projects-all" class="w-full p-2 scroll-m-18 my-20 lg:my-32">
 				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
 					<AuroraText client:visible>All</AuroraText>
 					Projects
