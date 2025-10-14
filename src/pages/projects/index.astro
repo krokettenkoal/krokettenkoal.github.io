@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import RootLayout from '@/layouts/root-layout.astro';
-import ProjectsGrid from '@/components/astro/projects-grid.astro';
+import ProjectsGridAstro from '@/components/astro/projects-grid.astro';
+import { ProjectsGrid as ProjectsGridReact } from '@/components/react/projects-grid';
 import { AuroraText } from '@/components/ui/aurora-text';
 import { Icon } from 'astro-icon/components';
-import { LightRays } from '@/components/ui/light-rays';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { ButtonScrollTo } from '@/components/react/button-scroll-to';
 import { ProjectsCarousel } from '@/components/react/projects-carousel';
@@ -50,8 +50,8 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 					<AuroraText client:visible>XR</AuroraText>
 					Projects
 				</h2>
-				<div class="mt-4">
-					<ProjectsGrid projects={xrProjects} />
+				<div class="mt-4 -mx-2">
+					<ProjectsGridAstro projects={xrProjects} />
 				</div>
 			</div>
 			<!-- END XR PROJECTS -->
@@ -62,8 +62,8 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 					<AuroraText client:visible>Web</AuroraText>
 					Projects
 				</h2>
-				<div class="mt-4">
-					<ProjectsGrid projects={webProjects} />
+				<div class="mt-4 -mx-2">
+					<ProjectsGridAstro projects={webProjects} />
 				</div>
 			</div>
 			<!-- END WEB PROJECTS -->
@@ -74,8 +74,8 @@ const webProjects = projects.filter(project => project.data.tags.includes('web')
 					<AuroraText client:visible>All</AuroraText>
 					Projects
 				</h2>
-				<div class="mt-4">
-					<ProjectsGrid projects={projects} />
+				<div class="mt-4 -mx-2">
+					<ProjectsGridReact client:visible projects={projects} showTagFilter={true} />
 				</div>
 			</div>
 		</section>

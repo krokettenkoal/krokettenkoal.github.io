@@ -1,8 +1,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import color from 'color-string';
-
-export const projectTags = ['web', 'game', 'xr', 'unity', 'wwise', 'mobile'] as const;
+import { projectTags } from '@/lib/types/content.ts';
 
 function colorValidator(val: string): boolean {
 	try {
