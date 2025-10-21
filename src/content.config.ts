@@ -18,6 +18,7 @@ const projects = defineCollection({
 		description: z.string(),
 		thumbnail: image(),
 		thumbnailAlt: z.string().optional(),
+		background: image().optional(),
 		date: z.string().date(),
 		tags: z.enum(projectTags).array(),
 		featured: z.boolean().default(false),
