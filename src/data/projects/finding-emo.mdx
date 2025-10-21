@@ -2,7 +2,9 @@
 title: "Finding Emo"
 description: "Finding Emo is an immersive VR experience where players step into a dark void and interact with seven glowing elements, each representing a different emotion."
 thumbnail: "@/assets/projects/finding-emo/thumbnail.webp"
+background: "@/assets/projects/finding-emo/frame_01.png"
 date: "2024-06-30"
+youtube: "rRYahPG_l_w"
 tags:
   - xr
   - unity
@@ -14,6 +16,46 @@ relatedProjects:
   - twisted-funland
 ---
 
-Finding Emo is an immersive VR experience where players step into a dark void and interact with seven glowing elements,
-each representing a different emotion.
-As players manipulate these elements, they create evolving soundscapes, shaping a unique auditory and visual journey.
+## Overview
+
+Finding Emo invites players into a mysterious virtual reality world built with Unity and Wwise, where the boundaries between sound, emotion, and environment blur.
+This project was created during the _Virtual Music Space_ workshop at the _Creative Media Summer School_ at UAS St. Pölten by a dedicated team of **13 composers and audio engineers** and **3 developers and software engineers**, realized within just **5 days**.
+
+The journey begins in a dark void, where players find themselves standing in shallow water.
+Before them, a strange energy fractures into seven glowing elements, each embodying a distinct emotion: anger, fear, joy, disgust, disdain, surprise, and grief.
+The experience starts with an enveloping room tone, but as players lift the glowing items from the water, each item reveals its own evocative soundtrack.
+The sounds become richer and more complex as the objects are rotated, introducing up to three additional layers of sound.
+Returning the objects to their initial state simplifies the sound to its base layer, and submerging them back into the water silences them entirely.
+
+In this ever-changing sonic landscape, players are free to place and arrange the emotional elements as they wish, crafting their own personal symphony.
+Finding Emo is not a game; it’s an exploration of emotion through sound and interaction, offering a deeply personal and reflective VR experience where every choice alters the auditory and visual tapestry around them.
+
+## Development
+
+Finding Emo utilizes Unity with the XR Interaction Toolkit, incorporating hand tracking for enhanced interactivity.
+The audio environment is managed using Wwise as the audio middleware.
+Each emotional element continuously plays its soundtrack, which is low-passed and silenced when submerged underwater.
+
+The rotational movement of each element is tracked and linked to a Wwise RTPC, modulating the intensity of additional sound layers.
+Spatial audio is achieved using the Reflect and Convolution Reverb plugins, with rendering and binauralization handled by the Meta XR Presence SDK, ensuring a fully immersive auditory experience.
+
+## Team
+
+### Audio
+- Kaiser Gabriel - Audio Lead
+- Askar Ali & Pfeiffer Lukas - Disdain
+- Dzehverovic Alma - Fear
+- Kaiser Gabriel & Artner Dominik - Disgust
+- Mayer Konstantin - Grief
+- Moisl Jakob & Brandstetter Mario - Anger
+- Schönfeldinger Leonie & Morgenroth Daniel - Surprise
+- Weber Désirée - Joy
+
+### Development & Implementation
+- Heinzl Lukas & Steinmetz Martin - Unity Development
+- Grill Cajetan - Audio Development & Implementation
+- Pfeiffer Paul - Wwise Implementation
+
+### Supervisors
+- Aichinger Thomas
+- Schmellenkamp Oliver
