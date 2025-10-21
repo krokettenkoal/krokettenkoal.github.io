@@ -17,6 +17,7 @@ import * as React from 'react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { TagList } from '@/components/react/tag-list.tsx';
+import { CarouselIndicators } from '@/components/react/carousel-indicators.tsx';
 
 type ProjectsCarouselProps = React.ComponentProps<typeof Carousel> & {
 	projects: CollectionEntry<'projects'>[];
@@ -106,17 +107,7 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 					))}
 				</CarouselContent>
 
-				<ul className="flex justify-center items-center gap-4 mt-8 lg:mt-0">
-					{projects.map((_project, idx) => (
-						<li key={idx}>
-							<button onClick={() => api?.scrollTo(idx)	}
-											className={cn('cursor-pointer text-muted-foreground text-xs hover:text-foreground transition-all', { 'scale-125 text-foreground': current === idx })}>
-								●
-							</button>
-						</li>
-					))}
-				</ul>
-
+				<CarouselIndicators className="mt-0 lg:mt-8" />
 				<CarouselPrevious className="hidden lg:inline-flex" />
 				<CarouselNext className="hidden lg:inline-flex" />
 			</Carousel>
