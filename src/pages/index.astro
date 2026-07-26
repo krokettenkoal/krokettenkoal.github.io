@@ -19,7 +19,7 @@ const featuredProjects = (
         <section class="w-full h-hero flex justify-between items-center flex-col p-2">
             <LightRays client:idle/>
             <div></div>
-            <div class="text-center">
+            <div class="text-center max-w-[65ch]">
                 <BlurFade client:load>
                     <h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
                         <AuroraText>
@@ -28,20 +28,20 @@ const featuredProjects = (
                     </h1>
                 </BlurFade>
                 <BlurFade client:load delay={.5} direction="left">
-                    <p class="text-muted-foreground text-xl mt-4">
+                    <p class="text-muted-foreground text-lg mt-6">
                         Thanks for stopping by. My name is Cajetan Grill, but you can call me
                          <AuroraText>&nbsp;Charlie</AuroraText>
                         .
                     </p>
                 </BlurFade>
-                <BlurFade client:load delay={1} direction="left">
-                    <p class="text-muted-foreground text-xl mt-2">
+                <BlurFade client:load delay={1.5} direction="left">
+                    <p class="text-muted-foreground text-lg mt-2">
                         I am a software engineer and XR developer based in Austria. I love creating immersive
                         experiences and cutting-edge user interfaces.
                     </p>
                 </BlurFade>
-                <BlurFade client:load delay={1.5}>
-                    <p class="text-muted-foreground text-xl mt-2">
+                <BlurFade client:load delay={2.5}>
+                    <p class="text-muted-foreground text-lg mt-2">
                         Feel free to look around or jump to my <a href="/projects"
                                                                   class="underline underline-offset-2 decoration-2">projects</a>
                         &nbsp;or&nbsp;
