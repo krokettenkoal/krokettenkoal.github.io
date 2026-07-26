@@ -1,67 +1,75 @@
 ---
 import RootLayout from '@/layouts/root-layout.astro';
-import { ButtonScrollTo } from '@/components/react/button-scroll-to';
-import { Icon } from 'astro-icon/components';
-import { BlurFade } from '@/components/ui/blur-fade';
-import { AuroraText } from '@/components/ui/aurora-text';
-import { LightRays } from '@/components/ui/light-rays';
+import {ButtonScrollTo} from '@/components/react/button-scroll-to';
+import {Icon} from 'astro-icon/components';
+import {BlurFade} from '@/components/ui/blur-fade';
+import {AuroraText} from '@/components/ui/aurora-text';
+import {LightRays} from '@/components/ui/light-rays';
 import ProjectsGrid from '@/components/astro/projects-grid.astro';
-import { getCollection } from 'astro:content';
-const featuredProjects = (await getCollection('projects', ({ data }) => data.featured)).sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+import {getCollection} from 'astro:content';
+import {dateCompare} from "@/lib/utils/date.ts";
+const featuredProjects = (
+    await getCollection('projects', ({data}) => data.featured))
+    .sort((a, b) => dateCompare(b.data.date, a.data.date)
+    );
 ---
 
 <RootLayout title="Home">
-	<main class="container mx-auto">
-		<section class="w-full h-hero flex justify-between items-center flex-col p-2">
-			<LightRays client:idle />
-			<div></div>
-			<div class="text-center">
-				<BlurFade client:load>
-					<h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
-						<AuroraText>
-							Hello there!
-						</AuroraText>
-					</h1>
-				</BlurFade>
-				<BlurFade client:load delay={.5} direction="left">
-					<p class="text-muted-foreground text-xl mt-4">
-						Thanks for stopping by. My name is Cajetan Grill, but you can call me Charlie.
-					</p>
-				</BlurFade>
-				<BlurFade client:load delay={1} direction="left">
-					<p class="text-muted-foreground text-xl">
-						I am a software engineer and XR developer based in Austria. I love creating immersive experiences and cutting-edge user interfaces.
-					</p>
-				</BlurFade>
-				<BlurFade client:load delay={1.5}>
-					<p class="text-muted-foreground text-xl">
-						Feel free to look around or jump to my <a href="/projects"
-																											class="underline underline-offset-2 decoration-2">projects</a> or
-						<a
-							href="/bio" class="underline underline-offset-2 decoration-2">bio</a> page right away.
-					</p>
-				</BlurFade>
-			</div>
+    <main class="container mx-auto">
+        <section class="w-full h-hero flex justify-between items-center flex-col p-2">
+            <LightRays client:idle/>
+            <div></div>
+            <div class="text-center">
+                <BlurFade client:load>
+                    <h1 class="scroll-m-20 text-5xl font-black tracking-tight text-balance lg:text-6xl">
+                        <AuroraText>
+                            Hello there!
+                        </AuroraText>
+                    </h1>
+                </BlurFade>
+                <BlurFade client:load delay={.5} direction="left">
+                    <p class="text-muted-foreground text-xl mt-4">
+                        Thanks for stopping by. My name is Cajetan Grill, but you can call me
+                         <AuroraText>&nbsp;Charlie</AuroraText>
+                        .
+                    </p>
+                </BlurFade>
+                <BlurFade client:load delay={1} direction="left">
+                    <p class="text-muted-foreground text-xl mt-2">
+                        I am a software engineer and XR developer based in Austria. I love creating immersive
+                        experiences and cutting-edge user interfaces.
+                    </p>
+                </BlurFade>
+                <BlurFade client:load delay={1.5}>
+                    <p class="text-muted-foreground text-xl mt-2">
+                        Feel free to look around or jump to my <a href="/projects"
+                                                                  class="underline underline-offset-2 decoration-2">projects</a>
+                        &nbsp;or&nbsp;
+                        <a
+                                href="/bio" class="underline underline-offset-2 decoration-2">bio</a> page right away.
+                    </p>
+                </BlurFade>
+            </div>
 
-			<ButtonScrollTo client:idle
-											targetSelector="#projects-featured" variant="outline" size="icon"
-											className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
-				<Icon name="lucide:arrow-down" />
-			</ButtonScrollTo>
-		</section>
+            <ButtonScrollTo client:idle
+                            targetSelector="#projects-featured" variant="outline" size="icon"
+                            className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
+                <Icon name="lucide:arrow-down"/>
+            </ButtonScrollTo>
+        </section>
 
-		<section id="projects-featured" class="w-full p-2 my-20 scroll-m-18">
-			<h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
-				Featured
-				<AuroraText client:visible>Projects</AuroraText>
-			</h2>
-			<div class="mt-4 -mx-2">
-				<ProjectsGrid projects={featuredProjects} />
-			</div>
-			<a href="/projects" class="mt-2 text-lg underline inline-block">
-				View all projects
-				<Icon name="lucide:arrow-right" class="inline-block size-4 ml-1" />
-			</a>
-		</section>
-	</main>
+        <section id="projects-featured" class="w-full p-2 my-20 scroll-m-18">
+            <h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
+                Featured
+                <AuroraText client:visible>Projects</AuroraText>
+            </h2>
+            <div class="mt-4 -mx-2">
+                <ProjectsGrid projects={featuredProjects}/>
+            </div>
+            <a href="/projects" class="mt-2 text-lg underline inline-block">
+                View all projects
+                <Icon name="lucide:arrow-right" class="inline-block size-4 ml-1"/>
+            </a>
+        </section>
+    </main>
 </RootLayout>
