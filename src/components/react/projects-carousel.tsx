@@ -108,8 +108,8 @@ export function ProjectsCarousel({ projects, ...restProps }: Omit<ProjectsCarous
 				</CarouselContent>
 
 				<CarouselIndicators className="mt-0 lg:mt-8" />
-				<CarouselPrevious className="hidden lg:inline-flex" />
-				<CarouselNext className="hidden lg:inline-flex" />
+				<CarouselPrevious className="hidden ml-2 lg:inline-flex" />
+				<CarouselNext className="hidden mr-2 lg:inline-flex" />
 			</Carousel>
 
 		</>
