@@ -1,15 +1,21 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./typeset.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-sans: 'Geist Sans', sans-serif;
+    --font-sans: var(--font-geist);
+    --font-mono: var(--font-geist-mono);
 }
 
 :root {
+    --font-geist: 'Geist Variable', sans-serif;
+    --font-geist-mono: 'Geist Mono Variable', monospace;
     --radius: 0.65rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.141 0.005 285.823);
