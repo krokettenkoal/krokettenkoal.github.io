@@ -41,7 +41,11 @@
     "typescript": "^7.0.2"
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.62",
+    "@iconify-json/fad": "^1.2.1",
     "@iconify-json/lucide": "^1.2.120",
+    "@iconify-json/simple-icons": "^1.2.93",
+    "@iconify-json/skill-icons": "^1.2.4",
     "@iconify/react": "^6.0.2",
     "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^19.2.17",

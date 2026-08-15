@@ -1,9 +1,338 @@
 ---
 import RootLayout from '@/layouts/root-layout.astro';
+import {BlurFade} from "@/components/ui/blur-fade.tsx";
+import {Separator} from "@/components/ui/separator.tsx";
+import {BentoGrid, BentoCard} from "@/components/ui/bento-grid.tsx";
+import {Marquee} from "@/components/ui/marquee.tsx";
+import {Icon} from 'astro-icon/components';
+import {Badge} from "@/components/ui/badge";
+import {Image} from 'astro:assets';
+import photoCajetan from "../assets/img/cajetan.jpeg";
+import iconDst from '../assets/img/dst-icon.png';
+import iconUstp from '../assets/img/ustp-icon.png';
+import wwiseCertifiedInstructor from '../assets/img/wwise-certified-instructor.png';
+import wwiseCertifiedInstructorDark from '../assets/img/wwise-certified-instructor_dark.png';
+import wwiseUnityIntegration from '../assets/img/wwise-unity-integration.png';
+import wwiseUnityIntegrationDark from '../assets/img/wwise-unity-integration_dark.png';
+import wwiseFundamentals from '../assets/img/wwise-fundamentals.png';
+import wwiseFundamentalsDark from '../assets/img/wwise-fundamentals_dark.png';
+import winServer from '../assets/img/win-server.png';
+import msO365 from '../assets/img/ms-o365.png';
+import {cn} from "@/lib/utils";
+
+const skills = [
+    [{
+        name: 'TypeScript',
+        icon: 'skill-icons:typescript',
+    },
+        {
+            name: 'JavaScript',
+            icon: 'skill-icons:javascript',
+        },
+        {
+            name: 'C#',
+            icon: 'skill-icons:cs',
+        },
+        {
+            name: '.NET',
+            icon: 'skill-icons:dotnet',
+        },
+        {
+            name: 'PowerShell',
+            icon: 'skill-icons:powershell-light',
+            iconDark: 'skill-icons:powershell-dark'
+        },
+        {
+            name: 'PHP',
+            icon: 'skill-icons:php-light',
+            iconDark: 'skill-icons:php-dark'
+        },
+        {
+            name: 'SQL',
+            icon: 'skill-icons:mysql-light',
+            iconDark: 'skill-icons:mysql-dark'
+        },
+        {
+            name: 'HTML',
+            icon: 'skill-icons:html',
+        },
+        {
+            name: 'CSS',
+            icon: 'skill-icons:css',
+        }],
+    [{
+        name: 'Svelte',
+        icon: 'skill-icons:svelte',
+    },
+        {
+            name: 'React',
+            icon: 'skill-icons:react-light',
+            iconDark: 'skill-icons:react-dark'
+        },
+        {
+            name: 'Astro',
+            icon: 'skill-icons:astro',
+        },
+        {
+            name: 'Vite',
+            icon: 'skill-icons:vite-light',
+            iconDark: 'skill-icons:vite-dark'
+        },
+        {
+            name: 'Node.js',
+            icon: 'skill-icons:nodejs-light',
+            iconDark: 'skill-icons:nodejs-dark'
+        },
+        {
+            name: 'Tailwind CSS',
+            icon: 'skill-icons:tailwindcss-light',
+            iconDark: 'skill-icons:tailwindcss-dark'
+        }],
+    [{
+        name: 'Unity',
+        icon: 'skill-icons:unity-light',
+        iconDark: 'skill-icons:unity-dark'
+    },
+        {
+            name: 'Wwise',
+            icon: 'simple-icons:wwise'
+        },
+        {
+            name: 'Ren\'Py',
+            icon: 'devicon:renpy'
+        },
+        {
+            name: 'Adobe Illustrator',
+            icon: 'devicon:illustrator'
+        },
+        {
+            name: 'REAPER',
+            icon: 'fad:logo-reaper'
+        },
+        {
+            name: 'Git',
+            icon: 'skill-icons:git'
+        },
+        {
+            name: 'Intune',
+            icon: 'skill-icons:azure-light',
+            iconDark: 'skill-icons:azure-dark'
+        },
+        {
+            name: 'Chocolatey',
+            icon: 'simple-icons:chocolatey'
+        }],
+];
+const companyUstp = {
+    name: 'University of Applied Sciences St. Pölten',
+    logo: iconUstp
+}
+const experience = [
+    {
+        company: companyUstp,
+        role: 'Technical Head Usability, Client Management',
+        period: 'since 2026',
+        active: true
+    },
+    {
+        company: companyUstp,
+        role: 'Teaching & Research Assistant',
+        period: '2023 – 2025'
+    },
+    {
+        company: companyUstp,
+        role: 'Interactive Technologies',
+        period: '2023 – 2025',
+        badge: {
+            text: 'Dipl.-Ing.',
+            icon: 'lucide:graduation-cap'
+        }
+    },
+    {
+        company: companyUstp,
+        role: 'Student Assistant',
+        period: '2020 – 2023'
+    },
+    {
+        company: companyUstp,
+        role: 'Media Technology',
+        period: '2020 – 2023',
+        badge: {
+            text: 'BSc',
+            icon: 'lucide:graduation-cap'
+        }
+    },
+    {
+        company: {
+            name: 'DER STANDARD',
+            logo: iconDst
+        },
+        role: 'IT Support & Operations Engineer',
+        period: '2015 – 2020'
+    }
+];
+const certifications = [
+    {
+        name: 'Wwise Certified Instructor',
+        description: 'Audiokinetic, 2026',
+        cta: 'View certificate',
+        href: '/docs/wwise-certified-instructor.pdf',
+        img: wwiseCertifiedInstructor,
+        imgDark: wwiseCertifiedInstructorDark,
+        className: 'col-span-3 lg:col-span-3'
+    },
+    {
+        name: 'Wwise Unity Integration',
+        description: 'Audiokinetic, 2026',
+        cta: 'View certificate',
+        href: '/docs/wwise-unity-integration.pdf',
+        img: wwiseUnityIntegration,
+        imgDark: wwiseUnityIntegrationDark,
+        imgClass: 'lg:size-48',
+        className: 'col-span-3 lg:col-span-2'
+    },
+    {
+        name: 'Wwise Fundamentals',
+        description: 'Audiokinetic, 2026',
+        cta: 'View certificate',
+        href: '/docs/wwise-fundamentals.pdf',
+        img: wwiseFundamentals,
+        imgDark: wwiseFundamentalsDark,
+        imgClass: 'lg:size-32',
+        className: 'col-span-3 lg:col-span-1'
+    },
+    {
+        name: 'Windows Server Administration Fundamentals',
+        description: 'ETC Enterprise Training Center, 2015',
+        cta: 'View certificate',
+        href: '/docs/win-server-admin.pdf',
+        img: winServer,
+        imgClass: 'lg:size-32',
+        className: 'col-span-3 lg:col-span-1'
+    },
+    {
+        name: 'Microsoft Office 365 Online and Desktop for Administrators and Service Desk',
+        description: 'ETC Enterprise Training Center, 2018',
+        cta: 'View certificate',
+        href: '/docs/ms-o365-admin.pdf',
+        img: msO365,
+        imgClass: 'lg:size-32',
+        className: 'col-span-3 lg:col-span-2'
+    },
+];
 ---
 
 <RootLayout title="Bio">
-	<main class="container mx-auto">
-		<h1>About me</h1>
-	</main>
+    <main class="container max-w-3xl mx-auto p-2">
+        <section class="flex gap-8 my-8">
+            <Image src={photoCajetan} alt="A portrait photo of me" layout="constrained"
+                   class="object-cover rounded-full size-24 md:size-48 md:order-last"/>
+            <div class="my-auto grow">
+                <BlurFade client:load>
+                    <h1 class="text-xl font-black tracking-tight text-balance lg:text-4xl">
+                        Cajetan Grill
+                    </h1>
+                </BlurFade>
+                <ul class="md:mt-2">
+                    <li>
+                        <BlurFade client:load delay={0.5} direction="left">
+                            Software engineer, IT specialist.
+                        </BlurFade>
+                    </li>
+                    <li>
+                        <BlurFade client:load delay={1} direction="left">
+                            Web, games, DevOps.
+                        </BlurFade>
+                    </li>
+                    <li>
+                        <BlurFade client:load delay={1.5} direction="left">
+                            Lecturer <a href="https://ustp.at" class="text-muted-foreground text-sm">@ustp</a>, audio
+                            enthusiast.
+                        </BlurFade>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <Separator/>
+
+        <BlurFade client:visible direction="top">
+            <section class="typeset mt-8 md:mt-12">
+                <h2>Skills</h2>
+                <div class="relative flex w-full flex-col items-center justify-center gap-8 overflow-hidden">
+                    {skills.map((section, i) => (
+                            <Marquee key={i} pauseOnHover={true} reverse={i % 2 === 1}
+                                     className="[--duration:20s]">
+                                {section.map((skill) => (
+                                        <div class="mx-8 flex items-center gap-4">
+                                            <Icon name={skill.icon}
+                                                  className={cn("size-12", {"dark:hidden": !!skill.iconDark})}/>
+                                            {skill.iconDark && (
+                                                    <Icon name={skill.iconDark} class="hidden dark:block size-12"/>
+                                            )}
+                                            <span class="font-semibold text-lg">{skill.name}</span>
+                                        </div>
+                                ))}
+                            </Marquee>
+                    ))}
+                    <div class="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
+                    <div class="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
+                </div>
+            </section>
+        </BlurFade>
+
+        <BlurFade client:visible direction="top">
+            <section class="typeset mt-12 md:mt-16">
+                <h2>Education & Experience</h2>
+                <ol class="not-typeset mt-4">
+                    {experience.map((exp, i) => (
+                            <li class:list={["mb-4", {"opacity-70": !exp.active, "saturate-50": !exp.active}]} key={i}>
+                                <BlurFade client:visible delay={0.2 * i} direction="left" className="flex gap-4 ">
+                                    <Image src={exp.company.logo} alt={exp.company.name} layout="constrained"
+                                           class="size-8"/>
+                                    <div class="leading-none grow">
+                                        <span class="text-base font-semibold leading-none mt-1">{exp.role}</span>
+                                        {exp.badge && (
+                                                <Badge variant="outline" className="ml-1">
+                                                    {exp.badge.icon && (
+                                                            <Icon name={exp.badge.icon} class="size-4"/>)}
+                                                    {exp.badge.text}
+                                                </Badge>
+                                        )}
+                                        <br>
+                                        <span class="text-sm text-muted-foreground">{exp.company.name}</span>
+                                    </div>
+                                    <span class="text-muted-foreground text-xs md:text-sm basis-[4ch] md:basis-[12ch] text-center md:text-right leading-none">{exp.period}</span>
+                                </BlurFade>
+                            </li>
+                    ))}
+                </ol>
+            </section>
+        </BlurFade>
+
+        <BlurFade client:visible direction="top">
+            <section class="typeset mt-12 md:mt-16">
+                <h2>Certifications & Trainings</h2>
+                <BentoGrid>
+                    {certifications.map((cert, i) => (
+                            <BentoCard
+                                    client:visible
+                                    key={i}
+                                    childrenWrapperProps={{className: ""}}
+                                    {...cert}
+                            >
+                                <div class="size-full flex justify-end">
+                                    <Image src={cert.img} alt={cert.name}
+                                           class:list={[{"dark:hidden": !!cert.imgDark}, cn("size-72 object-contain object-center mx-4 opacity-50 saturate-50 group-hover:saturate-100 group-hover:blur-sm transition-all", cert.imgClass)]}/>
+                                    {cert.imgDark && (
+                                            <Image src={cert.imgDark} alt={cert.name}
+                                                   class={cn("hidden dark:block size-72 object-contain object-center mx-4 opacity-50 saturate-50 group-hover:saturate-100 group-hover:blur-sm transition-all", cert.imgClass)}/>
+                                    )}
+                                </div>
+                            </BentoCard>
+                    ))}
+                </BentoGrid>
+            </section>
+        </BlurFade>
+    </main>
 </RootLayout>
