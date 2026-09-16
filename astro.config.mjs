@@ -14,9 +14,40 @@ export default defineConfig({
         include: {
             lucide: ['*'], // TODO: limit to only the icons used in the project
             'simple-icons': ['wwise', 'chocolatey'],
-            'skill-icons': ['*'],
-            devicon: ['renpy', 'illustrator'],
-            fad: ['logo-reaper']
+            'skill-icons': [
+                'typescript',
+                'javascript',
+                'cs',
+            ],
+            devicon: ['renpy', 'tailwindcss'],
+            fad: ['logo-reaper'],
+            logos: [
+                'nodejs-icon'
+            ],
+            thesvg: [
+                'unity'
+            ],
+            'thesvg-color': [
+                'vite',
+                'svelte',
+                'astro-light',
+                'astro-dark',
+                'react-light',
+                'react-dark',
+                'php-light',
+                'php-dark',
+                'mysql-light',
+                'mysql-dark',
+                'git',
+                'microsoft-azure',
+                'chocolatey',
+                'powershell',
+                'html5',
+                'css',
+                'dotnet',
+                'ansible',
+                'jetbrains',
+            ]
         }
     }), mdx(), sitemap()],
     vite: {

@@ -21,10 +21,11 @@ import msO365 from '../assets/img/ms-o365.png';
 import {cn} from "@/lib/utils";
 
 const skills = [
-    [{
-        name: 'TypeScript',
-        icon: 'skill-icons:typescript',
-    },
+    [
+        {
+            name: 'TypeScript',
+            icon: 'skill-icons:typescript',
+        },
         {
             name: 'JavaScript',
             icon: 'skill-icons:javascript',
@@ -34,65 +35,65 @@ const skills = [
             icon: 'skill-icons:cs',
         },
         {
-            name: '.NET',
-            icon: 'skill-icons:dotnet',
-        },
-        {
             name: 'PowerShell',
-            icon: 'skill-icons:powershell-light',
-            iconDark: 'skill-icons:powershell-dark'
+            icon: 'thesvg-color:powershell',
         },
         {
             name: 'PHP',
-            icon: 'skill-icons:php-light',
-            iconDark: 'skill-icons:php-dark'
+            icon: 'thesvg-color:php-light',
+            iconDark: 'thesvg-color:php-dark'
         },
         {
             name: 'SQL',
-            icon: 'skill-icons:mysql-light',
-            iconDark: 'skill-icons:mysql-dark'
+            icon: 'thesvg-color:mysql-light',
+            iconDark: 'thesvg-color:mysql-dark'
         },
         {
             name: 'HTML',
-            icon: 'skill-icons:html',
+            icon: 'thesvg-color:html5',
         },
         {
             name: 'CSS',
-            icon: 'skill-icons:css',
-        }],
-    [{
-        name: 'Svelte',
-        icon: 'skill-icons:svelte',
-    },
+            icon: 'thesvg-color:css',
+        }
+    ],
+    [
+        {
+            name: 'Svelte',
+            icon: 'thesvg-color:svelte',
+        },
         {
             name: 'React',
-            icon: 'skill-icons:react-light',
-            iconDark: 'skill-icons:react-dark'
+            icon: 'thesvg-color:react-light',
+            iconDark: 'thesvg-color:react-dark'
         },
         {
             name: 'Astro',
-            icon: 'skill-icons:astro',
+            icon: 'thesvg-color:astro-light',
+            iconDark: 'thesvg-color:astro-dark'
         },
         {
             name: 'Vite',
-            icon: 'skill-icons:vite-light',
-            iconDark: 'skill-icons:vite-dark'
+            icon: 'thesvg-color:vite'
         },
         {
             name: 'Node.js',
-            icon: 'skill-icons:nodejs-light',
-            iconDark: 'skill-icons:nodejs-dark'
+            icon: 'logos:nodejs-icon'
         },
         {
             name: 'Tailwind CSS',
-            icon: 'skill-icons:tailwindcss-light',
-            iconDark: 'skill-icons:tailwindcss-dark'
-        }],
-    [{
-        name: 'Unity',
-        icon: 'skill-icons:unity-light',
-        iconDark: 'skill-icons:unity-dark'
-    },
+            icon: 'devicon:tailwindcss'
+        },
+        {
+            name: '.NET',
+            icon: 'thesvg-color:dotnet',
+        },
+    ],
+    [
+        {
+            name: 'Unity',
+            icon: 'thesvg:unity'
+        },
         {
             name: 'Wwise',
             icon: 'simple-icons:wwise'
@@ -102,26 +103,30 @@ const skills = [
             icon: 'devicon:renpy'
         },
         {
-            name: 'Adobe Illustrator',
-            icon: 'devicon:illustrator'
-        },
-        {
             name: 'REAPER',
             icon: 'fad:logo-reaper'
         },
         {
             name: 'Git',
-            icon: 'skill-icons:git'
+            icon: 'thesvg-color:git'
         },
         {
             name: 'Intune',
-            icon: 'skill-icons:azure-light',
-            iconDark: 'skill-icons:azure-dark'
+            icon: 'thesvg-color:microsoft-azure'
         },
         {
             name: 'Chocolatey',
-            icon: 'simple-icons:chocolatey'
-        }],
+            icon: 'thesvg-color:chocolatey'
+        },
+        {
+            name: 'Ansible',
+            icon: 'thesvg-color:ansible'
+        },
+        {
+            name: 'JetBrains IDEs',
+            icon: 'thesvg-color:jetbrains'
+        }
+    ],
 ];
 const companyUstp = {
     name: 'University of Applied Sciences St. Pölten',
@@ -262,7 +267,7 @@ const certifications = [
                 <div class="relative flex w-full flex-col items-center justify-center gap-8 overflow-hidden">
                     {skills.map((section, i) => (
                             <Marquee key={i} pauseOnHover={true} reverse={i % 2 === 1}
-                                     className="[--duration:20s]">
+                                     className="[--duration:60s]">
                                 {section.map((skill) => (
                                         <div class="mx-8 flex items-center gap-4">
                                             <Icon name={skill.icon}
@@ -275,8 +280,8 @@ const certifications = [
                                 ))}
                             </Marquee>
                     ))}
-                    <div class="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
-                    <div class="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
+                    <div class="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
+                    <div class="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
                 </div>
             </section>
         </BlurFade>
@@ -323,10 +328,10 @@ const certifications = [
                             >
                                 <div class="size-full flex justify-end">
                                     <Image src={cert.img} alt={cert.name}
-                                           class:list={[{"dark:hidden": !!cert.imgDark}, cn("size-72 object-contain object-center mx-4 opacity-50 saturate-50 group-hover:saturate-100 group-hover:blur-sm transition-all", cert.imgClass)]}/>
+                                           class:list={[{"dark:hidden": !!cert.imgDark}, cn("size-32 md:size-72 object-contain object-center mx-4 opacity-50 saturate-90 group-hover:saturate-50 group-hover:blur-sm transition-all", cert.imgClass)]}/>
                                     {cert.imgDark && (
                                             <Image src={cert.imgDark} alt={cert.name}
-                                                   class={cn("hidden dark:block size-72 object-contain object-center mx-4 opacity-50 saturate-50 group-hover:saturate-100 group-hover:blur-sm transition-all", cert.imgClass)}/>
+                                                   class={cn("hidden dark:block size-32 md:size-72 object-contain object-center mx-4 opacity-50 saturate-90 group-hover:saturate-50 group-hover:blur-sm transition-all", cert.imgClass)}/>
                                     )}
                                 </div>
                             </BentoCard>
