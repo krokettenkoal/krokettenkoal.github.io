@@ -36,7 +36,20 @@ const navLinks: NavLink[] = [
         label: 'Bio',
         iconName: 'lucide:user'
     }
-];
+] as const;
+
+const socialLinks = [
+    {
+        href: 'https://github.com/krokettenkoal',
+        iconName: 'thesvg:github',
+        label: 'Visit me on GitHub'
+    },
+    {
+        href: 'https://www.linkedin.com/in/cajetan-grill/',
+        iconName: 'devicon-plain:linkedin',
+        label: 'Visit me on LinkedIn'
+    }
+] as const;
 
 const {title = '', description = 'I create stuff on my laptop.'} = Astro.props;
 const {pathname} = Astro.url;
@@ -82,33 +95,50 @@ const {pathname} = Astro.url;
                 {navLinks.map(navLink => (
                         <li>
                             <a href={navLink.href}
-                               class={cn(buttonVariants({variant: 'link'}), ['flex items-center gap-1 text-muted-foreground transition-colors hover:underline hover:text-foreground', {'text-foreground font-semibold underline underline-offset-4 decoration-2': (navLink.isActive?.(pathname) ?? pathname === navLink.href)}])}>
-                                <Icon name={navLink.iconName} class="size-6 lg:size-4"/>
+                               class={cn(buttonVariants({variant: 'link'}), ['flex items-center gap-1 text-muted-foreground transition-colors hover:underline hover:text-foreground', {'text-foreground font-semibold': (navLink.isActive?.(pathname) ?? pathname === navLink.href)}])}>
+                                <Icon name={navLink.iconName} class="size-6 lg:hidden"/>
                                 <span class="hidden md:block">
-								{navLink.label}
-							</span>
+                                    {navLink.label}
+                                </span>
                             </a>
                         </li>
                 ))}
             </ul>
         </nav>
         <div>
-            <ModeToggle client:load/>
+
         </div>
     </div>
 </header>
 
 <slot/>
 
-<footer class="mt-8">
-    <div class="container mx-auto p-4 text-center text-sm text-muted-foreground">
+<footer class="mt-8 px-2 py-4 flex justify-between items-center flex-col gap-4 lg:flex-row lg:px-4">
+    <menu class="flex gap-3">
+        {socialLinks.map(socialLink => (
+                <li>
+                    <a href={socialLink.href} target="_blank" rel="noopener noreferrer"
+                       class={cn("size-6 text-muted-foreground hover:text-foreground transition-colors", socialLink.className)}
+                       aria-label={socialLink.label}>
+                        <Icon name={socialLink.iconName} class="size-6"/>
+                    </a>
+                </li>
+        ))}
+    </menu>
+    <div class="container text-center text-sm text-muted-foreground">
         <p>&copy; {new Date().getFullYear()} Cajetan Grill. All rights reserved.</p>
         <p>
             Made with 💜 using <a href="https://astro.build" class="underline hover:text-primary">Astro</a>,{' '}
-            <a href="https://reactjs.org" class="underline hover:text-primary">React</a>, and{' '}
-            <a href="https://ui.shadcn.com/" class="underline hover:text-primary">shadcn/ui</a>.
+            <a href="https://reactjs.org" class="underline hover:text-primary">React</a>,{' '}
+            <a href="https://ui.shadcn.com/" class="underline hover:text-primary">shadcn/ui</a>, and{' '}
+            <a href="https://magicui.design/" class="underline hover:text-primary">Magic UI</a>.
         </p>
     </div>
+    <menu class="flex text-center">
+        <li>
+            <ModeToggle client:load/>
+        </li>
+    </menu>
 </footer>
 </body>
 </html>

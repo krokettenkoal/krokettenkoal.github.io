@@ -19,13 +19,20 @@ export default defineConfig({
                 'javascript',
                 'cs',
             ],
-            devicon: ['renpy', 'tailwindcss'],
+            devicon: [
+                'renpy',
+                'tailwindcss',
+            ],
+            'devicon-plain': [
+                'linkedin',
+            ],
             fad: ['logo-reaper'],
             logos: [
                 'nodejs-icon'
             ],
             thesvg: [
-                'unity'
+                'unity',
+                'github',
             ],
             'thesvg-color': [
                 'vite',
@@ -46,7 +53,7 @@ export default defineConfig({
                 'css',
                 'dotnet',
                 'ansible',
-                'jetbrains',
+                'jetbrains'
             ]
         }
     }), mdx(), sitemap()],
