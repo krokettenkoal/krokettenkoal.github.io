@@ -286,13 +286,13 @@ const certifications = [
             </section>
         </BlurFade>
 
-        <BlurFade client:visible direction="top">
+        <BlurFade client:load direction="top">
             <section class="typeset mt-12 md:mt-16">
                 <h2>Education & Experience</h2>
                 <ol class="not-typeset mt-4">
                     {experience.map((exp, i) => (
                             <li class:list={["mb-4", {"opacity-70": !exp.active, "saturate-50": !exp.active}]} key={i}>
-                                <BlurFade client:visible delay={0.2 * i} direction="left" className="flex gap-4 ">
+                                <BlurFade client:load delay={0.2 * i} direction="left" className="flex gap-4 ">
                                     <Image src={exp.company.logo} alt={exp.company.name} layout="constrained"
                                            class="size-8"/>
                                     <div class="leading-none grow">
