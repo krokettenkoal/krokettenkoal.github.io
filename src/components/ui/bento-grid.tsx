@@ -74,10 +74,10 @@ const BentoCard = ({
                     <Icon
                         className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75"/>
                 )}
-                <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-300">
                     {name}
                 </h3>
-                <p className="max-w-lg line-clamp-3 text-neutral-600 dark:text-neutral-400">{description}</p>
+                <p className="max-w-lg line-clamp-3 text-neutral-700 dark:text-neutral-400">{description}</p>
                 {tags?.length ? (
                     <TagList tags={tags}/>
                 ) : undefined}
