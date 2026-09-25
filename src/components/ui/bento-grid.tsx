@@ -63,7 +63,7 @@ const BentoCard = ({
         <div>
             <div
                 {...childrenWrapperProps}
-                className={cn("absolute inset-0 border-none mask-[linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105", childrenWrapperProps?.className)}>
+                className={cn("absolute inset-0 border-none mask-[linear-gradient(to_top,transparent_20%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-105", childrenWrapperProps?.className)}>
                 {children}
             </div>
         </div>
@@ -77,7 +77,7 @@ const BentoCard = ({
                 <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
                     {name}
                 </h3>
-                <p className="max-w-lg text-neutral-400">{description}</p>
+                <p className="max-w-lg line-clamp-3 text-neutral-600 dark:text-neutral-400">{description}</p>
                 {tags?.length ? (
                     <TagList tags={tags}/>
                 ) : undefined}
