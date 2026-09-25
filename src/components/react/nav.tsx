@@ -7,12 +7,20 @@ export type NavLink = {
     href: string;
     label: string;
     iconName: string;
-    isActive?: (pathname: string) => boolean;
+    activePattern?: string;
 }
 
 type NavProps = HTMLAttributes<HTMLElement> & {
     items: NavLink[];
     initialPathname: string;
+}
+
+const navItemIsActive = (navItem: NavLink, currentPath: string): boolean => {
+    if (navItem.activePattern) {
+        const regex = new RegExp(navItem.activePattern);
+        return regex.test(currentPath);
+    }
+    return currentPath === navItem.href;
 }
 
 export function Nav({items, initialPathname, className, ...restProps}: NavProps) {
@@ -40,7 +48,7 @@ export function Nav({items, initialPathname, className, ...restProps}: NavProps)
                                buttonVariants({variant: 'link'}),
                                [
                                    'flex items-center gap-1 text-secondary-foreground transition-colors hover:no-underline hover:text-foreground',
-                                   {'text-foreground font-semibold bg-secondary': (navLink.isActive?.(currentPath) ?? currentPath === navLink.href)}
+                                   {'text-foreground font-semibold bg-secondary': navItemIsActive(navLink, currentPath)}
                                ]
                            )}
                         >
