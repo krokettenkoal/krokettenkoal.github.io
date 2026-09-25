@@ -1,9 +1,10 @@
 {
   "name": "krokettenkoal.github.io",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "scripts": {
     "dev": "astro dev",
+    "host": "npm run dev -- --host",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -26,6 +27,7 @@
     "astro": "^7.3.2",
     "astro-embed": "^0.13.1",
     "astro-icon": "^1.1.5",
+    "astro-scroll-observer": "^0.5.3",
     "astro-seo": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "color-string": "^2.1.4",

@@ -6,17 +6,14 @@ import {ModeToggle} from '@/components/react/mode-toggle';
 import {Icon} from 'astro-icon/components';
 import {cn} from '@/lib/utils';
 import {buttonVariants} from '@/components/ui/button.tsx';
+import {ScrollObserver} from 'astro-scroll-observer';
+import {ClientRouter} from "astro:transitions";
+import type {NavLink} from "@/components/react/nav";
+import Nav from '@/components/astro/nav.astro';
 
 interface Props {
     title?: string;
     description?: string;
-}
-
-interface NavLink {
-    href: string;
-    label: string;
-    iconName: string;
-    isActive?: (pathname: string) => boolean;
 }
 
 const navLinks: NavLink[] = [
@@ -37,7 +34,6 @@ const navLinks: NavLink[] = [
         iconName: 'lucide:user'
     }
 ] as const;
-
 const socialLinks = [
     {
         href: 'https://github.com/krokettenkoal',
@@ -62,16 +58,38 @@ const {pathname} = Astro.url;
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     };
-    const isDark = getThemePreference() === 'dark';
-    document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
 
+    const applyThemePreference = () => {
+        const isDark = getThemePreference() === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+    };
+
+    // apply the theme preference on initial load
+    applyThemePreference();
+
+    let observer;
     if (typeof localStorage !== 'undefined') {
-        const observer = new MutationObserver(() => {
+        observer = new MutationObserver(() => {
             const isDark = document.documentElement.classList.contains('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
-        observer.observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
     }
+
+    document.addEventListener('astro:page-load', () => {
+        // observe the document element for class changes to update the theme preference in localStorage
+        observer?.observe(document.documentElement, {attributes: true, attributeFilter: ['class']});
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+        // disconnect the observer before the page swap to avoid unnecessary mutations during the transition
+        observer?.disconnect();
+    });
+
+    document.addEventListener('astro:after-swap', () => {
+        // restore the theme preference after the page swap to ensure the correct theme is applied
+        applyThemePreference();
+    });
+
 </script>
 
 <html lang="en">
@@ -81,39 +99,22 @@ const {pathname} = Astro.url;
     <meta name="generator" content={Astro.generator}/>
     <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <link rel="sitemap" href="/sitemap-index.xml"/>
+    <ClientRouter/>
+    <ScrollObserver/>
     <SEO title={title} titleTemplate="%s — Cajetan Grill" titleDefault="Cajetan Grill" description={description}/>
 </head>
 <body>
-<header
-        class="sticky bg-background/60 top-0 left-0 right-0 h-header backdrop-blur-xl z-50 border-b-2">
-    <div class="h-full flex justify-between items-center py-2 px-5">
-        <div></div>
-        <nav class="grow">
-            <ul
-                    class="flex justify-center items-center gap-10 lg:gap-8"
-            >
-                {navLinks.map(navLink => (
-                        <li>
-                            <a href={navLink.href}
-                               class={cn(buttonVariants({variant: 'link'}), ['flex items-center gap-1 text-muted-foreground transition-colors hover:underline hover:text-foreground', {'text-foreground font-semibold': (navLink.isActive?.(pathname) ?? pathname === navLink.href)}])}>
-                                <Icon name={navLink.iconName} class="size-6 lg:hidden"/>
-                                <span class="hidden md:block">
-                                    {navLink.label}
-                                </span>
-                            </a>
-                        </li>
-                ))}
-            </ul>
-        </nav>
-        <div>
-
-        </div>
-    </div>
+<header transition:persist
+        class="sticky top-0 left-0 right-0 h-header z-50 flex justify-between items-center py-2 px-5">
+    <div></div>
+    <Nav items={navLinks} initialPathname={pathname}/>
+    <div></div>
 </header>
 
 <slot/>
 
-<footer class="mt-8 px-2 py-4 flex justify-between items-center flex-col gap-4 lg:flex-row lg:px-4">
+<footer transition:persist
+        class="container mx-auto mt-8 mb-2 flex justify-between items-center flex-col gap-4 lg:mt-12 lg:mb-4 lg:flex-row">
     <menu class="flex gap-3">
         {socialLinks.map(socialLink => (
                 <li>
@@ -125,16 +126,16 @@ const {pathname} = Astro.url;
                 </li>
         ))}
     </menu>
-    <div class="container text-center text-sm text-muted-foreground">
+    <div class="text-center text-sm text-muted-foreground">
         <p>&copy; {new Date().getFullYear()} Cajetan Grill. All rights reserved.</p>
         <p>
             Made with 💜 using <a href="https://astro.build" class="underline hover:text-primary">Astro</a>,{' '}
-            <a href="https://reactjs.org" class="underline hover:text-primary">React</a>,{' '}
+            <a href="https://reactjs.org" class="underline hover:text-foreground">React</a>,{' '}
             <a href="https://ui.shadcn.com/" class="underline hover:text-primary">shadcn/ui</a>, and{' '}
             <a href="https://magicui.design/" class="underline hover:text-primary">Magic UI</a>.
         </p>
     </div>
-    <menu class="flex text-center">
+    <menu class="flex justify-end">
         <li>
             <ModeToggle client:load/>
         </li>

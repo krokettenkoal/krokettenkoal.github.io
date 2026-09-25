@@ -1,0 +1,32 @@
+---
+import {Nav} from "@/components/react/nav.tsx";
+
+interface Props {
+    items: NavLink[];
+    initialPathname: string;
+}
+---
+
+<Nav client:load {...Astro.props}/>
+
+<style is:global>
+    @reference '../../styles/global.css';
+    @supports (container-type: scroll-state) {
+        header {
+            container-type: scroll-state;
+
+            nav {
+                @container scroll-state(stuck: top) {
+                    @apply bg-background/30 backdrop-blur-lg rounded-lg border;
+                }
+            }
+        }
+
+    }
+
+    @supports not (container-type: scroll-state) {
+        [data-is-top='false'] header nav {
+            @apply bg-background/30 backdrop-blur-lg rounded-lg border;
+        }
+    }
+</style>
