@@ -61,7 +61,7 @@ function CarouselIndicators({
                                 onClick={() => scrollTo(idx, jump)}
                                 disabled={current === idx}
                                 className={cn(
-                                    'enabled:cursor-pointer disabled:border-foreground size-4 rounded-full aspect-square border-2 transition-all',
+                                    'enabled:cursor-pointer border-0 bg-muted-foreground disabled:bg-foreground size-2 disabled:scale-120 rounded-full aspect-square transition-all',
                                     buttonClass
                                 )}>
                             {children ? children : (
