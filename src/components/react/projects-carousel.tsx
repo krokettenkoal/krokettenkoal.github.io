@@ -4,30 +4,25 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import {Icon} from '@iconify/react';
-import {BlurFade} from '@/components/ui/blur-fade';
 import {AuroraText} from '@/components/ui/aurora-text';
 import {cn} from '@/lib/utils';
 import {buttonVariants} from '@/components/ui/button';
-import * as React from 'react';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import {TagList} from '@/components/react/tag-list.tsx';
-import {CarouselIndicators} from '@/components/react/carousel-indicators.tsx';
+import {useEffect, useState} from 'react';
+import {TagList} from '@/components/react/tag-list';
+import {CarouselIndicators} from '@/components/react/carousel-indicators';
 
 type ProjectsCarouselProps = React.ComponentProps<typeof Carousel> & {
     projects: CollectionEntry<'projects'>[];
 }
 
 export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarouselProps, 'plugins'>) {
-    const [api, setApi] = React.useState<CarouselApi>();
-    const [current, setCurrent] = React.useState(0);
+    const [api, setApi] = useState<CarouselApi>();
+    const [current, setCurrent] = useState(0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!api) {
             return;
         }
@@ -42,7 +37,7 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
             {projects.map((project, idx) => (
                 <img key={idx}
                      src={project.data.thumbnail.src}
-                     alt={project.data.thumbnailAlt ?? project.data.title}
+                     alt=""
                      loading="lazy"
                      className={cn(
                          'absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none mask-y-from-70% mask-y-to-90% filter saturate-[75%] blur-lg opacity-0 transition-opacity duration-500',
@@ -56,47 +51,39 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                     {projects.map((project) => (
                         <CarouselItem key={project.id}>
                             <div className="mt-8 mb-6 lg:hidden">
-                                <BlurFade inView={true}>
-                                    <h2
-                                        className="scroll-m-20 px-2 text-5xl font-black tracking-tight text-balance lg:text-6xl uppercase">
-                                        <AuroraText colors={project.data.colors}>
-                                            {project.data.title}
-                                        </AuroraText>
-                                    </h2>
-                                </BlurFade>
+                                <h2
+                                    className="scroll-m-20 px-2 text-4xl font-bold tracking-tight text-balance uppercase">
+                                    <AuroraText colors={project.data.colors}>
+                                        {project.data.title}
+                                    </AuroraText>
+                                </h2>
                             </div>
 
                             <div
-                                className="w-full max-h-[30vh] lg:max-h-[45vh] overflow-clip lg:w-[45%] lg:float-left lg:mr-12 lg:rounded-xl	">
-                                {project.data.youtube ? (
-                                    <LiteYouTubeEmbed id={project.data.youtube} title={project.data.title}/>
-                                ) : (
-                                    <img src={project.data.thumbnail.src} width={project.data.thumbnail.width}
-                                         height={project.data.thumbnail.height}
-                                         alt={project.data.thumbnailAlt ?? project.data.title}
-                                         loading="lazy" className="w-full h-full object-cover object-center"/>
-                                )}
+                                className="w-full aspect-square overflow-clip lg:w-[45%] lg:float-left lg:mr-12 lg:rounded-xl"
+                            >
+                                <img src={project.data.thumbnail.src} width={project.data.thumbnail.width}
+                                     height={project.data.thumbnail.height}
+                                     alt={project.data.thumbnailAlt ?? ''}
+                                     loading="lazy" className="w-full h-full object-cover object-center"/>
+
                             </div>
 
                             <div className="max-w-[120ch] my-auto">
-                                <BlurFade inView={true} className="hidden lg:block">
-                                    <h2
-                                        className="scroll-m-20 px-2 text-4xl font-black tracking-tight text-balance lg:text-5xl uppercase">
-                                        <AuroraText colors={project.data.colors}>
-                                            {project.data.title}
-                                        </AuroraText>
-                                    </h2>
-                                </BlurFade>
+                                <h2
+                                    className="hidden lg:block scroll-m-20 px-2 text-5xl font-bold tracking-tight text-balance uppercase">
+                                    <AuroraText colors={project.data.colors}>
+                                        {project.data.title}
+                                    </AuroraText>
+                                </h2>
 
                                 <TagList tags={project.data.tags} className="p-2 lg:p-0 lg:mt-2" variant="outline"/>
 
-                                <BlurFade inView={true} delay={.5} direction="left">
-                                    <p className="text-muted-foreground text-lg lg:text-xl lg:mt-4 p-2">
-                                        {project.data.description}
-                                    </p>
-                                </BlurFade>
+                                <p className="text-lg line-clamp-5 lg:text-xl lg:mt-4 p-2">
+                                    {project.data.description}
+                                </p>
 
-                                <div className="flex justify-center mt-2 lg:mt-8 lg:block">
+                                <div className="flex justify-center mt-4 lg:mt-8 lg:block">
                                     <a href={`/projects/${project.id}`}
                                        className={cn(buttonVariants({
                                            variant: 'outline',
@@ -111,11 +98,8 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                     ))}
                 </CarouselContent>
 
-                <CarouselIndicators className="mt-0 lg:mt-8"/>
-                <CarouselPrevious className="hidden ml-2 lg:inline-flex"/>
-                <CarouselNext className="hidden mr-2 lg:inline-flex"/>
+                <CarouselIndicators className="mt-4 lg:mt-8"/>
             </Carousel>
-
         </>
     );
 }

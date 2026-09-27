@@ -10,8 +10,7 @@ import { BlurFade } from '@/components/ui/blur-fade';
 import { Icon } from 'astro-icon/components';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 export async function getStaticPaths() {
 	const projects = await getCollection('projects');
@@ -54,12 +53,12 @@ const projectDate = new Date(project.data.date);
 				</p>
 			</BlurFade>
 
-			<TagList class="mt-2 mb-4" tags={project.data.tags} />
+			<TagList class="mt-2 mb-4" tags={project.data.tags} variant="secondary" />
 			<p class="text-muted-foreground italic mb-4">Created: {projectDate.toLocaleDateString()}</p>
 
 			{project.data.youtube && (
 				<div class="my-8 -mx-2">
-					<LiteYouTubeEmbed client:load id={project.data.youtube} title={project.data.title} />
+					<YouTube id={project.data.youtube} title={project.data.title} />
 				</div>
 			)}
 
