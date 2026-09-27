@@ -2,11 +2,12 @@ import {BentoCard, BentoGrid} from '@/components/ui/bento-grid';
 import {cn} from '@/lib/utils';
 import {useState} from 'react';
 import {buttonVariants} from '@/components/ui/button';
-import {type ProjectEntry, projectTags} from '@/lib/types/content';
+import {projectTags} from '@/lib/types/content';
 import {className as tagListClass} from '@/components/common/tag-list';
+import type {CollectionEntry} from "astro:content";
 
 type ProjectsGridProps = {
-    projects: ProjectEntry[];
+    projects: CollectionEntry<'projects'>[];
     gridClass?: string;
     cardClass?: string;
     tagFilterClass?: string;
