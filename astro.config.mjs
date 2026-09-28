@@ -3,10 +3,9 @@ import {defineConfig} from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import react from '@astrojs/react';
-
 import mdx from '@astrojs/mdx';
-
 import sitemap from '@astrojs/sitemap';
+import delayDirective from './src/integrations/directives/astro-delay/register';
 
 // https://astro.build/config
 export default defineConfig({
@@ -56,7 +55,7 @@ export default defineConfig({
                 'jetbrains'
             ]
         }
-    }), mdx(), sitemap()],
+    }), mdx(), sitemap(), delayDirective()],
     vite: {
         plugins: [tailwindcss()]
     },
