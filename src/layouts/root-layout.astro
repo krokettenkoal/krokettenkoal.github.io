@@ -85,10 +85,8 @@ const {pathname} = Astro.url;
         observer?.disconnect();
     });
 
-    document.addEventListener('astro:after-swap', () => {
-        // restore the theme preference after the page swap to ensure the correct theme is applied
-        applyThemePreference();
-    });
+    // restore the theme preference after the page swap to ensure the correct theme is applied
+    document.addEventListener('astro:after-swap', applyThemePreference);
 
 </script>
 
