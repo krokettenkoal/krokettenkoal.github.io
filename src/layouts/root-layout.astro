@@ -8,8 +8,7 @@ import {cn} from '@/lib/utils';
 import {buttonVariants} from '@/components/ui/button.tsx';
 import {ScrollObserver} from 'astro-scroll-observer';
 import {ClientRouter} from "astro:transitions";
-import type {NavLink} from "@/components/react/nav";
-import Nav from '@/components/astro/nav.astro';
+import Nav, {type NavLink} from '@/components/astro/nav.astro';
 
 interface Props {
     title?: string;
@@ -20,18 +19,18 @@ const navLinks: NavLink[] = [
     {
         href: '/',
         label: 'Home',
-        iconName: 'lucide:home'
+        icon: 'lucide:home'
     },
     {
         href: '/projects',
         label: 'Projects',
-        iconName: 'lucide:sparkles',
-        activePattern: '^/projects'
+        icon: 'lucide:sparkles',
+        match: '^/projects'
     },
     {
         href: '/bio',
         label: 'Bio',
-        iconName: 'lucide:user'
+        icon: 'lucide:user'
     }
 ] as const;
 const socialLinks = [
@@ -46,9 +45,7 @@ const socialLinks = [
         label: 'Visit me on LinkedIn'
     }
 ] as const;
-
 const {title = '', description = 'I create stuff on my laptop.'} = Astro.props;
-const {pathname} = Astro.url;
 ---
 
 <script is:inline>
@@ -105,7 +102,7 @@ const {pathname} = Astro.url;
 <header transition:persist
         class="sticky top-0 left-0 right-0 h-header z-50 flex justify-between items-center py-2 px-5">
     <div></div>
-    <Nav items={navLinks} initialPathname={pathname}/>
+    <Nav items={navLinks}/>
     <div></div>
 </header>
 
@@ -141,3 +138,11 @@ const {pathname} = Astro.url;
 </footer>
 </body>
 </html>
+
+<style>
+    @supports (container-type: scroll-state) {
+        header {
+            container-type: scroll-state;
+        }
+    }
+</style>

@@ -1,29 +1,93 @@
 ---
-import {Nav} from "@/components/react/nav.tsx";
+import {cn} from "@/lib/utils";
+import {buttonVariants} from "@/components/ui/button.tsx";
+import {Icon} from "astro-icon/components";
+import type {HTMLAttributes} from "astro/types";
 
-interface Props {
-    items: NavLink[];
-    initialPathname: string;
+export type NavLink = {
+    href: string;
+    label: string;
+    icon: string;
+    match?: string;
 }
+
+type Props = {
+    items: NavLink[];
+} & HTMLAttributes<'nav'>;
+
+const {items, class: className, ...props} = Astro.props;
+const {pathname} = Astro.url;
 ---
+<script>
+    const handlePathMutation: MutationCallback = (mutationList) => {
+        for (const mutation of mutationList) {
+            if (mutation.type !== 'attributes') continue;
+            const navElem = mutation.target as HTMLElement;
+            const newPathName = navElem.getAttribute(mutation.attributeName);
+            if (!newPathName) continue;
+            navElem.querySelectorAll('li[data-nav-match]').forEach((li) => {
+                const regex = new RegExp(li.getAttribute('data-nav-match') ?? '^$');
+                if (regex.test(newPathName))
+                    li.setAttribute('data-nav-active', '');
+                else
+                    li.removeAttribute('data-nav-active')
+            });
+        }
+    };
 
-<Nav client:load {...Astro.props}/>
+    const mutationConfig: MutationObserverInit = {
+        attributes: true,
+        attributeFilter: ['data-nav-current'],
+        subtree: false
+    };
+    const observer = new MutationObserver(handlePathMutation);
+    const navElems = document.querySelectorAll('nav[data-nav-current]');
 
-<style is:global>
+    navElems.forEach((navElem) => {
+        observer.observe(navElem, mutationConfig);
+    });
+
+    document.addEventListener('astro:before-swap', (event: { to: URL }) => {
+        navElems.forEach((navElem) => {
+            navElem.setAttribute('data-nav-current', event.to.pathname);
+        });
+    });
+</script>
+<nav data-nav-current={pathname} class:list={["transition-colors duration-300 p-1", className]} {...props}>
+    <menu class="flex justify-center items-center gap-2">
+        {items.map(navLink => (
+                <li data-nav-match={navLink.match ?? `^${navLink.href}$`} class="group"
+                    data-nav-active={(new RegExp(navLink.match ?? `^${navLink.href}$`)).test(pathname) ? '' : null}>
+                    <a href={navLink.href}
+                       class={cn([
+                           buttonVariants({variant: 'link'}),
+                           'flex items-center gap-1 text-secondary-foreground transition-colors hover:no-underline hover:text-foreground',
+                           'group-data-nav-active:text-foreground group-data-nav-active:font-semibold group-data-nav-active:bg-secondary'
+                       ])}
+                    >
+                        <Icon name={navLink.icon} class="size-4 lg:hidden"/>
+                        <span class="hidden md:block">
+                        {navLink.label}
+                    </span>
+                    </a>
+                </li>
+        ))}
+    </menu>
+</nav>
+
+<style>
     @reference '../../styles/global.css';
     @supports (container-type: scroll-state) {
-        header {
-            container-type: scroll-state;
-
-            nav {
-                @container scroll-state(stuck: top) {
-                    @apply bg-background/30 backdrop-blur-lg rounded-lg border;
-                }
+        nav {
+            @container scroll-state(stuck: top) {
+                @apply bg-background/30 backdrop-blur-lg rounded-lg border;
             }
         }
-
     }
 
+</style>
+<style is:global>
+    @reference '../../styles/global.css';
     @supports not (container-type: scroll-state) {
         [data-is-top='false'] header nav {
             @apply bg-background/30 backdrop-blur-lg rounded-lg border;
