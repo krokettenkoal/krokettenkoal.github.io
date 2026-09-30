@@ -46,10 +46,8 @@ export function Nav({items, initialPathname, className, ...restProps}: NavProps)
                         <a href={navLink.href}
                            className={cn(
                                buttonVariants({variant: 'link'}),
-                               [
-                                   'flex items-center gap-1 text-secondary-foreground transition-colors hover:no-underline hover:text-foreground',
-                                   {'text-foreground font-semibold bg-secondary': navItemIsActive(navLink, currentPath)}
-                               ]
+                               'flex items-center gap-1 text-secondary-foreground transition-colors hover:no-underline hover:text-foreground',
+                               {'text-foreground font-semibold bg-secondary': navItemIsActive(navLink, currentPath)}
                            )}
                         >
                             <Icon icon={navLink.iconName} className="size-4 lg:hidden"/>
