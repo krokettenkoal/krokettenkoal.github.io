@@ -1,6 +1,6 @@
 ---
 import RootLayout from '@/layouts/root-layout.astro';
-import {ButtonScrollTo} from '@/components/react/button-scroll-to';
+import ButtonScrollTo from '@/components/astro/button-scroll-to.astro';
 import {Icon} from 'astro-icon/components';
 import {BlurFade} from '@/components/ui/blur-fade';
 import {AuroraText} from '@/components/ui/aurora-text';
@@ -10,7 +10,6 @@ import {getCollection} from 'astro:content';
 import {dateCompare} from "@/lib/utils/date";
 import {TypingAnimation} from "@/components/ui/typing-animation";
 import {DiaTextReveal} from "@/components/ui/dia-text-reveal";
-import {buttonVariants} from "@/components/ui/button";
 
 const featuredProjects = (
     await getCollection('projects', ({data}) => data.featured))
@@ -88,11 +87,7 @@ const introTextDuration = introTextProps.words.reduce((acc, word) => {
                 </menu>
             </div>
 
-            <ButtonScrollTo client:idle
-                            targetSelector="#projects-featured" variant="outline" size="icon"
-                            className="size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
-                <Icon name="lucide:arrow-down"/>
-            </ButtonScrollTo>
+            <ButtonScrollTo target="#projects-featured"/>
         </section>
 
         <section id="projects-featured" class="w-full p-2 mt-20 scroll-m-18">

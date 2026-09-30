@@ -5,7 +5,7 @@ import {ProjectsGrid as ProjectsGridReact} from '@/components/react/projects-gri
 import {AuroraText} from '@/components/ui/aurora-text';
 import {Icon} from 'astro-icon/components';
 import {BlurFade} from '@/components/ui/blur-fade';
-import {ButtonScrollTo} from '@/components/react/button-scroll-to';
+import ButtonScrollTo from '@/components/astro/button-scroll-to.astro';
 import {ProjectsCarousel} from '@/components/react/projects-carousel';
 const projects = (await getCollection('projects')).sort((a, b) => (new Date(b.data.date)).getTime() - (new Date(a.data.date)).getTime());
 const featuredProjects = projects.filter(project => project.data.featured);
@@ -32,11 +32,7 @@ const featuredProjects = projects.filter(project => project.data.featured);
             <ProjectsCarousel client:load projects={featuredProjects} className="container grow lg:grow-0"/>
 
             <div>
-                <ButtonScrollTo client:idle
-                                targetSelector="#projects-all" variant="outline" size="icon"
-                                className="max-lg:hidden size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset">
-                    <Icon name="lucide:arrow-down"/>
-                </ButtonScrollTo>
+                <ButtonScrollTo target="#projects-all" class="max-lg:hidden"/>
             </div>
         </section>
         <!-- END FEATURED PROJECTS -->
