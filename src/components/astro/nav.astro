@@ -66,9 +66,9 @@ const {pathname} = Astro.url;
                        ])}
                     >
                         <Icon name={navLink.icon} class="size-4 lg:hidden"/>
-                        <span class="hidden md:block">
-                        {navLink.label}
-                    </span>
+                        <span class="max-md:not-group-data-nav-active:hidden md:block">
+                            {navLink.label}
+                        </span>
                     </a>
                 </li>
         ))}

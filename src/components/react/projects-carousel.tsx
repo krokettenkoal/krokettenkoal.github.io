@@ -46,10 +46,10 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                 />
             ))}
 
-            <Carousel plugins={[Autoplay({delay: 7000})]} setApi={setApi} {...restProps}>
-                <CarouselContent>
+            <Carousel plugins={[/*Autoplay({delay: 7000})*/]} setApi={setApi} {...restProps}>
+                <CarouselContent className="lg:p-8">
                     {projects.map((project) => (
-                        <CarouselItem key={project.id}>
+                        <CarouselItem key={project.id} className="lg:flex justify-center items-center">
                             <div className="mt-8 mb-6 lg:hidden">
                                 <h2
                                     className="scroll-m-20 px-2 text-4xl font-bold tracking-tight text-balance uppercase">
@@ -60,16 +60,16 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                             </div>
 
                             <div
-                                className="w-full aspect-square overflow-clip lg:w-[45%] lg:float-left lg:mr-12 lg:rounded-xl"
+                                className="w-full max-lg:h-96 lg:aspect-square lg:w-[35%] lg:float-left lg:mr-12 xl:p-6"
                             >
                                 <img src={project.data.thumbnail.src} width={project.data.thumbnail.width}
                                      height={project.data.thumbnail.height}
                                      alt={project.data.thumbnailAlt ?? ''}
-                                     loading="lazy" className="w-full h-full object-cover object-center"/>
+                                     loading="lazy" className="w-full h-full object-cover object-center lg:rounded-xl"/>
 
                             </div>
 
-                            <div className="max-w-[120ch] my-auto">
+                            <div className="lg:max-w-[50ch]">
                                 <h2
                                     className="hidden lg:block scroll-m-20 px-2 text-5xl font-bold tracking-tight text-balance uppercase">
                                     <AuroraText colors={project.data.colors}>
@@ -98,7 +98,7 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                     ))}
                 </CarouselContent>
 
-                <CarouselIndicators className="mt-4 lg:mt-8"/>
+                <CarouselIndicators className="mt-4"/>
             </Carousel>
         </>
     );
