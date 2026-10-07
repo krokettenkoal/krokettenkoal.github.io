@@ -46,7 +46,7 @@ export function ProjectsCarousel({projects, ...restProps}: Omit<ProjectsCarousel
                 />
             ))}
 
-            <Carousel plugins={[/*Autoplay({delay: 7000})*/]} setApi={setApi} {...restProps}>
+            <Carousel plugins={[Autoplay({delay: 7000})]} setApi={setApi} {...restProps}>
                 <CarouselContent className="lg:p-8">
                     {projects.map((project) => (
                         <CarouselItem key={project.id} className="lg:flex justify-center items-center">
