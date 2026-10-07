@@ -12,7 +12,7 @@ function colorValidator(val: string): boolean {
 }
 
 const projects = defineCollection({
-    loader: glob({pattern: '**/*.{md,mdx}', base: './src/data/projects'}),
+    loader: glob({pattern: '**/*.{md,mdx}', base: './src/content/projects'}),
     schema: ({image}) => z.object({
         title: z.string(),
         description: z.string(),
