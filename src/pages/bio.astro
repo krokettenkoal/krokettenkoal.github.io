@@ -19,6 +19,7 @@ import wwiseFundamentalsDark from '../assets/img/wwise-fundamentals_dark.png';
 import winServer from '../assets/img/win-server.png';
 import msO365 from '../assets/img/ms-o365.png';
 import {cn} from "@/lib/utils";
+import type {ComponentProps} from "react";
 
 const skills = [
     [
@@ -176,58 +177,70 @@ const experience = [
         period: '2015 – 2020'
     }
 ];
-const certifications = [
+const certifications: { card: ComponentProps<typeof BentoCard>, img: {}, imgDark?: {}, imgClass?: string } = [
     {
-        name: 'Wwise Certified Instructor',
-        description: 'Audiokinetic, 2026',
-        cta: 'View certificate',
-        href: '/docs/wwise-certified-instructor.pdf',
+        card: {
+            name: 'Wwise Certified Instructor',
+            description: 'Audiokinetic, 2026',
+            cta: 'View certificate',
+            href: '/docs/wwise-certified-instructor.pdf',
+            className: 'col-span-3 lg:col-span-3'
+        },
         img: wwiseCertifiedInstructor,
         imgDark: wwiseCertifiedInstructorDark,
-        className: 'col-span-3 lg:col-span-3'
     },
     {
-        name: 'Wwise Unity Integration',
-        description: 'Audiokinetic, 2026',
-        cta: 'View certificate',
-        href: '/docs/wwise-unity-integration.pdf',
+        card: {
+            name: 'Wwise Unity Integration',
+            description: 'Audiokinetic, 2026',
+            cta: 'View certificate',
+            href: '/docs/wwise-unity-integration.pdf',
+            className: 'col-span-3 lg:col-span-2'
+        },
         img: wwiseUnityIntegration,
         imgDark: wwiseUnityIntegrationDark,
         imgClass: 'lg:size-48',
-        className: 'col-span-3 lg:col-span-2'
     },
     {
-        name: 'Wwise Fundamentals',
-        description: 'Audiokinetic, 2026',
-        cta: 'View certificate',
-        href: '/docs/wwise-fundamentals.pdf',
+        card: {
+
+            name: 'Wwise Fundamentals',
+            description: 'Audiokinetic, 2026',
+            cta: 'View certificate',
+            href: '/docs/wwise-fundamentals.pdf',
+            className: 'col-span-3 lg:col-span-1'
+        },
         img: wwiseFundamentals,
         imgDark: wwiseFundamentalsDark,
         imgClass: 'lg:size-32',
-        className: 'col-span-3 lg:col-span-1'
     },
     {
-        name: 'Windows Server Administration Fundamentals',
-        description: 'ETC Enterprise Training Center, 2015',
-        cta: 'View certificate',
-        href: '/docs/win-server-admin.pdf',
+        card: {
+            name: 'Windows Server Administration Fundamentals',
+            description: 'ETC Enterprise Training Center, 2015',
+            cta: 'View certificate',
+            href: '/docs/win-server-admin.pdf',
+            className: 'col-span-3 lg:col-span-1'
+        },
         img: winServer,
         imgClass: 'lg:size-32',
-        className: 'col-span-3 lg:col-span-1'
     },
     {
-        name: 'Microsoft Office 365 Online and Desktop for Administrators and Service Desk',
-        description: 'ETC Enterprise Training Center, 2018',
-        cta: 'View certificate',
-        href: '/docs/ms-o365-admin.pdf',
+        card: {
+            name: 'Microsoft Office 365 Online and Desktop for Administrators and Service Desk',
+            description: 'ETC Enterprise Training Center, 2018',
+            cta: 'View certificate',
+            href: '/docs/ms-o365-admin.pdf',
+            className: 'col-span-3 lg:col-span-2'
+        },
         img: msO365,
         imgClass: 'lg:size-32',
-        className: 'col-span-3 lg:col-span-2'
     },
 ];
 ---
 
-<RootLayout title="Bio" description="Software engineer, IT specialist. Web, games, DevOps. Lecturer and audio enthusiast.">
+<RootLayout title="Bio"
+            description="Software engineer, IT specialist. Web, games, DevOps. Lecturer and audio enthusiast.">
     <main class="container max-w-3xl mx-auto p-2">
         <section class="flex gap-8 my-8">
             <Image src={photoCajetan} alt="A portrait photo of me" layout="constrained"
@@ -324,13 +337,13 @@ const certifications = [
                                     client:visible
                                     key={i}
                                     childrenWrapperProps={{className: ""}}
-                                    {...cert}
+                                    {...cert.card}
                             >
                                 <div class="size-full flex justify-end">
-                                    <Image src={cert.img} alt={cert.name}
+                                    <Image src={cert.img} alt={cert.card.name}
                                            class:list={[{"dark:hidden": !!cert.imgDark}, cn("size-32 md:size-72 object-contain object-center mx-4 opacity-50 saturate-90 group-hover:saturate-50 group-hover:blur-sm transition-all", cert.imgClass)]}/>
                                     {cert.imgDark && (
-                                            <Image src={cert.imgDark} alt={cert.name}
+                                            <Image src={cert.imgDark} alt={cert.card.name}
                                                    class={cn("hidden dark:block size-32 md:size-72 object-contain object-center mx-4 opacity-50 saturate-90 group-hover:saturate-50 group-hover:blur-sm transition-all", cert.imgClass)}/>
                                     )}
                                 </div>
