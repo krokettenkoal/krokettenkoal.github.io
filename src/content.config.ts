@@ -2,7 +2,6 @@ import {z} from 'astro/zod';
 import {defineCollection, reference} from 'astro:content';
 import {glob} from 'astro/loaders';
 import color from 'color-string';
-import {projectTags} from '@/lib/types/content.ts';
 
 function colorValidator(val: string): boolean {
     try {
@@ -21,10 +20,10 @@ const projects = defineCollection({
         thumbnailAlt: z.string().optional(),
         background: image().optional(),
         date: z.iso.date(),
-        tags: z.enum(projectTags).array(),
+        tags: z.array(z.stringFormat('project tag', /^[a-z-]+$/)).nonempty(),
         featured: z.boolean().default(false),
-        youtube: z.string().optional(),
-        colors: z.string().refine(colorValidator).array().optional(),
+        youtube: z.stringFormat('YouTube video id', /^[\w\-]+$/).optional(),
+        colors: z.array(z.string().refine(colorValidator)).optional(),
         gridSize: z.number().min(1).max(3).default(1),
         relatedProjects: z.array(reference('projects'))
     })

@@ -1,8 +1,7 @@
 import {BentoCard, BentoGrid} from '@/components/ui/bento-grid';
 import {cn} from '@/lib/utils';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {buttonVariants} from '@/components/ui/button';
-import {projectTags} from '@/lib/types/content';
 import {className as tagListClass} from '@/components/common/tag-list';
 import type {CollectionEntry} from "astro:content";
 
@@ -27,14 +26,19 @@ export function ProjectsGrid({
                                  gridClass = '',
                                  cardClass = ''
                              }: ProjectsGridProps) {
-    const [tagFilter, setTagFilter] = useState<typeof projectTags[number] | null>(null);
-    const filteredProjects = tagFilter ? projects.filter(p => p.data.tags.includes(tagFilter)) : projects;
+    const [tagFilter, setTagFilter] = useState<string | null>(null);
+    const filteredProjects = useMemo(() => tagFilter ? projects.filter(p => p.data.tags.includes(tagFilter)) : projects, [projects, tagFilter]);
+    const projectTags = useMemo(() => {
+        const tagsSet = new Set<string>();
+        projects.forEach(p => p.data.tags.forEach(tag => tagsSet.add(tag)));
+        return Array.from(tagsSet).sort();
+    }, [projects]);
 
     return (
         <>
             {showTagFilter && (
                 <div className={cn(tagFilterClass)}>
-                    <ul className={cn(tagListClass, 'inline-flex p-2')}>
+                    <menu className={cn(tagListClass, 'inline-flex p-2')}>
                         <li key="all">
                             <button
                                 className={buttonVariants({variant: tagFilter === null ? 'default' : 'outline'})}
@@ -53,7 +57,7 @@ export function ProjectsGrid({
                                 </button>
                             </li>
                         ))}
-                    </ul>
+                    </menu>
                 </div>
             )}
 
