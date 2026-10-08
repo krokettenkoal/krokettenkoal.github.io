@@ -1,0 +1,115 @@
+---
+title: "Notes from the Past"
+description: "Walking Simulator set in a post-apocalyptic world where humans became extinct. The player follows the story of an alien on the hunt for music discs, exploring an abandoned house and discovering how its residents perceived the last days of humanity."
+thumbnail: "@/assets/projects/nftp/thumbnail.jpg"
+background: "@/assets/projects/nftp/bg.webp"
+date: "2023-02-14"
+tags:
+  - game
+  - unity
+  - wwise
+youtube: "zDLws-XPvSE"
+colors:
+  - "#e9cc42"
+  - "#59e9e8"
+  - "#9e654d"
+gridSize: 2
+relatedProjects:
+  - apophis
+  - twisted-funland
+---
+
+import {Badge} from '../../components/ui/badge';
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgHud from '../../assets/projects/nftp/screenshots/hud.webp';
+import imgHelmet from '../../assets/projects/nftp/screenshots/detail_helmet.webp';
+import imgTransponder from '../../assets/projects/nftp/screenshots/transponder.webp';
+import imgMotel from '../../assets/projects/nftp/screenshots/motel.jpeg';
+import imgCollection from '../../assets/projects/nftp/screenshots/collection.webp';
+import imgStartScreen from '../../assets/projects/nftp/screenshots/startscreen.webp';
+import imgCity from '../../assets/projects/nftp/concept/city.webp';
+import imgCrash from '../../assets/projects/nftp/concept/crash.webp';
+import imgGoldenRecord from '../../assets/projects/nftp/concept/golden-record.webp';
+import imgSpaceship from '../../assets/projects/nftp/concept/spaceship.webp';
+import imgSuburb from '../../assets/projects/nftp/concept/suburb.webp';
+import imgVoyager from '../../assets/projects/nftp/concept/voyager.webp';
+
+
+export const carouselScreenshots = [
+    {src: imgHud.src, caption: 'After crashing on the deserted planet, the journey begins.'},
+    {src: imgHelmet.src, caption: 'Repairing the broken helmet'},
+    {src: imgTransponder.src, caption: 'Transponder minigame: tuning in to contact the alien mothership'},
+    {src: imgMotel.src, caption: 'View from the local motel'},
+    {src: imgCollection.src, caption: 'Inventory view, showing items collected along the journey'},
+    {src: imgStartScreen.src, caption: 'Main menu screen'},
+];
+
+export const carouselConceptArt = [
+    {src: imgCity.src, caption: 'Alien civilization — the protagonist\'s homeworld'},
+    {src: imgSuburb.src, caption: 'Deserted suburb on what remains of Earth — the alien protagonist\'s destination'},
+    {src: imgCrash.src, caption: 'Passing Earth\'s atmosphere, crash imminent'},
+    {src: imgVoyager.src, caption: 'The Voyager probe, carrying the sole remnants of humanity into the cosmos ...'},
+    {
+        src: imgGoldenRecord.src,
+        caption: '... including the Golden Record, bringing the love for music to an alien civilization'
+    },
+    {src: imgSpaceship.src, caption: 'Leaving Earth with the mothership'},
+];
+
+> Discovering tomorrow what we lost today.
+
+## Summary
+
+Notes from the Past explores human culture through the lens of an **alien lifeform**.
+Discovering the _Voyager_ probe and deciphering the **Golden Record** led these aliens to find music.
+Enthralled by melodies never thought possible, they began their **journey to Earth**.
+While exploring an abandoned house and its surroundings, an alien discovers the story of the family that lived there and of **humanity’s sudden end.**
+
+Explore an expansive house filled with puzzles. Collect artifacts of humanity and find out what caused civilization to end.
+Listen to recordings of the people that lived there and learn about their fate.
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+Notes from the Part was developed during the MediaLab _Digital Game Production_ within the _Media Technology_ bachelor program at University of Applied Sciences St. Pölten during the 2022 winter semester.
+The game was developed in Unity, using Audiokinetic Wwise as audio middleware.
+
+### My Role
+
+<ul className="list-none flex gap-2 p-0 m-0 [&_li]:m-0 [&_li]:p-0 [&_li]:text-lg">
+    <li><Badge variant="outline">audio lead</Badge></li>
+    <li><Badge variant="outline">UI/PX lead</Badge></li>
+    <li><Badge variant="outline">development</Badge></li>
+    <li><Badge variant="outline">concept art</Badge></li>
+</ul>
+
+My roles in the project were audio lead, UI/PX lead, developer and concept artist.
+I was responsible for conceptualizing visuals of the game world and its protagonist, implementing the game's audio and crafting an intuitive user interface and an enjoyable player experience.
+Additionally, I contributed to various development tasks, including gameplay mechanics and system integration.
+
+
+## Concept Art
+
+<CarouselImages client:visible images={carouselConceptArt}/>
+
+
+## Credits
+
+### Core Team
+
+- [Lukas Heinzl](https://lheinzl.com): project lead, development lead
+- Cajetan Grill (me): audio lead, UI/PX lead, development, concept art
+- Dawid Lewandowski: story lead, world building, voice acting, 3D lead
+- Sebastian Grün: level design, audio production, 3D modeling
+- Michael Forthuber: visionary, story, development
+
+### Supervisors
+
+- [Peter Judmaier](https://www.ustp.at/en/about-us/staff-a-z/judmaier-peter?set_language=en)
+
+## Links
+
+- [fhstp_games on Instagram](https://www.instagram.com/fhstp_games/)
