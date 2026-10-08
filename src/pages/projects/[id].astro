@@ -27,8 +27,9 @@ const projectDate = new Date(project.data.date);
 ---
 
 <RootLayout title={project.data.title} description={project.data.description}>
-    <Image src={project.data.thumbnail} alt="" width={project.data.thumbnail.width}
-           height={project.data.thumbnail.height}
+    <Image src={project.data.background ?? project.data.thumbnail} alt=""
+           width={project.data.background?.width ?? project.data.thumbnail.width}
+           height={project.data.background?.height ?? project.data.thumbnail.height}
            class="hidden md:block fixed inset-0 w-full h-full object-cover object-center -z-10 filter blur-xl opacity-30 saturate-50"
     />
 
