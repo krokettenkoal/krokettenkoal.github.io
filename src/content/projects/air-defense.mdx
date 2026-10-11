@@ -1,0 +1,70 @@
+---
+title: "AiR Defense"
+description: "AiR Defense is an augmented reality tower defense game that transforms your real-world surroundings into a battlefield. Deploy defensive towers, fend off waves of enemy fighter jets, and see how long you can survive as the skies grow increasingly hostile."
+thumbnail: "@/assets/projects/air-defense/screenshots/under-attack-02.png"
+date: "2025-10-23"
+youtube: "Lz74zbyoOZM"
+tags:
+  - game
+  - xr
+  - unity
+featured: True
+relatedProjects:
+  - apophis
+  - twisted-funland
+colors:
+  - "#eebc20"
+  - "#feb100"
+gridSize: 1
+---
+
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgUnderAttack from '../../assets/projects/air-defense/screenshots/under-attack.png';
+import imgUnderAttack02 from '../../assets/projects/air-defense/screenshots/under-attack-02.png';
+import imgEnemyDestroyed from '../../assets/projects/air-defense/screenshots/enemy-destroyed.png';
+import imgPlaceTower from '../../assets/projects/air-defense/screenshots/place-tower.png';
+import imgGameOver from '../../assets/projects/air-defense/screenshots/game-over.png';
+import imgMainMenu from '../../assets/projects/air-defense/screenshots/main-menu.png';
+import imgMoreEnemies from '../../assets/projects/air-defense/screenshots/more-enemies.png';
+import imgWaveCleared from '../../assets/projects/air-defense/screenshots/wave-cleared.png';
+
+export const carouselScreenshots = [
+    {src: imgPlaceTower.src, caption: "Place your first tower to start the game"},
+    {src: imgUnderAttack.src, caption: "Enemy fighter jets approaching your tower"},
+    {src: imgUnderAttack02.src, caption: "Incoming waves of enemy jets"},
+    {src: imgEnemyDestroyed.src, caption: "Successfully destroyed an enemy jet"},
+    {src: imgMoreEnemies.src, caption: "More enemies approaching as the game progresses"},
+    {src: imgWaveCleared.src, caption: "Wave cleared! Place another tower to strengthen your defenses"},
+    {src: imgGameOver.src, caption: "Game over screen after your tower is destroyed"},
+    {src: imgMainMenu.src, caption: "Main menu screen"},
+];
+
+> Your world. Your tower. Defend at all costs.
+
+**AiR Defense** brings the classic tower defense genre into augmented reality, turning your surroundings into an interactive battlefield.
+Using your phone's camera, scan the environment to create a playing field that blends the virtual game world with the real one.
+Place your first defensive tower and prepare for incoming waves of enemy fighter jets determined to destroy it.
+Survive successive attacks to earn the opportunity to deploy additional towers and strengthen your defenses.
+
+With no final finish line in sight, your mission is simple: hold the line, adapt your strategy, and survive for as long as possible!
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+**AiR Defense** was developed as a solo project in Unity for Android, using AR Foundation to integrate augmented reality gameplay into the player's physical surroundings.
+The project combines real-world environment tracking with virtual object placement, enemy behavior, and wave-based tower defense mechanics.
+
+Key technical aspects include:
+
+- **Technology stack:** Unity, AR Foundation, Android.
+- **Surface detection and tracking:** Detects real-world surfaces through the device camera, allowing players to establish a playable area and place defensive towers within their surroundings.
+- **Image anchors and markers:** Uses image-based tracking to recognize designated visual markers and establish reference points for positioning and anchoring virtual content in the real world.
+- **Light estimation:** Uses AR light estimation to adapt virtual objects to the lighting conditions of the physical environment, helping integrate game elements more naturally into the camera view.
+- **AR object placement:** Enables players to position defensive structures within the tracked environment, making the physical space an integral part of the gameplay.
+- **Wave-based enemy AI:** Enemy fighter jets spawn in successive waves and target the player's towers, creating an ongoing defensive challenge.
+- **Progression and gameplay systems:** Implements wave progression, survival-based scoring, and the gradual unlocking of additional tower placements as players clear enemy waves.
+
+The project explores the practical application of mobile AR technologies in an interactive game, combining spatial tracking, environment-aware rendering, and familiar tower defense mechanics into a location-independent augmented reality experience.
