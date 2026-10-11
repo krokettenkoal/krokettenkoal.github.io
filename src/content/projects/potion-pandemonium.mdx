@@ -1,0 +1,167 @@
+---
+title: "Potion Pandemonium"
+description: "A magical mishap has cursed the kingdom, and only you can help brew the cure! Potion Pandemonium is a short VR RPG quest where you gather ingredients, negotiate with quirky characters, and master the art of gesture-based interaction."
+thumbnail: "@/assets/projects/potion-pandemonium/screenshots/square/highlight_binding-agent.png"
+background: "@/assets/projects/potion-pandemonium/screenshots/wide/env_marketplace.png"
+date: "2025-10-14"
+tags:
+  - game
+  - xr
+  - unity
+  - wwise
+featured: True
+colors:
+  - "#1f65a7"
+  - "#ad4a50"
+gridSize: 2
+relatedProjects:
+  - finding-emo
+  - apophis
+---
+
+import {Image} from "astro:assets";
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgEnvMarketplace from '../../assets/projects/potion-pandemonium/screenshots/wide/env_marketplace.png';
+import imgGestureFlow from '../../assets/projects/potion-pandemonium/diagrams/gesture-example-flow.jpg';
+import imgStoryFlow from '../../assets/projects/potion-pandemonium/diagrams/story-flow.jpg';
+import imgSystemArchitecture from '../../assets/projects/potion-pandemonium/diagrams/system-architecture.jpg';
+import imgDebugMetrics from '../../assets/projects/potion-pandemonium/diagrams/debug-metrics_inspector.png';
+
+export const screenshotsWide = import.meta.glob('../../assets/projects/potion-pandemonium/screenshots/wide/*', {eager: true});
+export const carouselScreenshotsWide = Object.values(screenshotsWide).map((screenshot) => ({
+    src: screenshot.default.src,
+    caption: ''
+}));
+
+export const screenshotsSquare = import.meta.glob('../../assets/projects/potion-pandemonium/screenshots/square/*', {eager: true});
+export const carouselScreenshotsSquare = Object.values(screenshotsSquare).map((screenshot) => ({
+    src: screenshot.default.src,
+    caption: ''
+}));
+
+> An enchanted quest where your hands do the talking.
+
+<Image src={imgEnvMarketplace} alt="A panoramic view of the game's marketplace and its king - your quest-giver"/>
+
+A magical mishap has thrown an entire kingdom into chaos.
+As a mute apprentice working in a potion shop, you must help your master reverse the curse before it's too late.
+Your mission? Travel across the kingdom, collect three essential ingredients, and brew an antidote that could save everyone.
+
+But gathering ingredients is only half the adventure.
+You'll need to identify rare herbs, haggle with a marketplace alchemist, and strike a deal with a stubborn blacksmith.
+Make your choices, lend a helping hand, and discover how your decisions shape the outcome of your quest.
+
+### Your Hands Are Your Voice
+
+In Potion Pandemonium, you don't need spoken words to communicate.
+Use intuitive hand gestures to answer questions, point at objects, confirm decisions, and negotiate prices.
+Alternatively, switch to a more traditional interaction style using familiar floating menus and point-and-pinch selection.
+
+<CarouselImages client:visible images={carouselScreenshotsWide}/>
+
+### A Quest Full of Choices
+
+Explore a charming low-poly fantasy world, interact with animated characters, and complete optional minigames to earn discounts on essential ingredients. Help the alchemist sort misplaced items or assist the blacksmith with the firewood. Every interaction brings you closer to completing your potion.
+
+### Your Choices Matter
+
+Not every ingredient is what it seems, and one crucial decision determines the fate of the kingdom.
+Choose wisely: your adventure can end in a royal celebration or a rather unfortunate trip to the dungeon.
+
+### More Than Just a Fantasy Adventure
+
+Potion Pandemonium was developed as part of my master's thesis investigating reality-based interaction (RBI) in virtual reality.
+By comparing symbolic hand gestures with conventional graphical interface interactions, the project explores how different input paradigms influence player experience and interaction performance.
+
+**Will you master the art of potion-making and save the kingdom?**
+
+The fate of the realm is quite literally in your hands.
+
+<CarouselImages client:visible images={carouselScreenshotsSquare}/>
+
+## Development
+
+Potion Pandemonium was developed in Unity 6 as a standalone VR experience for Meta Quest 3.
+Its architecture was designed around a central research objective: comparing reality-based interactions (RBI) with conventional WIMP-style graphical user interface interactions in the context of NPC dialogue and quest progression.
+
+
+<Image src={imgSystemArchitecture} alt="A diagram showing the system architecture of the project"/>
+
+The project combines hand tracking, gesture recognition, branching narrative logic, spatial audio, and custom evaluation tooling into a modular system that supports both interaction conditions within the same experience.
+
+### VR Platform & Interaction Framework
+
+The application uses the Meta XR SDKs, including the Core, Interaction, and Audio SDKs, to provide hand tracking, pose recognition, ray-based interactions, and spatial audio.
+
+Two interaction paradigms are implemented:
+
+- **Reality-Based Interaction (RBI):** Players communicate through symbolic hand gestures. Thumbs up and down represent binary decisions, pointing identifies objects, and raised fingers communicate numerical values during negotiations.
+- **WIMP-style interaction:** Players select dialogue options through conventional floating GUI elements using ray-based pointing and pinch input, following the familiar model of graphical interface interaction.
+
+Both approaches share the same underlying narrative and quest logic, allowing interaction methods to be compared without requiring separate implementations of the story.
+
+### Narrative System & Branching Dialogue
+
+The narrative is implemented using Ink and its Unity integration.
+This separates dialogue content and branching logic from the underlying presentation and input systems.
+
+Custom Ink tags associate dialogue choices with the required interaction type, such as a specific gesture, a target object, or a numerical response.
+External function bindings connect narrative events to Unity gameplay systems, enabling dialogue to trigger animations, update quest objectives, highlight objects, and manage story variables.
+
+This architecture makes it possible to change the active interaction paradigm while preserving the same narrative structure and progression logic.
+
+### Gesture Recognition & Input Validation
+
+Custom interaction components extend the Meta XR Interaction SDK's hand-pose recognition capabilities.
+The gesture vocabulary is deliberately limited to distinct static poses to improve reliability and reduce accidental selections.
+
+<Image src={imgGestureFlow} alt="A flow diagram showing how gestures are recognized and validated"/>
+
+The system supports binary, deictic, and numerical input categories.
+Pointing interactions use raycasting to identify referenced objects, while target-hold thresholds help distinguish intentional selections from incidental movements.
+Input validation and fallback logic prevent gestures that do not match the current choice set from triggering unintended actions.
+
+### User Interface & Audiovisual Feedback
+
+The dialogue interface adapts to the active interaction mode.
+WIMP mode displays selectable buttons, whereas RBI mode presents choice labels alongside visual representations of the required gestures.
+
+Both interfaces are positioned in the 3D environment near the speaking NPC.
+Visual transitions, object highlights, particle effects, and confirmation sounds communicate successful selections and minigame progress.
+
+NPCs use pre-authored animations alongside FinalIK for procedural gaze control, allowing them to look toward the player, other characters, and relevant objects.
+Voice-over dialogue was generated using ElevenLabs, while the Meta XR Audio SDK handles spatialized voices, environmental audio, and location-dependent room acoustics.
+
+### Quest Mechanics & Minigames
+
+The quest consists of a tutorial and three ingredient-gathering encounters, followed by a final resolution sequence.
+Players interact with a hermit, an alchemist, and a blacksmith, each presenting different combinations of object selection, binary decisions, numerical choices, and negotiation.
+
+<Image src={imgStoryFlow} alt="A flow diagram showing the branching narrative and quest progression"/>
+
+Two optional minigames extend the core dialogue interactions through direct object manipulation.
+Players sort items into a crate or place logs into a fireplace to earn discounts on ingredients.
+These tasks provide alternative progression paths while introducing additional physical interaction beyond dialogue selection.
+
+### Research Instrumentation & Evaluation Support
+
+A dedicated debugging and metrics subsystem supports playtesting and empirical evaluation.
+It records player actions, dialogue selections, task completion times, error rates, assistance requests, and quest progression.
+
+Custom Unity Editor inspectors facilitate test-session management, debugging, and data collection.
+These tools provide a structured basis for analyzing the two interaction paradigms using a consistent narrative and gameplay framework.
+
+<Image src={imgDebugMetrics}
+       alt="A screenshot of the custom Unity Editor inspector used for debugging and metrics collection"/>
+
+### Technology Stack
+
+- **Engine:** Unity 6
+- **Target platform:** Meta Quest 3
+- **XR framework:** Meta XR Core, Interaction, and Audio SDKs
+- **Narrative scripting:** Ink
+- **Character behavior:** FinalIK
+- **Editor tooling:** Odin Inspector and custom Unity Editor tools
+- **Voice generation:** ElevenLabs
+- **Audio:** Meta XR Audio SDK with spatialized dialogue and environmental sound
+- **Core systems:** Hand tracking, static gesture recognition, ray-based selection, branching dialogue, object manipulation, and research metrics
