@@ -1,0 +1,58 @@
+---
+title: "Orderbar"
+description: "Digital restaurant menu and order management system for restaurants and bars, allowing customers to order directly from their table using a tablet or smartphone."
+thumbnail: "@/assets/projects/orderbar/guest/welcome.webp"
+background: "@/assets/projects/orderbar/bg.webp"
+date: "2022-06-01"
+tags:
+  - desktop
+  - dotnet
+featured: True
+colors:
+  - "#083f9c"
+  - "#ffffff"
+  - "#083f9c"
+gridSize: 1
+relatedProjects:
+  - nftp
+---
+
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgGuestWelcome from '../../assets/projects/orderbar/guest/welcome.webp';
+import imgGuestOverview from '../../assets/projects/orderbar/guest/overview.webp';
+import imgGuestDrinks from '../../assets/projects/orderbar/guest/drinks.webp';
+import imgGuestOrderAdd from '../../assets/projects/orderbar/guest/order-add.webp';
+import imgGuestOrderSubmit from '../../assets/projects/orderbar/guest/order-submit.webp';
+import imgGuestOrderConfirmed from '../../assets/projects/orderbar/guest/order-confirmed.webp';
+import imgStaffOverview from '../../assets/projects/orderbar/staff/overview.webp';
+import imgStaffTableView from '../../assets/projects/orderbar/staff/table-view.webp';
+
+export const carouselScreenshots = [
+    {src: imgGuestWelcome.src, caption: 'Guest view: Welcome screen'},
+    {src: imgGuestOverview.src, caption: 'Guest view: Overview of all menu categories'},
+    {src: imgGuestDrinks.src, caption: 'Guest view: Drinks menu'},
+    {src: imgGuestOrderAdd.src, caption: 'Guest view: Add items to your order'},
+    {src: imgGuestOrderSubmit.src, caption: 'Guest view: Submit your order'},
+    {src: imgGuestOrderConfirmed.src, caption: 'Guest view: Order confirmed and being prepared'},
+    {src: imgStaffOverview.src, caption: 'Staff view: Overview of all tables'},
+    {src: imgStaffTableView.src, caption: 'Staff view: Table details and order management'},
+];
+
+> From table to kitchen, in just a tap.
+
+Orderbar is a digital restaurant menu with order functionality for guests and a dedicated management view for staff.
+Customers can browse the menu, add items to their order and submit it directly to the kitchen, while staff can view all tables, their orders and manage them accordingly.
+For demonstration purposes, the final application was built for the fictional restaurant *Hephaistos*, but can easily be adapted for any restaurant, bar or other business with table service.
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+The application is implemented using Windows Presentation Foundation (WPF), targeting .NET 6.
+All development aspects, including the user interface, data management and order processing, were handled by myself.
+
+## Links
+
+- [Source code on GitLab](https://git.nwt.fhstp.ac.at/mt201096/orderbar)

@@ -1,0 +1,48 @@
+---
+import {Icon} from 'astro-icon/components';
+import type {HTMLAttributes} from 'astro/types';
+import type {VariantProps} from "class-variance-authority";
+import {buttonVariants} from "@/components/ui/button";
+import {cn} from "@/lib/utils";
+
+type Props = {
+    target: string;
+    class?: string;
+} & HTMLAttributes<'button'> & Partial<VariantProps<typeof buttonVariants>>;
+const {
+    target,
+    class: className,
+    variant = 'outline',
+    size = 'icon',
+    ...props
+} = Astro.props;
+---
+<script>
+    function addScrollToButtonListeners() {
+        document.querySelectorAll('button[data-scroll-target]').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetSelector = button.getAttribute('data-scroll-target');
+                const targetElement = document.querySelector(targetSelector);
+                if (!targetElement) {
+                    console.warn(`No element found for selector: ${targetSelector}`);
+                    return;
+                }
+                targetElement.scrollIntoView({behavior: 'smooth'});
+            });
+        });
+    }
+
+    document.addEventListener('astro:page-load', addScrollToButtonListeners);
+</script>
+
+<button class={cn(buttonVariants({
+    variant,
+    size
+}), "size-12 rounded-full motion-safe:md:not-data-clicked:animate-bounce-offset", className)}
+        data-scroll-target={target}
+        {...props}
+>
+    <slot>
+        <Icon name="lucide:arrow-down"/>
+    </slot>
+</button>

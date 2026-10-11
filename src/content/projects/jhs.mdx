@@ -1,0 +1,74 @@
+---
+title: "Jesus Heist, Superstar"
+description: "Playing the Anointed Savior himself, you are on a holy mission to collect the humanly debts from the central bank vault. Since god's plan is — once again — not meet and right so to do in many terrestrial eyes, you have to be careful! Try not to get caught and haul as much sinful cash as possible, but watch out: Your time on earth is limited."
+thumbnail: "@/assets/projects/jhs/poster.webp"
+date: "2022-07-01"
+tags:
+  - game
+  - unity
+  - wwise
+colors:
+  - "#ee0298"
+  - "#052955"
+gridSize: 1
+relatedProjects:
+  - nftp
+  - twisted-funland
+---
+
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgAlarm from '../../assets/projects/jhs/screenshots/alarm_engaged.webp';
+import imgAtm from '../../assets/projects/jhs/screenshots/atm.webp';
+import imgCctv from '../../assets/projects/jhs/screenshots/cctv.webp';
+import imgEntry from '../../assets/projects/jhs/screenshots/entry.webp';
+import imgLasers from '../../assets/projects/jhs/screenshots/lasers.webp';
+import imgSpawn from '../../assets/projects/jhs/screenshots/spawn.webp';
+import imgUiMenu from '../../assets/projects/jhs/screenshots/ui_menu.webp';
+
+export const carouselScreenshots = [
+    {src: imgSpawn.src, caption: 'In front of the bank building, where the Anointed Savior steps down to Earth.'},
+    {src: imgAtm.src, caption: 'ATM machine for withdrawing earthly amounts of cash.'},
+    {src: imgEntry.src, caption: 'Entry area of the bank building.'},
+    {src: imgCctv.src, caption: 'View through a CCTV camera, which can be disabled in the security room.'},
+    {
+        src: imgLasers.src,
+        caption: 'Laser security system guarding the main vault. Avoid touching the lasers or you will trigger the alarm!'
+    },
+    {src: imgAlarm.src, caption: 'Alarm engaged! All doors are locked and code-locked.'},
+    {src: imgUiMenu.src, caption: 'In-game menu screen'},
+];
+
+> Welcome to the holy heist!
+
+## Mission Objectives
+
+In order to gain access to the main vault, you need to find the according keycard in the map.
+There are three different types of keycards:
+- Employee Keycard
+- CEO Keycard
+- Security Keycard
+
+The keycards spawn on random positions in the world and unlock various numbers of doors according to their security level.
+Having acquired all necessary keycards, your next goal is to find and open the main vault.
+Grab as much cash and valuables you can and escape by using one of the getaway opportunities before time runs off.
+
+Additionally to the main objectives, you can also try to gain access to the security room and disable all CCTV cameras.
+This gives you a time bonus and makes moving inside the building easier.
+
+## Code-locked doors
+
+As soon as the alarm is triggered, all doors are being closed and locked by a random 4-digit numeric code.
+To unlock a code-locked door, type in the highlighted digits in ascending order in the keypad.
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+Jesus Heist, Superstar was developed as a solo-project for the _Digital Game Production_ elective module within the _Media Technology_ bachelor program at University of Applied Sciences St. Pölten during the 2022 summer semester.
+The game was developed in Unity, using Audiokinetic Wwise as audio middleware.
+
+### My Role
+
+Since this was a solo-project, I was responsible for all aspects of the game development, including development, level design, and audio implementation.
