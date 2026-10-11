@@ -20,7 +20,7 @@ const projects = defineCollection({
         thumbnailAlt: z.string().optional(),
         background: image().optional(),
         date: z.iso.date(),
-        tags: z.array(z.stringFormat('project tag', /^[a-z-]+$/)).nonempty(),
+        tags: z.array(z.stringFormat('project tag', /^[a-z-0-9]+$/)).nonempty(),
         featured: z.boolean().default(false),
         youtube: z.stringFormat('YouTube video id', /^[\w\-]+$/).optional(),
         colors: z.array(z.string().refine(colorValidator)).optional(),
