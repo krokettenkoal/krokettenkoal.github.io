@@ -1,0 +1,101 @@
+---
+title: "Twisted Funland"
+description: "Step into Twisted Funland, an eerie VR escape room where a haunted amusement park hides a web of secrets, riddles, and skill-based challenges. Explore its twisted attractions, uncover forgotten secrets, and prove yourself worthy of escaping the darkness."
+thumbnail: "@/assets/projects/twisted-funland/screenshots/frame_18.png"
+background: "@/assets/projects/twisted-funland/screenshots/frame_04.png"
+youtube: "AIz6Ow4uu0E"
+date: "2023-11-17"
+tags:
+  - game
+  - xr
+  - unity
+  - wwise
+featured: True
+relatedProjects:
+  - apophis
+  - finding-emo
+colors:
+  - "#da5dc3"
+  - "#d84f7e"
+  - "#cdc876"
+  - "#7b001c"
+gridSize: 2
+---
+
+import {Image} from "astro:assets";
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgHighlightCut from '../../assets/projects/twisted-funland/highlight-cut.gif';
+
+export const screenshots = import.meta.glob('../../assets/projects/twisted-funland/screenshots/*', {eager: true});
+export const carouselScreenshots = Object.values(screenshots).map((screenshot) => ({
+    src: screenshot.default.src,
+    caption: ''
+}));
+
+> The fun never ends. Neither does the nightmare.
+
+Welcome to **Twisted Funland**, a once-magical amusement park now consumed by darkness.
+Trapped within its eerie attractions, you'll need more than luck to find your way out. Solve cryptic riddles, test your aim, uncover hidden objects, and conquer twisted carnival games as you unravel the secrets lurking beneath the park's haunted exterior.
+
+<Image src={imgHighlightCut} alt="Twisted Funland gameplay highlight"
+       className="w-full max-h-96 object-cover rounded-lg shadow-lg"/>
+
+**Explore a Twisted Amusement Park**
+
+Venture through atmospheric plazas and sinister attractions, from a mysterious carousel to a towering Ferris wheel.
+Every corner holds a new challenge, and every discovery brings you one step closer to freedom.
+
+**Solve Riddles and Uncover Secrets**
+
+Pay attention to your surroundings, decipher hidden symbols, and piece together cryptic clues.
+The park won't reveal its secrets to just anyone.
+
+**Test Your Skills**
+
+Take on a variety of interactive challenges, including Whac-A-Mole, shooting galleries, and cleanup games.
+Earn rewards, unlock essential tools, and use your newfound abilities to overcome the obstacles in your path.
+
+**Find Your Way Out**
+
+Your escape won't come easy.
+Search for hidden items, activate mechanisms, and piece together the solution to your final obstacle.
+Every challenge matters, and every step forward brings you closer to the exit.
+
+**Will you escape Twisted Funland, or become another lost soul in its endless game?**
+
+The attractions are waiting. Let the games begin.
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+**Twisted Funland was developed as a solo project in Unity**, with all gameplay implementation and technical integration handled independently.
+The project combines VR interaction, environmental puzzles, skill-based minigames, and spatial audio to create an immersive escape room experience set in a twisted amusement park.
+
+### VR Development & Interaction
+
+Built using Unity and the XR Interaction Toolkit, the project features interactive challenges designed around exploration, object interaction, and player-driven problem-solving.
+From solving environmental riddles to completing carnival minigames, the gameplay brings together a variety of mechanics within a cohesive VR experience.
+
+### Audio Integration & Immersion
+
+Audio plays an essential role in establishing the park's eerie atmosphere and guiding players through their journey.
+Wwise was integrated alongside the Meta XR Audio SDK to support the project's audio implementation and VR sound experience.
+
+The voice-over was AI-generated using ElevenLabs, providing narrative guidance, contextual hints, and feedback as players progress through the challenges.
+
+### Gameplay & Level Implementation
+
+The experience connects multiple themed areas through a sequence of puzzles, minigames, and progression objectives.
+Players must discover clues, complete challenges, and find essential items to unlock new opportunities and ultimately escape the park.
+All gameplay systems and project implementation were developed by me, bringing the individual interactions and objectives together into a complete VR escape room.
+
+### Assets & Production
+
+Third-party models, textures, and sound recordings were used to build the amusement park environment and establish its distinctive atmosphere.
+These assets were integrated into the Unity project as part of the overall level, gameplay, and audio implementation.
+
+### My Role
+
+As the sole developer, I was responsible for all implementation and technical integration of the project, including VR interaction, gameplay mechanics, puzzle and minigame implementation, and audio integration.
+This involved bringing the different components together into a cohesive, interactive VR experience.

@@ -1,0 +1,87 @@
+---
+title: "Avalanche"
+description: "Avalanche is a fast-paced, physics-based ski racing game where the mountain is your playground and the avalanche is right on your heels. Carve your way down the slopes, push your speed to the limit, and race to reach the Safe Zone in the valley before the avalanche catches up with you."
+thumbnail: "@/assets/projects/avalanche/poster.jpg"
+background: "@/assets/projects/avalanche/screenshots/avalanche-close.png"
+date: "2022-01-24"
+youtube: "Z5kFoPELFPs"
+tags:
+- game
+- unity
+- wwise
+colors:
+- "#000000"
+- "#ffffff"
+gridSize: 2
+relatedProjects:
+- nftp
+- jhs
+---
+
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgIngame01 from '../../assets/projects/avalanche/screenshots/ingame-01.png';
+import imgIngame02 from '../../assets/projects/avalanche/screenshots/ingame-02.png';
+import imgIngame03 from '../../assets/projects/avalanche/screenshots/ingame-03.png';
+import imgIngame04 from '../../assets/projects/avalanche/screenshots/ingame-04.png';
+import imgIngame05 from '../../assets/projects/avalanche/screenshots/ingame-05.png';
+import imgAvalancheFar from '../../assets/projects/avalanche/screenshots/avalanche-far.png';
+import imgAvalancheFar02 from '../../assets/projects/avalanche/screenshots/avalanche-far-02.png';
+import imgAvalancheCloser from '../../assets/projects/avalanche/screenshots/avalanche-closer.png';
+import imgAvalancheClose from '../../assets/projects/avalanche/screenshots/avalanche-close.png';
+import imgGameWon from '../../assets/projects/avalanche/screenshots/game-won.png';
+import imgGameLost from '../../assets/projects/avalanche/screenshots/game-lost.png';
+import imgHighscores from '../../assets/projects/avalanche/screenshots/highscores.png';
+import imgSettings from '../../assets/projects/avalanche/screenshots/settings.png';
+import imgMainMenu from '../../assets/projects/avalanche/screenshots/main-menu.png';
+
+export const carouselScreenshots = [
+    {src: imgIngame01.src, caption: "Starting the descent down the mountain"},
+    {src: imgAvalancheFar.src, caption: "The avalanche is approaching"},
+    {src: imgIngame02.src, caption: "Navigating between the trees"},
+    {src: imgIngame03.src, caption: "Speeding down the slope"},
+    {src: imgAvalancheFar02.src, caption: "Dashing away as fast as possible"},
+    {src: imgIngame04.src, caption: "Maximum speed!"},
+    {src: imgAvalancheClose.src, caption: "It's right behind you! Keep going!"},
+    {src: imgIngame05.src, caption: "Entering the safe cavern"},
+    {src: imgAvalancheCloser.src, caption: "Just barely escaping the danger"},
+    {src: imgGameWon.src, caption: "You've escaped the avalanche and reached the safe zone!"},
+    {src: imgGameLost.src, caption: "The avalanche has caught up with you. Better luck next time!"},
+    {src: imgHighscores.src, caption: "Your high scores"},
+    {src: imgSettings.src, caption: "Game settings: Adjust your ski setup and other options"},
+    {src: imgMainMenu.src, caption: "Main menu screen"},
+];
+
+> Race downhill. Outrun the avalanche. Make every second count.
+
+Avalanche is a fast-paced, physics-based ski racing game where the mountain is your playground and the avalanche is right on your heels.
+Carve your way down the slopes, push your speed to the limit, and race to reach the Safe Zone in the valley before the avalanche catches up with you.
+
+Fine-tune your skiing style by adjusting your setup, experiment with different combinations of gliding, edging, and turning, and master the art of staying in control at high speeds.
+Collect pickups, maintain your momentum, and put as much distance as possible between yourself and the avalanche to maximize your score.
+
+Need an extra edge? Slow down time to react to tricky situations and unleash charged jumps to navigate the terrain in style.
+Just keep an eye on your stamina: every advantage comes at a cost.
+
+**The mountain won't wait. Find your line, trust your instincts, and outrun the Avalanche!**
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+Avalanche was a solo-dev project implemented using Unity, with a focus on physics-based movement and experimental gameplay mechanics.
+After some experimentation and workarounds, the skiing physics were implemented using Articulation Bodies, although these were not yet fully supported in the version of Unity used for development.
+
+Real World Terrain data was used to generate the environment; the submitted build features Mount Ötscher as its terrain.
+Physics Materials with low friction values allow the player to glide downhill naturally without constant input.
+Additional acceleration, scaled according to the player's speed, enhances the sense of action.
+
+The skiing behavior can be fine-tuned through the ski setup parameters available in the settings menu: gliding, edging, and turning.
+User settings are persisted automatically.
+
+The avalanche acts as a persistent pursuer, while scoring incorporates speed, distance from the avalanche, and collected pickups.
+Rock collisions trigger a crash state when the impact exceeds a predefined threshold, although the corresponding visual effects have not yet been implemented.
+Time dilation and charged jumps provide additional gameplay mechanics, both consuming stamina.
+
+External assets were used primarily for visual purposes rather than for implementing the core gameplay logic.

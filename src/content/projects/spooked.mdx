@@ -1,0 +1,71 @@
+---
+title: "Spooked!"
+description: "Spooky, lighthearted visual novel created as a teaching project for a university course. Meet a quirky cast of Halloween-themed characters, make choices that shape your adventure, and discover multiple endings in this small, interactive introduction to visual novel storytelling."
+thumbnail: "@/assets/projects/spooked/screenshots/02_main-menu.png"
+background: "@/assets/projects/spooked/screenshots/03_graveyard_searching.png"
+date: "2026-05-05"
+tags:
+- visual-novel
+- web
+- renpy
+featured: True
+colors:
+- "#cc6600"
+- "#ff5c01"
+gridSize: 1
+relatedProjects:
+- twisted-funland
+- apophis
+---
+
+import {Image} from "astro:assets";
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgSplashScreen from '../../assets/projects/spooked/screenshots/01_splash.png';
+import imgMainMenu from '../../assets/projects/spooked/screenshots/02_main-menu.png';
+import imgGraveyardSearching from '../../assets/projects/spooked/screenshots/03_graveyard_searching.png';
+import imgGraveyardYawn from '../../assets/projects/spooked/screenshots/04_graveyard_yawn.png';
+import imgGraveyardChoice from '../../assets/projects/spooked/screenshots/05_graveyard_choice.png';
+import imgTownHappy from '../../assets/projects/spooked/screenshots/06_town_happy.png';
+
+export const carouselScreenshots = [
+    {src: imgGraveyardSearching.src, caption: 'Skully searching the graveyard for Batty'},
+    {src: imgGraveyardYawn.src, caption: 'Waking up Batty, the sleepy bat'},
+    {src: imgGraveyardChoice.src, caption: 'Player choice: Go to the town together?'},
+    {src: imgTownHappy.src, caption: 'Skully is having a great time!'},
+    {src: imgMainMenu.src, caption: 'Main menu screen'},
+];
+
+> **A little spooky, a little silly, and full of choices!**
+
+<Image src={imgSplashScreen} alt="" className="w-full max-h-32 object-center object-cover rounded-lg shadow-lg mb-4"/>
+
+**Spooked!** is a short, interactive visual novel that combines a playful supernatural setting with branching dialogue and multiple endings.
+Players join Skully, a friendly skeleton, on a quest to find Batty, a sleepy bat, and decide how their little adventure unfolds.
+With character interactions, atmospheric backgrounds, animated sprites, and a spooky audiovisual presentation, the game brings its quirky cast to life.
+
+Different choices lead to different outcomes, encouraging players to explore the story and discover its endings.
+Developed as a demo project for the university course *2D Game Animation and Interactive Storytelling*, Spooked! also serves as a practical introduction to the fundamentals of visual novel development using Ren'Py.
+
+## Screenshots
+
+<CarouselImages client:visible images={carouselScreenshots}/>
+
+## Development
+
+**Spooked!** was developed using Ren'Py and its Python-based scripting language, demonstrating core concepts of visual novel development through a compact, playable example.
+
+The project showcases several key features:
+
+- **Branching narrative:** Labels, conditional logic, menus, and jumps structure the story and connect player choices to different narrative outcomes.
+- **Character and state management:** Character definitions, dialogue interpolation, and variables track the player's chosen name and story progress, influencing subsequent scenes.
+- **2D animation and transforms:** Animated WebM character sprites, layered character states, custom positioning transforms, movement transitions, and a procedural shaking animation bring the characters to life.
+- **Video and scene transitions:** A prerendered introductory cutscene, animated backgrounds, and transitions between scenes establish the game's atmosphere and pacing.
+- **Audio implementation:** Background music, ambient sound, sound effects, volume control, fade transitions, and a low-pass audio filter reinforce the mood of individual scenes and endings.
+- **Custom presentation:** A custom display font, reusable text styling, and Ren'Py's image and screen presentation features support the game's visual identity.
+- **Multiple endings:** Separate ending labels demonstrate how narrative branches can lead to distinct outcomes and how audiovisual elements can be adapted to each conclusion.
+
+The project was designed as both a standalone narrative experience and an educational resource, illustrating how Ren'Py combines scripting, visual assets, animation, audio, and interactive storytelling within an accessible development workflow.
+
+## Links
+
+- [Play Spooked! on itch.io](https://krokettenkoal.itch.io/spooked-demo?password=2dgais2026)

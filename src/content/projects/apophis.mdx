@@ -1,0 +1,110 @@
+---
+title: "Apophis"
+description: "Take part in a perilous mission on Apophis, a bizarre VR space world, and recover your lost friend from its hostile grasp."
+thumbnail: "@/assets/projects/apophis/thumbnail.jpg"
+background: "@/assets/projects/apophis/game_background.jpg"
+date: "2025-01-19"
+tags:
+  - game
+  - xr
+  - unity
+  - wwise
+featured: True
+youtube: "s0e1s9sfgR4"
+colors:
+  - "#7661ae"
+  - "#cf6d89"
+  - "#f3a07f"
+gridSize: 3
+relatedProjects:
+  - twisted-funland
+  - finding-emo
+---
+
+import {Badge} from '../../components/ui/badge';
+import {CarouselImages} from '../../components/react/carousel-images';
+import imgRenderWorld from '../../assets/projects/apophis/game_vis.jpg';
+import imgRenderCore from '../../assets/projects/apophis/game_thecore.jpg';
+import imgVehicle from '../../assets/projects/apophis/vehicle_ingame.webp';
+import imgVehicle2 from '../../assets/projects/apophis/vehicle_center.gif';
+
+export const carouselOverview = [
+    {src: imgRenderWorld.src, caption: 'A render of the in-game world of Apophis'},
+    {
+        src: imgRenderCore.src,
+        caption: 'The core: a mischievous antagonist, confronting the player with challenges and riddles'
+    },
+];
+
+export const carouselGameplay = [
+    {src: imgVehicle.src, caption: 'An outside look at the player\'s space rover'},
+    {src: imgVehicle2.src, caption: 'A render of the player\'s space rover'},
+];
+
+> Apophis is a new kind of VR experience.
+> Explore, collect, restore and progress through a hostile, fractured world to uncover the truth about your lost friend's whereabouts.
+
+Imagine a world suspended in the vast void of space, shaped by surreal organic forms and shimmering crystalline structures.
+In Apophis, players don’t just explore this mysterious landscape—they unravel a tale of discovery, survival, and innovation.
+This VR adventure combines exploration, resource management, and immersive storytelling to create an experience like no other.
+
+<CarouselImages client:visible images={carouselOverview}/>
+
+At the heart of Apophis lies the desire to create a fresh and captivating VR experience.
+Players take on the role of a scientist piloting a versatile vehicle designed for exploration and resource collection.
+_Their journey?_ To traverse an alien world filled with obstacles, puzzles, and secrets, all while facing a looming threat embodied by a mischievous off-screen antagonist.
+
+## Gameplay
+Designed for the Meta Quest 3 VR headset, Apophis prioritizes simple, intuitive gameplay to ensure accessibility for new VR players while still captivating seasoned explorers.
+The single-player experience offers a smooth and immersive world that encourages players to advance at their own pace.
+
+<CarouselImages client:visible images={carouselGameplay}/>
+
+The gameplay in Apophis revolves around three primary elements:
+1. **Exploration:** Navigate four distinct areas, each presenting unique environments, dangers, and opportunities.
+2. **Resource Management:** Destroy certain parts of the world to gather resources and unlock new paths. Players can use harvested materials to replicate key items, progressing further into the game.
+3. **Obstacle Navigation:** Utilize the vehicle’s various modes, including a gravity gun, laser, and flamethrower, to overcome different challenges.
+
+Each obstacle requires players to think critically and leverage their resources wisely.
+Tutorials guide players when encountering new mechanics, ensuring a seamless and engaging learning curve.
+
+## Development
+
+Apophis was developed as part of the master class _Augmented & Virtual Reality_ within the _Interactive Technologies_ master program at University of Applied Sciences St. Pölten during the 2024 summer and winter semesters.
+The game was developed in Unity using C#. Audio was implemented using the Wwise middleware. The 3D team used a combination of Maya and Blender for creating our assets. Furthermore, Notion was used for project management.
+
+### My Role
+
+<ul className="list-none flex gap-2 p-0 m-0 [&_li]:m-0 [&_li]:p-0 [&_li]:text-lg">
+    <li><Badge variant="outline">audio lead</Badge></li>
+    <li><Badge variant="outline">UI/PX lead</Badge></li>
+    <li><Badge variant="outline">development</Badge></li>
+</ul>
+
+My roles in the project were audio lead, UI/PX lead and developer. I was responsible for conceptualizing and implementing the game's audio and crafting an intuitive user interface and an enjoyable player experience.
+Additionally, I contributed to various development tasks, including gameplay mechanics and system integration.
+
+## Credits
+
+### Core Team
+
+- [Lukas Heinzl](https://lheinzl.com): project lead, development lead
+- Cajetan Grill (me): audio lead, UI/PX lead, development
+- Dawid Lewandowski: world building, level design, 3D
+- Srdjan Pajic: story lead, animation, 3D
+- Ewelina Pawlik: 3D lead, environment design
+- Martin Steinmetz: game design lead, development
+- Isabella Willmann: story, marketing, graphics
+
+### Support Team
+
+- Alma Dzehverovic: audio / sound design
+- Arno Enk: 3D modelling
+- Finn Schneppenheim: logo, UI design
+
+### Supervisors
+
+- Manuel Bonell: project supervision
+- Flavia Mazzanti: project supervision
+- Matthias Husinsky: project supervision, head of master class
+- Peter Judmaier: project supervision, deputy head of master class

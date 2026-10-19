@@ -1,0 +1,110 @@
+---
+import RootLayout from '@/layouts/root-layout.astro';
+import ButtonScrollTo from '@/components/astro/button-scroll-to.astro';
+import {Icon} from 'astro-icon/components';
+import {BlurFade} from '@/components/ui/blur-fade';
+import {AuroraText} from '@/components/ui/aurora-text';
+import {LightRays} from '@/components/ui/light-rays';
+import ProjectsGrid from '@/components/astro/projects-grid.astro';
+import {getCollection} from 'astro:content';
+import {dateCompare} from "@/lib/utils/date";
+import {TypingAnimation} from "@/components/ui/typing-animation";
+import {DiaTextReveal} from "@/components/ui/dia-text-reveal";
+
+const featuredProjects = (
+    await getCollection('projects', ({data}) => data.featured))
+    .sort((a, b) => dateCompare(b.data.date, a.data.date)
+    );
+
+const greetingTextTimingProps = {
+    duration: 2,
+    delay: 0.5
+}
+const greetingIconTimingProps = {
+    duration: 0.5,
+    delay: greetingTextTimingProps.duration
+}
+const introTextProps = {
+    typeSpeed: 50,
+    deleteSpeed: 20,
+    pauseDelay: 1500,
+    words: [
+        "Thanks for stopping by.",
+        "My name is Cajetan Grill, but you can call me Charlie.",
+        "I'm a software engineer and IT specialist.",
+        "Feel free to look around.",
+        "You may also check out the pages below:",
+    ]
+}
+
+const introTextDelay = greetingTextTimingProps.duration + greetingIconTimingProps.duration + 0.2;
+const introTextDuration = introTextProps.words.reduce((acc, word) => {
+    const typeTime = word.length * introTextProps.typeSpeed;
+    const deleteTime = word.length * introTextProps.deleteSpeed;
+    const pauseTime = introTextProps.pauseDelay;
+    return acc + typeTime + deleteTime + pauseTime;
+}, 0) / 1000;
+---
+
+<RootLayout title="Home">
+    <main class="container mx-auto">
+        <section class="w-full h-hero flex justify-between items-center flex-col p-2">
+            <LightRays client:media="(min-width: 48rem)"/>
+            <div></div>
+            <div class="text-center max-w-[65ch]">
+                <h1 class="scroll-m-20 text-4xl font-bold tracking-tight text-balance lg:text-5xl">
+                    <DiaTextReveal client:load
+                                   text="Hello there!"
+                                   {...greetingTextTimingProps}
+                    />
+                    {' '}
+                    <BlurFade client:load {...greetingIconTimingProps} direction="right"
+                              className="inline-block">
+                        <Icon name="mdi:human-greeting" class="inline-block"/>
+                    </BlurFade>
+                </h1>
+                <TypingAnimation
+                        client:delay={{seconds: introTextDelay}}
+                        as="p"
+                        className="text-muted-foreground text-lg mt-2"
+                        loop={false}
+                        {...introTextProps}
+                />
+
+                <menu class="mt-6">
+                    {[{href: '/projects', text: 'Projects'}, {href: '/bio', text: 'Bio'}].map((item, idx) => (
+                            <li class="mt-2">
+                                <BlurFade client:delay={{seconds: introTextDelay + introTextDuration}}
+                                          delay={idx * 0.2}>
+                                    <a href={item.href}
+                                       class="text-lg font-semibold text-foreground hover:no-underline">
+                                        {item.text}
+                                        <Icon name="lucide:arrow-right" class="inline-block size-4 ml-1"/>
+                                    </a>
+                                </BlurFade>
+                            </li>
+                    ))}
+                </menu>
+            </div>
+
+            <ButtonScrollTo target="#projects-featured"/>
+        </section>
+
+        <section id="projects-featured" class="w-full p-2 mt-20 scroll-m-18">
+            <h2 class="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight first:mt-0 lg:text-5xl">
+                Featured&nbsp;
+                <AuroraText client:visible>Projects</AuroraText>
+            </h2>
+            <p class="text-muted-foreground text-lg mt-2">
+                A selection of my most recent, relevant or fun projects.
+            </p>
+            <div class="mt-8 -mx-2">
+                <ProjectsGrid projects={featuredProjects}/>
+            </div>
+            <a href="/projects" class="mt-2 text-lg underline inline-block">
+                View all projects
+                <Icon name="lucide:arrow-right" class="inline-block size-4 ml-1"/>
+            </a>
+        </section>
+    </main>
+</RootLayout>

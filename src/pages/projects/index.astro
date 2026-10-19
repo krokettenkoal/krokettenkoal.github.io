@@ -1,0 +1,41 @@
+---
+import {getCollection} from 'astro:content';
+import RootLayout from '@/layouts/root-layout.astro';
+import {ProjectsGrid as ProjectsGridReact} from '@/components/react/projects-grid';
+import {AuroraText} from '@/components/ui/aurora-text';
+import {Icon} from 'astro-icon/components';
+import {BlurFade} from '@/components/ui/blur-fade';
+import ButtonScrollTo from '@/components/astro/button-scroll-to.astro';
+import {ProjectsCarousel} from '@/components/react/projects-carousel';
+const projects = (await getCollection('projects')).sort((a, b) => (new Date(b.data.date)).getTime() - (new Date(a.data.date)).getTime());
+const featuredProjects = projects.filter(project => project.data.featured);
+---
+
+<RootLayout title="Projects" description="A selection of my most recent, relevant or fun projects">
+    <main>
+        <!-- FEATURED PROJECTS -->
+        <section id="projects-featured" class="scroll-m-18 relative my-4">
+            <hgroup class="p-2 absolute invisible top-0">
+                <h1>Projects</h1>
+                <p>A selection of my most recent, relevant or fun projects.</p>
+            </hgroup>
+
+            <ProjectsCarousel client:load projects={featuredProjects} className="container grow lg:grow-0 lg:my-8"/>
+        </section>
+        <!-- END FEATURED PROJECTS -->
+
+        <section class="container mx-auto">
+            <!-- ALL PROJECTS -->
+            <div id="projects-all" class="w-full p-2 scroll-m-18 mt-20 lg:mt-32">
+                <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 lg:text-4xl">
+                    <AuroraText client:visible>All</AuroraText>
+                    &nbsp;Projects
+                </h2>
+                <div class="mt-4 -mx-2">
+                    <ProjectsGridReact client:visible projects={projects} showTagFilter={true}/>
+                </div>
+            </div>
+        </section>
+        <!-- END ALL PROJECTS -->
+    </main>
+</RootLayout>

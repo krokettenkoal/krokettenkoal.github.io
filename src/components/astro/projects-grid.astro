@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid';
+import { Image } from 'astro:assets';
+import { cn } from '@/lib/utils';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+	gridClass?: string;
+	cardClass?: string;
+}
+
+const { projects, gridClass = '', cardClass = '' } = Astro.props;
+
+const gridSizes: Record<number, string> = {
+	1: 'col-span-3 lg:col-span-1',
+	2: 'col-span-3 lg:col-span-2',
+	3: 'col-span-3 lg:col-span-3'
+};
+---
+
+<BentoGrid client:visible className={cn(gridClass)}>
+	{projects.map((project, idx) => (
+		<BentoCard
+			client:visible
+			key={idx}
+			href={`/projects/${project.id}`}
+			name={project.data.title}
+			description={project.data.description}
+			cta="Explore project"
+			tags={project.data.tags}
+			className={cn(gridSizes[project.data.gridSize] ?? gridSizes[1]!, 'rounded-none lg:rounded-xl', cardClass)}
+		>
+			<Image src={project.data.thumbnail} alt={project.data.thumbnailAlt ?? project.data.title}
+						 class="w-full h-full object-cover object-center" />
+		</BentoCard>
+	))}
+</BentoGrid>
