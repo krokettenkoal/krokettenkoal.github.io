@@ -57,7 +57,7 @@ const {pathname} = Astro.url;
     <menu class="flex justify-center items-center gap-2">
         {items.map(navLink => (
                 <li data-nav-match={navLink.match ?? `^${navLink.href.trimEnd('/')}$`} class="group"
-                    data-nav-active={(new RegExp(navLink.match ?? `^${navLink.href}$`)).test(pathname) ? '' : null}>
+                    data-nav-active={(new RegExp(navLink.match ?? `^${navLink.href.trimEnd('/')}$`)).test(pathname.trimEnd('/')) ? '' : null}>
                     <a href={navLink.href}
                        class={cn([
                            buttonVariants({variant: 'link'}),

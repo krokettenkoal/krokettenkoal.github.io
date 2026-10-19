@@ -25,12 +25,13 @@ const navLinks: NavLink[] = [
         href: '/projects',
         label: 'Projects',
         icon: 'lucide:sparkles',
-        match: '^/projects'
+        match: '^/projects(/?|[/#].*)$'
     },
     {
         href: '/bio',
         label: 'Bio',
-        icon: 'lucide:user'
+        icon: 'lucide:user',
+        match: '^/bio(/?|[/#].*)$'
     }
 ] as const;
 const socialLinks = [
