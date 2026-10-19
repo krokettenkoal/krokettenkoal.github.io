@@ -27,7 +27,7 @@ const {pathname} = Astro.url;
             if (!newPathName) continue;
             navElem.querySelectorAll('li[data-nav-match]').forEach((li) => {
                 const regex = new RegExp(li.getAttribute('data-nav-match') ?? '^$');
-                if (regex.test(newPathName))
+                if (regex.test(newPathName.trimEnd('/'))) // remove trailing slash for path matching
                     li.setAttribute('data-nav-active', '');
                 else
                     li.removeAttribute('data-nav-active')
@@ -56,7 +56,7 @@ const {pathname} = Astro.url;
 <nav data-nav-current={pathname} class:list={["transition-colors duration-300 p-1", className]} {...props}>
     <menu class="flex justify-center items-center gap-2">
         {items.map(navLink => (
-                <li data-nav-match={navLink.match ?? `^${navLink.href}$`} class="group"
+                <li data-nav-match={navLink.match ?? `^${navLink.href.trimEnd('/')}$`} class="group"
                     data-nav-active={(new RegExp(navLink.match ?? `^${navLink.href}$`)).test(pathname) ? '' : null}>
                     <a href={navLink.href}
                        class={cn([
